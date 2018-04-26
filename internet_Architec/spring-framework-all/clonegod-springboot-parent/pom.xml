@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>clonegod</groupId>
+	<artifactId>clonegod-springboot-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<!-- parent pom's parent -->
+	<parent>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>2.0.1.RELEASE</version>
+	</parent>
+
+	<name>clonegod-springboot-parent</name>
+
+	<modules>
+		<module>clonegod-springboot-api</module>
+		<module>clonegod-springboot-service</module>
+		<module>clonegod-springboot-web</module>
+		<module>clonegod-springboot-persistence</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<guava.version>23.0</guava.version>
+	</properties>
+
+	<!-- 子模块直接继承的依赖 -->
+	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>${guava.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<!-- 子模块可选的依赖 -->
+	<dependencyManagement>
+
+	</dependencyManagement>
+
+	<!-- 项目构建：插件配置 -->
+	<build>
+		<!-- 对子模块直接生效的插件配置 -->
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+		<!-- 可选插件的依赖管理 -->
+		<pluginManagement>
+		</pluginManagement>
+		
+	</build>
+
+</project>

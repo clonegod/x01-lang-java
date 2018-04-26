@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 服务提供方应用名称，在dubbo管理页面上会显示每个服务是哪个应用发布出来的 -->
+    <dubbo:application name="dubbo-provider-CoreServer"/>
+    
+    <!-- 使用multicast广播注册中心 -->
+    <!-- <dubbo:registry address="multicast://224.5.6.7:1234"/> -->
+    
+    <!-- 使用zookeeper注册中心 -->
+    <!-- 
+    <dubbo:registry protocol="zookeeper" 
+    				address="192.168.1.201:2181,192.168.1.202:2181,192.168.1.203:2181"
+    				client="curator"/>
+     -->			
+    <dubbo:registry address="zookeeper://192.168.1.201:2181?backup=192.168.1.202:2181,192.168.1.203:2181"
+    				client="zkclient"/>
+    
+    <!-- 配置协议类型为dubbo协议，服务监听端口号为20880 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+    
+    <!-- 声明需要发布的服务接口 -->
+    <dubbo:service interface="clonegod.rpc.dubbo.service.HelloService" ref="helloService"/>
+    <dubbo:service interface="clonegod.rpc.dubbo.service.UserService" ref="userService"/>
+    
+    <!-- 具体的服务实例bean -->
+    <bean id="helloService" class="clonegod.rpc.dubbo.service.impl.HelloServiceImpl"/>
+    <bean id="userService" class="clonegod.rpc.dubbo.service.impl.UserServiceImpl"/>
+</beans>

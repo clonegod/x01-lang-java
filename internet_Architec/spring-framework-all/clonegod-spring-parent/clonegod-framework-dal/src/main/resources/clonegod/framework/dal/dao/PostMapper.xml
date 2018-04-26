@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="clonegod.framework.dal.dao.PostMapper">
+  <resultMap id="BaseResultMap" type="clonegod.framework.dal.dao.Post">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="blog_id" jdbcType="INTEGER" property="blogId" />
+    <result column="author_id" jdbcType="INTEGER" property="authorId" />
+    <result column="section" jdbcType="VARCHAR" property="section" />
+    <result column="subject" jdbcType="VARCHAR" property="subject" />
+    <result column="draft" jdbcType="VARCHAR" property="draft" />
+    <result column="body" jdbcType="VARCHAR" property="body" />
+    <result column="created_on" jdbcType="TIMESTAMP" property="createdOn" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, blog_id, author_id, section, subject, draft, body, created_on
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from post
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from post
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="clonegod.framework.dal.dao.Post">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into post (blog_id, author_id, section, 
+      subject, draft, body, 
+      created_on)
+    values (#{blogId,jdbcType=INTEGER}, #{authorId,jdbcType=INTEGER}, #{section,jdbcType=VARCHAR}, 
+      #{subject,jdbcType=VARCHAR}, #{draft,jdbcType=VARCHAR}, #{body,jdbcType=VARCHAR}, 
+      #{createdOn,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="clonegod.framework.dal.dao.Post">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into post
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="blogId != null">
+        blog_id,
+      </if>
+      <if test="authorId != null">
+        author_id,
+      </if>
+      <if test="section != null">
+        section,
+      </if>
+      <if test="subject != null">
+        subject,
+      </if>
+      <if test="draft != null">
+        draft,
+      </if>
+      <if test="body != null">
+        body,
+      </if>
+      <if test="createdOn != null">
+        created_on,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="blogId != null">
+        #{blogId,jdbcType=INTEGER},
+      </if>
+      <if test="authorId != null">
+        #{authorId,jdbcType=INTEGER},
+      </if>
+      <if test="section != null">
+        #{section,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="draft != null">
+        #{draft,jdbcType=VARCHAR},
+      </if>
+      <if test="body != null">
+        #{body,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null">
+        #{createdOn,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="clonegod.framework.dal.dao.Post">
+    update post
+    <set>
+      <if test="blogId != null">
+        blog_id = #{blogId,jdbcType=INTEGER},
+      </if>
+      <if test="authorId != null">
+        author_id = #{authorId,jdbcType=INTEGER},
+      </if>
+      <if test="section != null">
+        section = #{section,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null">
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="draft != null">
+        draft = #{draft,jdbcType=VARCHAR},
+      </if>
+      <if test="body != null">
+        body = #{body,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null">
+        created_on = #{createdOn,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="clonegod.framework.dal.dao.Post">
+    update post
+    set blog_id = #{blogId,jdbcType=INTEGER},
+      author_id = #{authorId,jdbcType=INTEGER},
+      section = #{section,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      draft = #{draft,jdbcType=VARCHAR},
+      body = #{body,jdbcType=VARCHAR},
+      created_on = #{createdOn,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

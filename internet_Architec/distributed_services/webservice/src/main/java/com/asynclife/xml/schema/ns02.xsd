@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ns02" 
+xmlns:tns="http://www.example.org/ns02" elementFormDefault="qualified">
+
+	<element name="books" type="tns:booksType"/>
+	
+	<complexType name="booksType">
+		<sequence>
+			<element name="book" type="tns:bookType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="bookType">
+		<!-- sequence中声明的元素在XML中有固定顺序 -->
+		<sequence>
+			<element name="title" type="string"/>
+			<element name="content" type="string"/>
+			<!-- choice中的元素在XML中只能选择其中1个 -->
+			<choice>
+				<element name="author" type="string"/>
+				<element name="authors">
+					<complexType>
+						<sequence>
+							<element name="author" type="string" maxOccurs="3"/>
+						</sequence>
+					</complexType>
+				</element>
+			</choice>
+		</sequence>
+		<!-- 属性必须在sequence之后进行定义 -->
+		<attribute name="id" type="int" use="required"/>
+		
+		<!-- all 元素顺序任意，但是每个元素只能出现1次(具体见w3cschool schema 相关介绍) -->
+	</complexType>
+	
+			
+</schema>

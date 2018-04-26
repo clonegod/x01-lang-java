@@ -1,0 +1,109 @@
+REST 与 RPC 
+
+RPC - remote procedure call
+RPC是面向服务的， 并关注于行为和动作，以操作和处理为中心。
+
+REST - Representational State Transfer
+REST是面向资源的， 强调描述应用程序的事物和名词，以信息和资源为中心。
+
+====================================================================
+
+什么是REST
+REST就是将资源的状态以最适合客户端或服务端的形式从服务器端转移到客户端。
+
+REST的应用场景
+移动或富JavaScript客户端， 它们都会使用运行在服务器上REST API。
+
+在REST中， 资源通过URL进行识别和定位。从请求URL即可识别出请求的资源。
+
+REST的行为表述
+	通过HTTP方法来定义：GET, POST, PUT, PATCH, DELETE
+
+====================================================================
+REST资源的表现形式 
+任何给定的资源都几乎可以有若干不同的形式来进行表述.
+	对于浏览器而言，比较合适的资源表现形式：HTML, PDF, EXCEL
+	对于应用程序而言，下面的资源表述更合适： XML、JSON、RSS、Atom
+
+尽管Spring支持多种资源表述形式， 但是在定义REST API的时候， 不一定要全部使用它们。 对于大多数客户端来说， 用JSON和XML来进行表述就足够了。
+
+
+spring对资源表述提供的两种方案：
+	内容协商（Content negotiation） ： 选择一个视图， 它能够将模型渲染为呈现给客户端的表述形式；
+		在Spring MVC之上构建的REST资源表述层，可复用Controller中已有的方法。
+		通过客户端提交请求的后缀、Accept头等信息来判断响应哪种类型的结果。
+		
+	消息转换器（Message conversion） ： 通过一个消息转换器将控制器所返回的对象转换为呈现给客户端的表述形式。
+		控制器产生的数据转换为服务于客户端的表述形式。
+		与Spring MVC相比较，根本就没有模型， 也没有视图， 只有控制器产生的数据， 以及消息转换器（message converter） 转换之后所产生的资源表述。
+
+
+====================================================================
+
+@RestController
+	统一设置该控制器的所有处理方法都应用消息转换功能。
+
+@RequestBody：    
+	告诉Spring查找一个消息转换器， 将来自客户端的资源表述转换为对象。
+
+@ResponseBody：
+	告诉Spring在把数据发送给客户端的时候， 要使用某一个消息转换器， 
+
+@ResponseStatus
+	指定响应状态码
+	
+ResponseEntity
+	提供更多响应相关的元数据（如头部信息和状态码）
+	
+---> HttpMessageConverter: 
+	请求层面：将客户端发送的请求资源转换为POJO对象。
+	响应层面：将返回的POJO对象转换为某种类型的内容json或xml。
+	
+
+配置HttpMessageConverter使用GSON而不是Jackson处理json转换？？？怎么做？？？？
+	
+
+REST请求
+	@PathVariable：提取URL中的表述资源相关的参数
+	@RequestBody + HttpMethodConverter: 将传入的HTTP数据转化为传入控制器处理方法的Java对象
+
+	
+REST响应
+	@ResponseBody：告诉Spring跳过正常的模型/视图流程， 使用消息转换器来处理Controller中返回的结果。
+	@ResponseBody注解完全绕过视图解析，并使用信息转换器将返回值转换为客户端的响应。
+	
+	消息转换器怎样处理Controller返回的对象，格式化为json? xml?
+		1. 从客户端的Accept头获取请求资源类型；
+		2. toJson
+			若Jackson JSON库存在于classpath路径下- MappingJackson2HttpMessageConverter
+		3. toXml
+			JAXB库在classpath路径下 - 用Jaxb2RootElementHttpMessageConverter来实现XML消息和Java对象的互相转换
+	
+	当要使用某个消息转换器时，需要添加对应的类库到classpath路径下，spring发现之后会自动注册相关转换器。
+		StringHttpMessageConverter
+		MarshallingHttpMessageConverter
+		Jaxb2RootElementHttpMessageConverter
+		MappingJackson2HttpMessageConverter
+		。。。
+
+
+====================================================================
+	
+通常来讲， 移动或JavaScript应用会是REST API的客户端
+
+借助RestTemplate， Spring应用能够方便地使用REST资源。
+
+REST客户端
+	RestTemplate定义了36个与REST资源交互的方法
+	封装通用代码并参数化可变的部分
+
+GET资源
+	getForObject()
+	getForEntity()
+	
+POST资源数据
+	postForObject()
+	postForEntity()
+	
+交换资源-请求中设置头信息
+	exchange()

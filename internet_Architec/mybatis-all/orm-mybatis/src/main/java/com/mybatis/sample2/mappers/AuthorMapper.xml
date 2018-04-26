@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.sample2.dao.AuthorMapper">
+	
+	<insert id="insertAuthor" parameterType="Author" useGeneratedKeys="true" keyProperty="id">
+		insert into author (username,password,email,gender)
+  		values (#{username},#{password},#{email},#{gender})
+	</insert>
+  	
+  	
+  	<select id="selectAuthorByUsernameOrEmail" resultType="Author">
+  		 SELECT id, username, password, email, gender, create_time
+		 FROM author
+		 <where>
+		 	<if test="username != null">
+		 		username like #{username}
+		 	</if>
+		 	<if test="email != null and email != ''">
+		 		AND email like #{email}
+		 	</if>
+		 </where>
+		 LIMIT 0, 100
+  	</select>
+</mapper> 

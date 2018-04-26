@@ -1,0 +1,35 @@
+# Server settings
+server:
+    port: 80
+    address: localhost
+
+# SPRING PROFILES
+spring:
+    # HTTP ENCODING
+    http:
+        encoding.charset: UTF-8
+        encoding.enable: true
+        encoding.force: true
+    # DATASOURCE
+    datasource: 
+        driver-class-name: com.mysql.jdbc.Driver 
+        url: jdbc:mysql://192.168.1.201:3306/test_mybatis?useUnicode=true&characterEncoding=utf8
+        username: alice 
+        password: alice123
+
+# MyBatis
+mybatis:
+    type-aliases-package: com.clonegod.demo.model
+    check-config-location: true
+    mapper-locations: classpath:mybatis/mapper/*.xml
+    config-location: classpath:mybatis/mybatis-config.xml
+
+# LOGGING
+logging: 
+    level: 
+        com.clonegod.demo.dao: DEBUG
+        com.clonegod.demo.service: DEBUG
+        com.clonegod.demo.controller: DEBUG
+        com.ibatis: DEBUG
+
+

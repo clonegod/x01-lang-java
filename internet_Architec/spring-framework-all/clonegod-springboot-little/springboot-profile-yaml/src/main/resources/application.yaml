@@ -1,0 +1,12 @@
+# use as default profile if 'spring.profiles.active' property not set
+my:
+   servers:
+       - dev.foo1.bar.com
+       - dev.foo2.bar.com
+
+foo:
+  list:
+    - name: dev -> my name
+      description: my description
+    - name: dev -> another name
+      description: another description

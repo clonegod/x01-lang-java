@@ -1,0 +1,47 @@
+HTTP(超文本传输协议)是建立在TCP传输协议之上的应用层协议。
+
+Http协议的特点：
+1、简单。客户端请求只需要指定URL和携带必要参数即可。
+2、灵活。http协议允许传输任何类型的数据，传输内容由消息头的Content-Type加以标识。
+3、无状态。http协议是无状态的，每个请求都是独立的，因此在后续的请求时，需要额外的数据来维护与服务端建立的会话：cookie，session。
+
+http协议的组成部分：
+请求行		GET /index.html HTTP/1.1
+请求头		Accept-Encoding	User-Agent Referer 
+请求体		username=test&password=test
+
+
+http协议的请求方式：
+	GET			获取由Request-URI所标识的资源
+	POST		在Request-URI所标识的资源上附加新的提交数据
+	HEAD		请求获取由Request-URI所标识的资源的响应消息头
+	PUT			请求服务器存储一个资源，并用Request-URI作为标识
+	DELETE		请求服务器删除由Request-URI所标识的资源
+	TRACE		请求服务器回送收到的请求消息，主要用于测试和诊断
+	CONNECT		保留，未使用
+	OPTIONS		允许客户端查看服务器的性能。
+
+
+http协议的响应状态码
+	1xx	提示信息。表示请求已经接收，需要继续处理
+	2xx	成功。表示请求已成功处理。
+	3xx	重定向。要完成请求必须进一步的操作，如跳转到其它链接。
+	4xx	客户端错误。可能是无权限，或者请求的资源不存在。
+	5xx	服务器端错误。服务器内部异常。
+	
+	常见的状态码解释
+	200	OK 成功
+	400	Bad Request 错误的请求语法，不能被服务器理解。
+	401	Unauthorized 请求未经授权
+	403 Forbidden 服务器收到请求，但请求被服务器拒绝
+	404	Not Found 请求资源不存在
+	405	Method Not Allowed 请求方式不正确，比如只支持POST，但客户端使用了GET进行请求
+	500	Internal Server Error 服务器发生不可预期的错误
+	505	Server Unavailable 服务器当前不能处理客户端请求，一段时间后可能恢复正常
+	
+
+	
+	
+
+
+

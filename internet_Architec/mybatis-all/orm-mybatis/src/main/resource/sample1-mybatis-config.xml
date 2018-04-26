@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 从外部配置文件读取配置参数 -->
+	<properties resource="database.properties"/>
+	
+	<settings>  
+        
+        <!-- 指定 MyBatis 所用日志的具体实现，未指定时将自动查找。 -->
+        <setting name="logImpl" value="LOG4J2" />  
+        
+        <!-- 启用延迟加载。与子查询配合使用，可提升sql执行效率 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+        
+        
+    </settings> 
+	
+	<!-- 定义Mapper.xml中的实体类别名 -->
+	<typeAliases>
+		<!-- 直接指定package的名字， mybatis会自动扫描指定包下面的javabean，并且默认设置一个别名，默认的名字为： javabean 的首字母小写的类名 -->
+		<!-- 也可在javabean 加上注解@Alias 来自定义别名 -->
+		<package name="com.mybatis.sample1.model"/>
+	</typeAliases>
+	
+	<typeHandlers>
+		<!-- 枚举类型转换器 
+			映射枚举类型 Enum，则需要从 EnumTypeHandler 或者 EnumOrdinalTypeHandler 中选一个来使用
+			EnumTypeHandler：把 Enum 值转换成对应的名字；
+			EnumOrdinalTypeHandler ：把 Enum 的original值存入数据库
+		-->
+	  <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.mybatis.sample1.model.Gender"/>
+	</typeHandlers>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>	<!-- 指定mybatis使用哪种事务管理：JDBC/MANAGED -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${database.driver}"/>
+				<property name="url" value="${database.url}"/>
+				<property name="username" value="${database.username}"/>
+				<property name="password" value="${database.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	
+	<mappers>
+		<!-- mapper有3种不同的配置方式：
+			1. resource 指定xml文件路径； 
+			2. class 	指定接口路径；
+			3. package 	指定接口所在的包路径，包路径下的所有接口都会被自动扫描注册；
+		-->
+		<!-- Using classpath relative resources -->
+		<mapper resource="com/mybatis/sample1/mappers/UserMapper.xml"/>
+		
+		<mapper resource="com/mybatis/sample1/mappers/AuthorMapper.xml"/>
+		
+		<mapper resource="com/mybatis/sample1/mappers/SqlInjection.xml"/>
+		
+	</mappers>
+</configuration>

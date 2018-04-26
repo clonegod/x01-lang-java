@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classroom xmlns="http://www.example.org/all"
+ 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.example.org/all classroom.xsd">
+	
+	<name>五班</name>
+	<grade>2001</grade>
+	<student>
+		<name>a01</name>
+		<sex>女</sex>
+	</student>
+	<student>
+		<name>a02</name>
+		<sex>男</sex>
+	</student>
+</classroom>

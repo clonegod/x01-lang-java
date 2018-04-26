@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="SLF4J"/>
+        <!-- 一级缓存(同一个sqlSession下的查询共享一级缓存) -->
+        <setting name="localCacheScope" value="SESSION"/>
+        <!-- 二级缓存的总开关(不会影响一级缓存) -->
+        <setting name="cacheEnabled" value="true" />
+    </settings>
+    <typeHandlers>
+    	<!-- 注册自定义typehandler -->
+	  <package name="clonegod.framework.dal.typehandlers.ClonegodCurrencyEnumTypeHandler"/>
+	</typeHandlers>
+    <environments default="development">
+    	<!-- 配置连接数据库 -->
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/blogs?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+                <property name="username" value="alice"/>
+                <property name="password" value="alice123"/>
+                <property name="poolMaximumActiveConnections" value="300"/>
+                <property name="poolMaximumIdleConnections" value="100"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+    	<!-- 注册mapper -->
+    	<!-- Using classpath relative resources -->
+        <mapper resource="clonegod/framework/dal/dao/AuthorMapper.xml"/>
+        <mapper resource="clonegod/framework/dal/dao/BlogMapper.xml"/>
+        <mapper resource="clonegod/framework/dal/dao/PostMapper.xml"/>
+        <mapper resource="clonegod/framework/dal/dao/TagMapper.xml"/>
+        <mapper resource="clonegod/framework/dal/dao/CommentMapper.xml"/>
+        <mapper resource="clonegod/framework/dal/dao/AuthorEnumMapper.xml"/>
+        <mapper resource="clonegod/framework/dal/dao/BlogPostsMapper.xml"/>
+    </mappers>
+</configuration>

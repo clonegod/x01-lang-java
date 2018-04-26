@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+<title>Using JCaptcha - A Simple Captcha Servlet</title>
+<style type="text/css">
+td {
+	font-family: Verdana, Tahoma, Arial, Helvetica;
+	font-size: 10pt;
+	background-color: #FFFFFF;
+	margin-left: 0pt
+}
+</style>
+</head>
+<body>
+	<h2>Using JCaptcha: A Simple Captcha </h2>
+	
+	<form  action="/register" method="post">
+		<table border="0" cellspacing="0" cellpadding="3">
+			<tr>
+				<td>Email:</td>
+				<td align="center"><input type="text" name="email"
+					value="" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td align="center"><input type="password" name="password"
+					value="" /></td>
+			</tr>
+			<tr>
+				<td valign="middle">Enter these letters:<br /> 
+					<img id="captchaImg" src="/captcha.jpg" alt="Enter the characters appearing in this image"
+					onclick="this.src='/captcha.jpg?t='+Math.random()"/>
+				</td>
+				<td><input type="text" name="captchaChars" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><input type="submit"
+					value="Submit" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><br />
+				<br />(click image to generate a new image)</td>
+			</tr>
+		</table>
+	</form>
+	<div>
+	验证结果:
+		<p th:text="${result}"> </p>
+	</div>
+</body>
+</html>

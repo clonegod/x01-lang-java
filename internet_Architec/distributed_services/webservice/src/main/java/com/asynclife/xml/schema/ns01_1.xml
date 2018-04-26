@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	指定默认命名空间为自己定义的命名空间： xmlns="http://www.example.org/ns01"
+	引入外部命名空间必须的命名空间：xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	引入自己定义的命名空间 ： xsi:schemaLocation="http://www.example.org/ns01"
+	
+	注意：需要将自己定义的xsd加入XML Catalog中
+-->
+
+<user xmlns="http://www.example.org/ns01"
+ 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.example.org/ns01
+		 ns01.xsd">
+	
+	<id>1</id>
+	<name>aa</name>
+	<birth>2012-01-01</birth>
+	
+</user>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/esb"
+	xmlns:tns="http://www.example.org/esb" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	jaxb:version="2.0" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc" elementFormDefault="qualified">
+	
+	<!-- 以下annotation配置可解决生成的LoanAcctReq没有@XmlRootElement注解导致UnMarahll异常的问题 -->
+	<annotation>
+        <appinfo>
+            <jaxb:globalBindings>
+                <xjc:simple />
+            </jaxb:globalBindings>
+        </appinfo>
+    </annotation>
+    
+	<element name="HEADER" type="tns:HEADER" />
+
+	<complexType name="HEADER">
+		<sequence>
+			<element name="txCode" type="string" />
+			<element name="date" type="string" />
+			<element name="time" type="string" />
+		</sequence>
+	</complexType>
+
+	<element name="LoanAcctReq">
+		<complexType>
+			<complexContent>
+				<extension base="tns:HEADER">
+					<sequence>
+						<element name="name" type="string" />
+						<element name="age" type="int" />
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+
+</schema>

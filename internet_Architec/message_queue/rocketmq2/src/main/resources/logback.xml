@@ -1,0 +1,33 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+<!--   
+  <appender name="mqAppender1" class="org.apache.rocketmq.logappender.logback.RocketmqLogbackAppender">
+    <tag>TagA</tag>
+    <topic>TopicTest</topic>
+    <producerGroup>Group-Producer-Broadcast</producerGroup>
+    <nameServerAddress>192.168.1.201:9876</nameServerAddress>
+    <layout>
+        <pattern>%date %p %t - %m%n</pattern>
+    </layout>
+   </appender>
+	 -->
+	 
+   <appender name="mqAsyncAppender1" class="ch.qos.logback.classic.AsyncAppender">
+	    <queueSize>1024</queueSize>
+	    <discardingThreshold>80</discardingThreshold>
+	    <maxFlushTime>2000</maxFlushTime>
+	    <neverBlock>true</neverBlock>
+	    <appender-ref ref="STDOUT"/>
+   </appender>
+
+  <root level="debug">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

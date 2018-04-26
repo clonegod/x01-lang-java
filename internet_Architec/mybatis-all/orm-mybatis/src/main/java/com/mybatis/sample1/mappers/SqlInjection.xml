@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 绑定本mapper中的操作到对应的Dao接口上 -->
+<mapper namespace="com.mybatis.sample1.mappers.SqlInjection">
+	
+  	<!-- sql inject -->
+  	<select id="selectSqlInject" resultType="User" statementType="STATEMENT">
+  		SELECT * 
+  		FROM user u 
+  		WHERE 
+  		username = '${username}' AND password = '${password}'
+  	</select>
+  	
+  	<select id="selectSqlInject_LIKE" resultType="User" statementType="STATEMENT">
+  		SELECT * 
+  		FROM user u 
+  		WHERE 
+  		username like  '%${username}%'
+  	</select>
+  		
+</mapper> 

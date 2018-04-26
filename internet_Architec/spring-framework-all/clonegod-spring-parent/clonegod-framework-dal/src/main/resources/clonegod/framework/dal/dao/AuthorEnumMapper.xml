@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="clonegod.framework.dal.dao.AuthorEnumMapper">
+  <resultMap id="BaseResultMap" type="clonegod.framework.dal.dao.Author">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="currency" property="currency" typeHandler="clonegod.framework.dal.typehandlers.ClonegodCurrencyEnumTypeHandler"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, password, email, currency
+  </sql>
+  <select id="selectByPrimaryKeyEnum" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from author
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  
+  <insert id="insertEnum" parameterType="clonegod.framework.dal.dao.Author">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into author (username, password, email, 
+      currency)
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{currency, typeHandler=clonegod.framework.dal.typehandlers.ClonegodCurrencyEnumTypeHandler})
+  </insert>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.sample2.dao.PostMapper">
+
+	<insert id="insertPost" parameterType="Post" useGeneratedKeys="true" keyProperty="id">
+		insert into post (subject,body,author_id,blog_id)
+  		values (#{subject},#{body},#{author.id},#{blog.id})
+	</insert>
+  		
+</mapper> 

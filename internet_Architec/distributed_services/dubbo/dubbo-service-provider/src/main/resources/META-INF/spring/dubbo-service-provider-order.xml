@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd" default-autowire="byName">
+    
+    <!-- 启用spring注解扫描 -->
+    <context:annotation-config/>
+    <context:component-scan base-package="clonegod.dubbo.service.impl"/>
+    
+    
+    
+    <!-- 1、当前项目在整个分布式架构里面的唯一名称，用来计算依赖关系的标签 -->
+    <dubbo:application name="clonegod-service-provider-order" owner="clonegod"/>
+    
+    <!-- 可以配置监控 -->
+    <dubbo:monitor protocol="registry"/>
+    
+    <!-- 2、dubbo暴露服务所使用的注册中心-->
+    <dubbo:registry protocol="zookeeper" 
+    				address="192.168.1.201:2181,192.168.1.202:2181,192.168.1.203:2181"
+    				client="curator"/>
+    
+    <!-- 3、当前服务发布所使用的协议：webservice，thrift，hessian，http等 -->
+    <dubbo:protocol name="dubbo" port="30881"/>
+    <dubbo:protocol name="hessian" port="30882" server="jetty"/>
+    
+    
+    <!-- provider端的全局服务超时时间，优先级低于consumer端的全局服务超时配置 -->
+    <dubbo:provider timeout="6000"/> 
+    
+    <!-- 4、配置要发布的服务 -->
+    <!-- 对外暴露的服务接口 -->
+    <!-- dubbo 服务多协议（同一个服务可以配置多种协议）、多版本的配置（服务升级后版本号跟着升级） -->
+    <dubbo:service interface="clonegod.dubbo.api.order.IOrderService" ref="orderService" 
+    				protocol="dubbo" 
+    				version="0.0.1"    				
+    				timeout="4000">
+    	<!-- 方法级别上配置timeout，provider端方法级别的配置优先级低于consumer端方法级别的配置 -->
+    	<dubbo:method name="doOrder" timeout="2000"/>
+   </dubbo:service>
+   
+    <!-- 多版本服务（不同版本的业务逻辑是不同的）
+    	-不同版本可以配置不同的协议，比如版本0.0.2增加了对hessian协议的支持
+    	-客户端根据需要调用某个版本号的服务
+    	-历史版本的app调用旧版本的服务
+    	-新版本的app调用新版本的服务 
+    -->	
+    <dubbo:service interface="clonegod.dubbo.api.order.IOrderService" ref="orderServiceV2" 
+    				protocol="hessian,dubbo" 
+    				version="0.0.2">
+    </dubbo:service>
+    
+    
+    
+    <!-- 服务的具体实现类 -->
+    <!-- 注意：已通过注解扫描注入service到spring容器中，这里不再通过xml发布bean -->
+    <!-- 
+    <bean id="orderService" class="clonegod.dubbo.service.impl.OrderServiceImpl"/>
+     -->
+    
+</beans>

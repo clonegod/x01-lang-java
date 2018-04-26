@@ -1,0 +1,5 @@
+h2 {color: blue}
+
+td:nth-child(3) {
+    text-align: right;
+}

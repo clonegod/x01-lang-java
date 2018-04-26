@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT classroom (cname,grade,students)>
+<!ATTLIST classroom cid ID #REQUIRED>
+<!ELEMENT cname (#PCDATA)>
+<!ELEMENT grade (#PCDATA)>
+<!ELEMENT students (student+)>
+<!ELEMENT student (id,name,age)> <!-- xml中元素书写顺序必须与这里一致 -->
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>

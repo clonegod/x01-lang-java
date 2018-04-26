@@ -1,0 +1,11 @@
+my:
+   servers:
+       - test.foo1.bar.com
+       - test.foo2.bar.com
+       
+foo:
+  list:
+    - name: test -> my name
+      description: my description
+    - name: test -> another name
+      description: another description

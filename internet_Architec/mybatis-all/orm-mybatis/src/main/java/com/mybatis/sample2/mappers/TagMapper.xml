@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.sample2.dao.TagMapper">
+	
+	<!-- 配置Mybatis二级查询缓存，供selectAnyTag查询用。
+		flushInterval：每隔 30 秒刷新
+	 -->
+	<cache
+	  eviction="LRU"
+	  flushInterval="30000"
+	  size="1024"
+	  readOnly="true"/>
+
+	<insert id="insertTag" parameterType="Tag" useGeneratedKeys="true" keyProperty="id">
+		insert into tag (name) values (
+			#{name}
+		)
+	</insert>
+	
+	<!-- 随机查询一条记录 -->
+	<resultMap type="Tag" id="tagMap">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="createTime" column="create_time"/>
+	</resultMap>
+	<select id="selectAnyTag" resultMap="tagMap" flushCache="false" useCache="true">
+		SELECT *
+				FROM `tag` AS t1
+				JOIN (
+					SELECT ROUND(RAND() * (
+						SELECT MAX(id) FROM `tag`
+					)
+				) AS id) AS t2
+		WHERE t1.id >= t2.id
+		ORDER BY t1.id ASC
+		LIMIT 1;
+	</select>
+  		
+</mapper> 

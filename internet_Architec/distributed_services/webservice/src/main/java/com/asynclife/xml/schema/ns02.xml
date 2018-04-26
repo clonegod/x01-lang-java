@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books xmlns="http://www.example.org/ns02"
+ 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.example.org/ns02
+							ns02.xsd">
+	<book id="100">
+		<title>Java</title>
+		<content>Java Schema Learn</content>
+		<author>张三</author>
+	</book>	
+	
+	<book id="101">
+		<title>XML</title>
+		<content>web service</content>
+		<authors>
+			<author>ws01</author>
+			<author>ws02</author>
+			<author>ws03</author>
+		</authors>
+	</book>	
+	
+</books>

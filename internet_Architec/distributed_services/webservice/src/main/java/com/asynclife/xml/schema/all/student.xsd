@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/all" 
+		xmlns:tns="http://www.example.org/all" elementFormDefault="qualified">
+		
+	<element name="student" type="tns:studentType"/>
+	
+	<complexType name="studentType">
+		<sequence>
+			<element name="name" type="string"/>
+			<element name="sex" type="tns:sexType"/>
+		</sequence>
+	</complexType>
+	
+	<simpleType name="sexType">
+		<restriction base="string">
+			<enumeration value="男"/>
+			<enumeration value="女"/>
+		</restriction>
+	</simpleType>
+</schema>

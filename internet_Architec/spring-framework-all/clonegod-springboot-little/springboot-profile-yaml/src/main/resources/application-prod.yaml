@@ -1,0 +1,11 @@
+my:
+   servers:
+       - prod.foo1.bar.com
+       - prod.foo2.bar.com
+       
+foo:
+  list:
+    - name: prod -> my name
+      description: my description
+    - name: prod -> another name
+      description: another description

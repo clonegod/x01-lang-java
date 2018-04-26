@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 绑定本mapper中的操作到对应的Dao接口上 -->
+<mapper namespace="com.mybatis.sample1.mappers.AuthorMapper">
+	
+	<insert id="insertAuthor" parameterType="author" statementType="PREPARED">
+		INSERT INTO author(user_id, real_name, idcard)
+			VALUES(#{user.id}, #{realName}, #{idcard});
+	</insert>
+	
+	<resultMap type="Author" id="authorJoinUserResultMap_common">
+		<id property="id" column="authorId"/>
+		<result property="realName" column="real_name"/>
+		<result property="idcard" column="idcard"/>
+		
+		<!-- association： property指定Authro中的User属性名，column指定author表关联user表的外键，javaType指定关联表的结果映射POJO类型 -->
+		<association property="user" column="auth.user_id" javaType="User">
+			<id property="id" column="userId"/>
+			<result property="username" column="username"/>
+			<result property="password" column="password"/>
+			<result property="firstName" column="first_name"/>
+			<result property="lastName" column="last_name"/>			
+		</association>
+	</resultMap>
+	
+	<resultMap type="Author" id="authorJoinUserResultMap_constructor">
+		<!-- 通过构造函数注入属性.构造函数注入，
+			注意：column顺序必须与构造函数参数顺序一致，必须使用javaType来指定构造函数参数的类型，否则按Object类型注入会报构造函数不存在。
+		-->
+		<constructor>
+			<idArg column="authorId" javaType="int"/>
+			<arg column="real_name" javaType="string"/>
+			<arg column="idcard" javaType="string"/>
+		</constructor>
+		<association property="user" column="userId" javaType="User">
+			<!-- 通过构造函数注入属性 -->
+			<constructor>
+				<idArg column="userId" javaType="int"/>
+				<arg column="username" javaType="string"/>
+				<arg column="password" javaType="string"/>
+			</constructor>
+		</association>
+	</resultMap>
+	
+	<select id="selectAuthorByJoin" resultMap="authorJoinUserResultMap_constructor">
+		SELECT author.id as "authorId", author.real_name, author.idcard,
+				 user.id as "userId", user.username, user.password, user.first_name, user.last_name
+		FROM author JOIN user ON author.user_id = user.id
+	</select>
+	
+	<!-- 子查询 -->
+	<resultMap type="Author" id="authorSubSelectResultMap">
+		<id property="id" column="id"/>
+		<result property="realName" column="real_name"/>
+		<result property="idcard" column="idcard"/>
+		<!-- 
+			使用子查询来查询关联表user的数据：关联表的数据是通过子查询来获取的。
+			mybatis在处理子查询时，会将auhtor表中的user_id传递到select绑定的子查询中，然后执行getUserById查询获取user，最后注入到Author对象的user属性上。
+		-->
+		<association property="user" column="user_id" select="getUserById"/>
+	</resultMap>
+	
+	<!-- 主sql -->
+	<select id="authorSubSelect" resultMap="authorSubSelectResultMap">
+		select * from author
+	</select>
+	
+	<!-- 子查询sql -->
+	<select id="getUserById" parameterType="int" resultType="User">
+		select id,
+		username, password,
+		first_name as "firstName", last_name as "lastName" from user where
+		id = #{id}
+  	</select>
+  	
+  	
+</mapper> 

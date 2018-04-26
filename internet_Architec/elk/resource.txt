@@ -1,0 +1,8 @@
+https://www.tecmint.com/install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-rhel-7/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7
+
+http://blog.csdn.net/wh211212/article/details/54015645
+
+http://www.cnblogs.com/huangxincheng/p/7918722.html
+

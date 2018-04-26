@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>clonegod</groupId>
+  <artifactId>serialize_object</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>serialize_object</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    <!-- JSON -->
+    <dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.8.2</version>
+	</dependency>
+    
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.8.10</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.8.10</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>2.8.10</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.44</version>
+	</dependency>
+	
+	
+	<!-- protobuf -->
+	<dependency>
+	    <groupId>com.baidu</groupId>
+	    <artifactId>jprotobuf</artifactId>
+	    <version>2.1.5</version>
+	</dependency>
+	
+	<!-- kryo -->
+	<dependency>
+	    <groupId>com.esotericsoftware</groupId>
+	    <artifactId>kryo</artifactId>
+	    <version>4.0.0</version>
+	</dependency>
+	
+    <!-- hessian -->
+    <dependency>
+	    <groupId>com.caucho</groupId>
+	    <artifactId>hessian</artifactId>
+	    <version>4.0.38</version>
+	</dependency>
+    
+    <!-- thrift -->
+    <dependency>
+	    <groupId>org.apache.thrift</groupId>
+	    <artifactId>libthrift</artifactId>
+	    <version>0.10.0</version>
+	    <type>pom</type>
+	</dependency>
+    
+    <!-- avro -->
+    <dependency>
+	    <groupId>org.apache.avro</groupId>
+	    <artifactId>avro</artifactId>
+	    <version>1.8.2</version>
+	</dependency>
+	    
+    
+	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+</project>

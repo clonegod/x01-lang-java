@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.asynclife.mappers.UserMapper">
+
+	<resultMap id="BaseResultMap" type="User">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="uname" property="uname" jdbcType="VARCHAR" />
+		<result column="unumber" property="unumber" jdbcType="INTEGER" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		id, uname, unumber
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from user_info
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		user_info
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	
+	<insert id="insert" parameterType="User">
+		insert into user_info (id,
+		uname, unumber
+		)
+		values (#{id,jdbcType=INTEGER},
+		#{uname,jdbcType=VARCHAR},
+		#{unumber,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	
+	<insert id="insertSelective" parameterType="User">
+		insert into user_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="uname != null">
+				uname,
+			</if>
+			<if test="unumber != null">
+				unumber,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="uname != null">
+				#{uname,jdbcType=VARCHAR},
+			</if>
+			<if test="unumber != null">
+				#{unumber,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	
+	
+	<update id="updateByPrimaryKeySelective" parameterType="User">
+		update user_info
+		<set>
+			<if test="uname != null">
+				uname = #{uname,jdbcType=VARCHAR},
+			</if>
+			<if test="unumber != null">
+				unumber = #{unumber,jdbcType=INTEGER},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+	
+	<update id="updateByPrimaryKey" parameterType="User">
+		update user_info
+		set uname = #{uname,jdbcType=VARCHAR},
+		unumber =
+		#{unumber,jdbcType=INTEGER}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+	
+
+	<resultMap type="User" id="UserCourseMap"
+		extends="BaseResultMap">
+		<collection property="courseInfos" javaType="list"
+			ofType="Course">
+			<id property="id" column="course_id" jdbcType="INTEGER" />
+			<result property="cname" column="cname" jdbcType="VARCHAR" />
+			<result property="caddress" column="caddress" jdbcType="VARCHAR" />
+		</collection>
+	</resultMap>
+	<select id="selectAll" resultMap="UserCourseMap">
+		select u.id, u.uname,
+		u.unumber, c.id course_id, c.cname, c.caddress from user_info u left
+		join course_user_info cu on u.id = cu.uid
+		left join course_info c on
+		cu.cid = c.id
+	</select>
+</mapper>

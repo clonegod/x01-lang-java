@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.sample2.dao.BlogMapper">
+	
+	<!-- 二级缓存必须显示开启，配置：
+		eviction：回收策略-LRU，FIFO，SOFT，WEAK 
+		flushInterval：每隔 60 秒刷新
+		size：保存结果对象或列表的1024 个引用
+		readOnly：返回的对象被认为是只读的,可提高性能，但是不能修改返回的结果（返回结果在多线程中共享）。
+	 -->
+	<cache
+	  eviction="LRU"
+	  flushInterval="60000"
+	  size="1024"
+	  readOnly="true"/>
+	
+	
+	<insert id="insertBlog" parameterType="Blog" useGeneratedKeys="true" keyProperty="id">
+		insert into blog (title,author_id)
+  		values (#{title},#{author.id})
+	</insert>
+  	
+  	
+  	<!-- Very Complex Result Map -->
+	<resultMap id="detailedBlogResultMap" type="Blog">
+	  <constructor>
+	    <idArg column="blog_id" javaType="_int" name="id"/>
+	    <arg column="blog_title" javaType="string" name="title"/>
+	  </constructor>
+	  <result property="createTime" column="blog_create_time"/>
+	  <association property="author" javaType="Author">
+	    <id property="id" column="author_id"/>
+	    <result property="username" column="author_username"/>
+	    <result property="password" column="author_password"/>
+	    <result property="email" column="author_email"/>
+	    <result property="gender" column="author_gender"/>
+	  </association>
+	  <collection property="posts" ofType="Post">
+	    <id property="id" column="post_id"/>
+	    <result property="subject" column="post_subject"/>
+	    <association property="author" javaType="Author"/>
+	    <collection property="comments" ofType="Comment">
+	      <id property="id" column="comment_id"/>
+	      <id property="commentText" column="comment_text"/>
+	    </collection>
+	    <collection property="tags" ofType="Tag" >
+	      <id property="id" column="tag_id"/>
+	      <id property="name" column="tag_name"/>
+	    </collection>
+	  </collection>
+	</resultMap>
+
+  	<!-- Very Complex Statement -->
+  	<!-- 
+  		flushCache: 将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空，默认值：false。
+  		useCache：true，表示使用二级缓存。二级缓存提供了在不同sqlSession间共享查询结构的支持。（session关闭时才会写入二级缓存）
+  	 -->
+	<select id="selectBlogDetails" resultMap="detailedBlogResultMap" flushCache="false" useCache="true">
+	  select
+	       B.id 			as blog_id,
+	       B.title 			as blog_title,
+	       B.create_time 	as blog_create_time,
+	       B.author_id 		as blog_author_id,
+	       A.id 			as author_id,
+	       A.username 		as author_username,
+	       A.password 		as author_password,
+	       A.email 			as author_email,
+	       A.gender 		as author_gender,
+	       P.id 			as post_id,
+	       P.blog_id 		as post_blog_id,
+	       P.author_id 		as post_author_id,
+	       P.subject 		as post_subject,
+	       P.body 			as post_body,
+	       P.create_time 	as post_created_on,
+	       C.id 		 	as comment_id,
+	       C.post_id 	 	as comment_post_id,
+	       C.comment_text 	 	as comment_text,
+	       T.id 			as tag_id,
+	       T.name 			as tag_name
+	  from blog B
+	       left outer join author A 	on B.author_id = A.id
+	       left outer join post P 		on B.id = P.blog_id
+	       left outer join comment C 	on P.id = C.post_id
+	       left outer join post_tag PT 	on PT.post_id = P.id
+	       left outer join tag T 		on PT.tag_id = T.id
+	  where B.id = #{id}
+	</select>
+	
+</mapper> 

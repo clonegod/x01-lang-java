@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	schema的好处：
+	1. 用XML的格式进行编写，可以更好的描述复杂数据结构
+	2. 通过命名空间解决了属性同名的问题
+	
+	命名空间的作用：类似于package的作用，不同命名空间下的元素可以同名
+	
+	schema中3个命名空间的说明:
+	1.xmlns 声明本schema中所有标签元素默认关联的命名空间（1个schema中只能有1个默认的命名空间）
+	2.targetNamespace 本schema编写好之后，被外部XML引用时的命名空间
+	3.xmlns:tns 命名空间前缀（指向的名称空间中的元素需要通过前缀tns才能进行访问）
+ -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/my01" 
+xmlns:tns="http://www.example.org/my01" elementFormDefault="qualified">
+
+	<element name="name" type="string"/>
+	
+	<!-- 通过tns引用'http://www.example.org/my'中的personType元素 -->
+	<element name="person" type="tns:personType"/>
+	
+	<complexType name="personType"/>
+</schema>
+

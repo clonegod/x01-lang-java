@@ -1,0 +1,9 @@
+一个博客只有一个作者。
+一个作者Author写的博客Blog,有很多的博文Post,每 篇博文有零条或多条的评论Comment和标签Tag
+
+Author 1-1 Blog 		1个作者对应1个博客（一对一）	
+Blog 1-* Post			1个博客有多篇博文（一对多）
+Post 1-* Comment		1篇博文有0或多个评论（一对多）
+Post *-* Tag			1篇博文有0或多个标签（多对多）
+Post 1-* PostTag		多对多建立中间表，转为一对多		
+Tag  1-* PostTag		多对多建立中间表，转为一对多

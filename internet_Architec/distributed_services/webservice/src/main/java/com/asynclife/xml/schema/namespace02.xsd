@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	将默认的命名空间修改为带xsd前缀（修改默认命名空间，让我们自己的schema命名空间作为默认命名空间）：
+		xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	
+	将默认命名空间修改为本schema的命名空间
+		xmlns:tns="http://www.example.org/my"
+		xmlns="http://www.example.org/my"
+		
+	使用哪个命名空间作为默认命名空间呢？
+		哪个命名空间下的元素使用得多，就将哪个命名空间作为默认命名空间
+		
+ -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/my02" 
+xmlns="http://www.example.org/my02" elementFormDefault="qualified">
+
+	<xsd:element name="name" type="xsd:string" />
+	
+	<!-- 将'http://www.example.org/my'修改为默认命名空间后，不需要写前缀就可以直接引用到personType了 -->
+	<xsd:element name="person" type="personType" />
+	
+	<xsd:complexType name="personType" />
+</xsd:schema>
+

@@ -1,0 +1,21 @@
+server:
+    port: 80
+    context-path: /web
+
+application:
+    message: Hello, Andy
+
+spring: 
+    main:
+        banner-mode: "off"       
+    datasource:
+        platform: h2
+    freemarker:
+        cache: false
+        charset: UTF-8
+        
+
+logging: 
+    level: 
+        org: 
+            springframework: ERROR

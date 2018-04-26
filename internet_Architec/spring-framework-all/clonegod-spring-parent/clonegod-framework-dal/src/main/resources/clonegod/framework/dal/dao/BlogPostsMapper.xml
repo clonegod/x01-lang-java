@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="clonegod.framework.dal.dao.BlogPostsMapper">
+	
+	<!-- 批量插入 -->
+	<insert id="insertBatch" parameterType="clonegod.framework.dal.dao.Post">
+		insert into post (blog_id, author_id, section, subject, draft, body, created_on)
+		values
+		<foreach item="item" index="index" collection="list" open=""
+			separator="," close="">
+			(#{item.blogId}, #{item.authorId}, #{item.section}, #{item.subject}, #{item.draft}, #{item.body}, #{item.createdOn})
+		</foreach>
+	</insert>
+
+	<!-- 多条件查询 -->
+	<resultMap id="Post_BaseResultMap" type="clonegod.framework.dal.dao.Post">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="post_name" jdbcType="VARCHAR" property="postName" />
+		<result column="blog_id" jdbcType="INTEGER" property="blogId" />
+		<result column="author_id" jdbcType="INTEGER" property="authorId" />
+		<result column="section" jdbcType="VARCHAR" property="section" />
+		<result column="subject" jdbcType="VARCHAR" property="subject" />
+		<result column="draft" jdbcType="VARCHAR" property="draft" />
+		<result column="body" jdbcType="VARCHAR" property="body" />
+		<result column="created_on" jdbcType="TIMESTAMP" property="createdOn" />
+	</resultMap>
+	<sql id="Post_Base_Column_List">
+		id, blog_id, author_id, section, subject, draft, body, created_on
+	</sql>
+	<select id="selectPosts" resultMap="Post_BaseResultMap">
+		select
+		<include refid="Post_Base_Column_List" />
+		from post
+		<where>
+			<if test="subject != null and subject != ''">
+				<!-- <bind name="pattern" value="'%' + _parameter.postName + '%'" /> -->
+				<bind name="pattern" value="_parameter.subject + '%'" />
+				AND subject LIKE #{pattern}
+			</if>
+			<if test="blogId != null and subject != ''">
+				AND blog_id >= #{blogId}
+			</if>
+		</where>
+	</select>
+
+	<!-- 自定义多表关联查询 -->
+	<!-- 嵌套结果（在数据库中根据查询到的结果直接进行表关联查询） -->
+	<resultMap type="clonegod.framework.dal.dao.resultmap.BlogPostsResultMap" id="blog_post_resultMap">
+		<result property="blog.id" column="blog_id" />
+		<result property="blog.title" column="blog_tile" />
+		<association property="author" javaType="clonegod.framework.dal.dao.Author">
+			<id property="id" column="author_id" />
+			<result property="username" column="author_name" />
+		</association>
+		<collection property="posts" ofType="clonegod.framework.dal.dao.Post">
+			<id property="id" column="post_id" />
+			<result property="subject" column="subject" />
+			<result property="body" column="body" />
+		</collection>
+	</resultMap>
+
+	<select id="selectBlogAllRelatedInfoById" resultMap="blog_post_resultMap">
+		SELECT
+		B.id AS blog_id,
+		B.title AS blog_tile,
+		A.id AS author_id,
+		A.username AS author_name,
+		P.id AS post_id,
+		P.subject AS subject,
+		P.body AS body
+		FROM blog B
+		inner join author A on B.author_id = A.id
+		inner join post P on P.blog_id = B.id
+		<where>
+			B.id >= #{blogId}
+		</where>
+		limit 0,1
+	</select>
+
+
+
+	<!-- 嵌套查询 -->
+	<!-- Nested Select for Collection: N+1问题 和  懒加载策略的使用-->
+	<resultMap id="blogResult" type="clonegod.framework.dal.dao.resultmap.BlogPostsResultMap">
+	  <result property="blog.title" column="title"/>
+	  <collection property="posts" javaType="ArrayList" column="id" 
+	  			  ofType="clonegod.framework.dal.dao.Post" 
+	  			  select="selectPostsForBlog" 
+	  			  fetchType="lazy"/>
+	</resultMap>
+	
+	<select id="selectBlogPosts" resultMap="blogResult">
+	  SELECT * FROM blog WHERE id = #{blogId}
+	</select>
+	
+	<select id="selectPostsForBlog" resultType="clonegod.framework.dal.dao.Post">
+	  SELECT * FROM post WHERE blog_id = #{blogId}
+	</select>
+	
+</mapper>

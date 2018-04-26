@@ -1,0 +1,13 @@
+常见web攻击手段：
+
+csrf 跨站请求伪造
+	-解决：所有提交的表单中都需要附带token，由后端服务器进行验证，不带token的表单提交需要被拒绝处理。
+
+xss  跨站脚本攻击
+	-解决：过滤提交内容中的“危险”字符串，如script,drop database等
+	
+	
+spring-security为以上web攻击提供了解决方案，已经集成到spring-security的处理流程中。
+
+
+

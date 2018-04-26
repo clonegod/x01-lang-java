@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 绑定本mapper中的操作到对应的Dao接口上 -->
+<mapper namespace="com.mybatis.sample1.mappers.UserMapper">
+	
+	<cache size="1024" flushInterval="60000" eviction="LRU" readOnly="false"></cache>
+
+	<!-- 由于设置了Alias，所以可以直接写类名User，不用写类的全路径包路径了 -->
+	<select id="getUserById" parameterType="int" resultType="User">
+		select id,
+		username, password,
+		first_name as "firstName", last_name as "lastName" from user where
+		id = #{id}
+  	</select>
+
+	<!-- 	Either use AS in SQL to map columns to property names, or use resultMap. -->
+
+	<!-- <resultMap id="personResultMap" type="main.domain.Person"> -->
+	<!-- <id property="id" column="id" /> -->
+	<!-- <result property="firstName" column="first_name" /> -->
+	<!-- <result property="lastName" column="last_name" /> -->
+	<!-- </resultMap> -->
+
+	<!-- 由于设置了Alias，所以可以直接写类名User，不用写类的全路径包路径了 
+		=> 自动ID返回：返回新插入记录的主键id，id将自动写入到parameterType绑定的User对象上.
+		=> useGeneratedKeys="true" keyProperty="id" 
+	-->
+	<insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+		insert into user (username, password, first_name,last_name) 
+		values (#{username}, #{password}, #{firstName}, #{lastName})
+  	</insert>
+  	
+  	
+  	<update id="updateUser" parameterType="User">
+  		UPDATE user SET first_name = #{firstName}, last_name = #{lastName} 
+  		WHERE id = #{id}
+  	</update>
+  	
+  	<!-- SELECT TEST -->
+  	
+  	<!-- parameterType为POJO, resultType为hashmap类型 -->
+  	<select id="selectUser_paramType_POJO" parameterType="User" resultType="hashmap">
+  		SELECT * FROM user where username = #{username} AND password = #{password} limit 1
+  	</select>
+  	
+  	<!-- parameterType为hashmap, resultType为POJO类型 -->
+  	<select id="selectUser_paramType_HashMap" parameterType="hashmap" resultType="User">
+  		SELECT * FROM user where username = #{username} AND password = #{password} limit 1
+  	</select>
+  	
+  	<!-- 返回多条记录，结果被封装到List -->
+  	<select id="selectUserList_resultType" resultType="User">
+  		SELECT * FROM user
+  	</select>
+  	
+  	<!-- resultMap 解决复杂查询时的对象属性映射问题，通过声明property与column的对应关系来完成对象值的填充 -->
+  	<resultMap type="User" id="userResultMap">
+  		<id	property="id" column="id"/>
+  		<result property="username" column="username"/>
+  		<result property="password" column="password"/>
+  		<result property="firstName" column="first_name"/>
+  		<result property="lastName" column="last_name"/>
+  	</resultMap>
+  	
+  	<!-- 返回多条记录，结果被封装到List -->
+  	<select id="selectUserList_resultMap" resultMap="userResultMap">
+  		SELECT * FROM user
+  	</select>
+  	
+  	<!-- Pojo内部集合属性查询 -->
+  	<resultMap type="User" id="userVisitCollectionResultMap">
+  		<id column="userId" property="id"/>
+  		<result column="username" property="username"/>
+  		<result column="password" property="password"/>
+  		<!-- 集合查询 -->
+  		<collection property="visitList" ofType="UserVisit">
+  			<result column="visitId" property="id"/>
+  			<result column="visitDate" property="visitDate"/>
+  			<result column="visitIp" property="visitIp"/>
+  		</collection>
+  	</resultMap>
+  	<select id="selectUserVisitCollection" resultMap="userVisitCollectionResultMap">
+  		select 
+  			user.id as "userId", 
+  			user.username,
+  			user.password,
+  			user_visit.id as "visitId",
+  			user_visit.visit_date as "visitDate",
+  			user_visit.visit_ip as "visitIp"
+  		from user join user_visit 
+  			on user.id = user_visit.user_id
+  	</select>
+  	
+  	
+  	<!-- 枚举 -->
+    <resultMap type="User" id="userGenderEnumResultMap">
+		<id column="id" property="id"/>
+		<result column="username" property="username"/>
+		<result column="password" property="password"/>
+		<result column="gender" property="gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+	</resultMap>
+	
+	<select id="getUserGenderEnum" resultMap="userGenderEnumResultMap">
+		select * from user limit 1
+	</select>
+	
+	<insert id="insertUserGenderEnum">
+	    insert into user (username, password, gender) values (
+	    	#{username}, #{password}, #{gender, typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler }
+	    )
+	</insert>
+  	
+  	<!-- if -->
+  	<select id="selectUserIf" resultType="User">
+  		select * from user
+  			where 1 = 1
+  		<if test="firstName != null">
+  			and first_name like #{firstName}
+  		</if>
+  	</select>
+  	
+  	<!-- choose -->
+  	<select id="selectUserChoose" resultType="User">
+  		select * from user
+  			where 1 = 1
+  		<if test="firstName != null">
+  			and first_name like #{firstName}
+  		</if>
+  		<choose>
+  			<when test="gender != null">
+  			and gender = #{gender}
+  			</when>
+  			<otherwise>
+  			and gender = 1
+  			</otherwise>
+  		</choose>
+  	</select>
+  	
+  	
+  	<!-- where -->
+  	<select id="selectUserWhere" resultType="User">
+  		select * from user
+  		<where>  		
+	  		<if test="firstName != null">
+	  			first_name like #{firstName}
+	  		</if>
+	  		<choose>
+	  			<when test="gender != null">
+	  			and gender = #{gender}
+	  			</when>
+	  			<otherwise>
+	  			and gender = 1
+	  			</otherwise>
+	  		</choose>
+  		</where>
+  	</select>
+  	
+  	
+  	<!-- set -->
+  	<select id="updateUserBySet" resultType="User">
+  		update user
+  		<set>
+  			<if test="firstName !=null">
+  				first_name = #{firstName},
+  			</if>
+  			<if test="lastName !=null">
+  				last_name = #{lastName},
+  			</if>
+  		</set>
+  		<where>
+  			<choose>
+  				<when test="gender !=null">
+  					AND gender = #{gender}
+  				</when>
+  				<otherwise>
+  					AND gender = 2
+  				</otherwise>
+  			</choose>
+  		</where>
+  	</select>
+  	
+  	
+  	<!-- foreach -->
+  	<select id="selectUserByForeach" resultType="User">
+  		SELECT * 
+  		FROM user u 
+  		WHERE id IN
+  		<foreach collection="list" item="item"
+  			open="(" separator="," close=")">
+  			  #{item}
+  		</foreach>
+  	</select>
+  		
+</mapper> 

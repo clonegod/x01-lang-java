@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/all" 
+		xmlns:tns="http://www.example.org/all" elementFormDefault="qualified">
+		
+		<!-- 引入student.xsd到classroom.xsd中 -->
+		<include schemaLocation="student.xsd"></include>
+		
+		<element name="classroom" type="tns:classroomType"/>
+		
+		<complexType name="classroomType">
+			<sequence>
+				<element name="name" type="string"/>
+				<element name="grade" type="tns:gradeType"/>
+				<!-- 在classroom中使用student.xsd中定义的类型  
+					要求：classroom.xsd和student.xsd使用的namespace要相同
+				-->
+				<sequence maxOccurs="unbounded">
+					<element name="student" type="tns:studentType"/>
+				</sequence>
+			</sequence>
+		</complexType>
+		
+		<simpleType name="gradeType">
+			<restriction base="int">
+				<minInclusive value="2000"/>
+				<maxInclusive value="2020"/>
+			</restriction>
+		</simpleType>
+</schema>

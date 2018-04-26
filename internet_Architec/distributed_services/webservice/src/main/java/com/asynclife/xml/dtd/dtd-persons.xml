@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!-- ? 0或1次 	* 0或多次	  + 1次或多次 -->
+<!DOCTYPE persons[
+	<!ELEMENT persons (person+)>
+	<!ELEMENT person (name,password?,age)>
+	<!ATTLIST person id ID #REQUIRED> <!-- 属性 -->
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT age (#PCDATA)>
+]>
+
+<persons>
+	<person id="p1">
+		<name>zs</name>
+		<password>123</password>
+		<age>20</age>
+	</person>
+	<person id="p2">
+		<name>ls</name>
+		<age>30</age>
+	</person>
+</persons>

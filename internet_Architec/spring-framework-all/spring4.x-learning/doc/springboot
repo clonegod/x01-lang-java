@@ -1,0 +1,26 @@
+Spring Boot is not too different from Spring MVC in the sense that it just has an embedded server and utilities to create standalone web applications quickly.
+
+Assuming you have some familiarity with Spring MVC as well as Thymeleaf (or any template engine) already, I’ll try to explain the basic setup and how it would all work. You might already be familiar with some of these:
+
+Basic setup would include (Java/annotations based setup, no web.xml):
+
+A web initialiser class to register the Dispatcher Servlet, and setup mappings, root and web configs, listeners (if required) etc. Easiest would be to just create a class which extends org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer
+A root configuration class - to tell spring where to look for config / components for root application context.
+A Servlet config class - to specify to Spring where to find the Config / Component classes for the dispatcher servlet application context. This is where we’ll setup the template engine (Thymeleaf or whichever) as ViewResolver(s).
+Controller(s)/Service(s)/DAOs etc.
+Templates (Thymeleaf, Pebble, JSP etc)
+The request-response process would broadly be somewhat like:
+
+Incoming request is first handled by Spring’s front dispatcher, then
+URL pattern + request type (GET, POST etc) lookup and the request is passed on to the matching Controller
+Controller would pass on the request to the corresponding methods, would get the business logic processing done by relevant service layer(s), and prepare a org.springframework.web.servlet.ModelAndView object to be returned,
+Model: A model map of data to be used by the front end template engine.
+View: The object with a reference to the front end template the model data should be processed on.
+Servlet config has the binding for the front end template engine(s) so it would do the mapping lookup to determine which template the mav is going to be processed on.
+Template engine takes the nav, processes it with the template and resources (JS/CSS/images etc) and produces the html response.
+HTML is rendered by the client (browser).
+We can also create some unit tests (using jUnit or TestNG, as they’ve got good support from Spring), mock the web application context and simulate the MVC mechanism.
+
+That’s it. Deploy the application to the server of your choice and start playing!
+
+Hope this was helpful.

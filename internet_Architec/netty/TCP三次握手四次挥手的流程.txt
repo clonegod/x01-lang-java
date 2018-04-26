@@ -1,0 +1,22 @@
+网络编程的基本模型是Client/Server模型。也就是两个进程直接进行网络通信，其中服务端提供配置信息（绑定IP地址和监听端口），客户端向服务器发起连接请求。
+通过3次握手建立连接，如果连接成功，双方就可以进行通信（网络套接字socket）。
+
+--------
+首先，server启动，在某个端口上监听客户端的连接请求；
+然后，客户端发起建立连接的请求；
+最后，客户端断开与服务器的连接；
+
+TCP 3次握手，建立连接
+	client:	SYN=J
+	server:	SYN=K, ACK=J+1
+	client:	ACK=K+1
+	
+TCP 4次挥手，断开连接
+	client:	FIN=M
+	server:	ACK=M+1
+	server:	FIN=N
+	client:	ACK=N+1
+	
+	
+tcp相关：	
+https://www.cnblogs.com/Jessy/p/3535612.html	

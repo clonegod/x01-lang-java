@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ns03" 
+		xmlns:tns="http://www.example.org/ns03" elementFormDefault="qualified">
+		
+	<element name="person" type="tns:personType"/>	
+	
+	<complexType name="personType">
+		<!-- all中的元素分别只能出现1次，顺序可以任意 -->
+		<all>
+			<element name="name" type="string"/>
+			<element name="age" type="tns:ageType"/>
+			<element name="sex" type="tns:sexType"/>
+			<element name="email" type="tns:emailType"/>
+		</all>
+	</complexType>
+	
+	<!-- simpleType 对element中的数据内容进一步进行约束 -->
+	<simpleType name="ageType">
+		<restriction base="int">
+			<minInclusive value="1"/>
+			<maxInclusive value="150"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="sexType">
+		<restriction base="string">
+			<enumeration value="男"/>
+			<enumeration value="女"/>
+			<enumeration value="未知"/>
+			<enumeration value="未说明"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="emailType">
+		<restriction base="string">
+			<pattern value="(\w+\.*)+@\w+\.[a-zA-Z]{2,3}"/>
+			<minLength value="5"/>
+			<maxLength value="20"/>
+		</restriction>
+	</simpleType>
+	
+</schema>

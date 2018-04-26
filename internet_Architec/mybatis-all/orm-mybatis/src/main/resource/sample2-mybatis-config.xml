@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<!-- 加载外部文件中的属性-->
+	<properties resource="database.properties"/>
+	
+	<!-- MyBatis运行时全局参数配置 -->
+	<settings>  
+		<!-- 二级缓存全局开关，默认true  -->
+        <setting name="cacheEnabled" value="true"/>
+        
+        <!-- 指定 MyBatis 所用日志的具体实现，未指定时将自动查找。 -->
+        <setting name="logImpl" value="LOG4J2" />  
+        
+        <!-- 启用延迟加载。与子查询配合使用，可提升sql执行效率 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 指定哪个对象的方法触发一次延迟加载 -->
+		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+		
+		<!-- 是否允许单一语句返回多结果集 -->
+		<setting name="multipleResultSetsEnabled" value="true"/>
+		
+		<!-- 使用列标签代替列名 -->
+		<setting name="useColumnLabel" value="true"/>
+		
+		<!-- 设置强制使用自动生成主键 -->
+		<setting name="useGeneratedKeys" value="false"/>
+		
+		<!-- 如何自动映射列到字段或属性：PARTIAL 只会自动映射没有定义嵌套结果集映射的结果集 -->
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+		
+		<!-- 发现自动映射目标未知列（或者未知属性类型）的行为  -->
+		<setting name="autoMappingUnknownColumnBehavior" value="WARNING"/>
+		
+		<!-- 默认的执行器: SIMPLE 就是普通的执行器；REUSE 执行器会重用预处理语句（prepared statements）； BATCH 执行器将重用语句并执行批量更新。 -->
+		<setting name="defaultExecutorType" value="REUSE"/>
+		
+		<!-- 驱动等待数据库响应的秒数 -->
+		<setting name="defaultStatementTimeout" value="25"/>
+		
+		<!-- 为驱动的结果集获取数量（fetchSize）设置一个提示值 -->
+		<setting name="defaultFetchSize" value="100"/>
+		
+		<!-- 允许在嵌套语句中使用分页: 允许-false -->
+		<setting name="safeRowBoundsEnabled" value="false"/>
+		<setting name="mapUnderscoreToCamelCase" value="false"/>
+		
+		<!-- 缓存一个会话中执行的所有查询 -->
+		<setting name="localCacheScope" value="SESSION"/>
+		
+		<!-- 当没有为参数提供特定的 JDBC 类型时，为“空值”指定 JDBC 类型。 -->
+		<setting name="jdbcTypeForNull" value="OTHER"/>
+		
+		<!-- 使用方法签名中的名称作为sql语句中的参数名称，要求：使用Java8编译，启用参数-parameters，保留方法参数名信息。
+			如果不是使用的Java8，则也可以手动通过@param参数来显示给方法参数绑定名称。
+		 -->
+		<setting name="useActualParamName" value="true"/>
+    </settings> 
+	
+	
+	<!-- 类型别名 -->
+	<typeAliases>
+		<!-- 直接指定package的名字， mybatis会自动扫描指定包下面的javabean，并且默认设置一个别名，默认的名字为： javabean 的首字母小写的类名 -->
+		<!-- 也可在javabean 加上注解@Alias 来自定义别名 -->
+		<package name="com.mybatis.sample2.model"/>
+	</typeAliases>
+	
+	
+	<!-- 类型处理器：对 Java类型与数据库字段值进行转换 -->
+	<typeHandlers>
+		<!--
+			枚举类型处理器: EnumTypeHandler 或者 EnumOrdinalTypeHandler
+			EnumTypeHandler：存储枚举的名称
+			EnumOrdinalTypeHandler：存储枚举的索引
+			javaType：指定需要绑定到该类型处理器上的java类
+		-->
+	  <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.mybatis.sample2.model.Gender"/>
+	</typeHandlers>
+	
+	
+	<!-- 插件（plugins）: 自定义插件 -->
+	<!-- 
+		<plugins/> 
+	-->
+	
+	<!-- 配置环境（environments） -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 事务管理器：JDBC/MANAGED -->
+			<transactionManager type="JDBC"/>
+			
+			<!-- 数据源dataSource：UNPOOLED/POOLED -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${sample2.database.driver}"/>
+				<property name="url" value="${sample2.database.url}"/>
+				<property name="username" value="${sample2.database.username}"/>
+				<property name="password" value="${sample2.database.password}"/>
+				<!-- 最大并发连接数 -->
+				<property name="poolMaximumActiveConnections" value="500"/>
+				<!-- 最小空闲连接数 -->
+				<property name="poolMaximumIdleConnections" value="10"/>
+				<!-- 空闲连接最大超时时间 -->
+				<property name="poolMaximumCheckoutTime" value="120000"/> <!-- 120s -->
+				<!-- 获取连接超时时间（超时后会重新尝试获取连接） -->
+				<property name="poolTimeToWait" value="10000"/> <!-- 10s -->
+				<!-- 是否启用侦测查询 -->
+				<property name="poolPingEnabled" value="true"/>
+				<property name="poolPingQuery" value="SELECT 1 FROM DUAL"/>
+				<property name="poolPingConnectionsNotUsedFor" value="10000"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	
+	<!-- 映射器（mappers） -->
+	<mappers>
+		<!-- Using classpath relative resources -->
+		<mapper resource="com/mybatis/sample2/mappers/AuthorMapper.xml"/>
+		<mapper resource="com/mybatis/sample2/mappers/BlogMapper.xml"/>
+		<mapper resource="com/mybatis/sample2/mappers/PostMapper.xml"/>
+		<mapper resource="com/mybatis/sample2/mappers/TagMapper.xml"/>
+		<mapper resource="com/mybatis/sample2/mappers/PostTagMapper.xml"/>
+		<mapper resource="com/mybatis/sample2/mappers/CommentMapper.xml"/>
+	</mappers>
+	
+</configuration>

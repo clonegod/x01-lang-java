@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<person xmlns="http://www.example.org/ns03"
+ 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.example.org/ns03
+							ns03.xsd">
+	<name>测试</name>
+	<age>100</age>
+	<email>abc@123.com</email>
+	<sex>男</sex>
+</person>

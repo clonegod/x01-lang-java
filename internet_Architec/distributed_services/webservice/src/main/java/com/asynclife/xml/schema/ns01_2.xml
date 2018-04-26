@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	通过文件路径引入schema：
+	 xsi:noNamespaceSchemaLocation="ns01.xsd"
+-->
+
+<user xmlns="http://www.example.org/ns01"
+ 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="ns01.xsd">
+	
+	<id>1</id>
+	<name>aa</name>
+	<birth>2012-01-03</birth>
+	
+</user>

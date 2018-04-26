@@ -1,0 +1,90 @@
+package clonegod.dubbo.user.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alibaba.dubbo.common.logger.Logger;
+import com.alibaba.dubbo.common.logger.LoggerFactory;
+import com.google.common.util.concurrent.RateLimiter;
+
+import clonegod.dubbo.user.api.IUserQueryService;
+import clonegod.dubbo.user.constants.ResponseCodeEnum;
+import clonegod.dubbo.user.dal.entity.User;
+import clonegod.dubbo.user.dal.persistence.UserMapper;
+import clonegod.dubbo.user.dto.UserQueryRequest;
+import clonegod.dubbo.user.dto.UserQueryResponse;
+import clonegod.dubbo.user.exception.ExceptionUtil;
+import clonegod.dubbo.user.exception.ServiceException;
+import clonegod.dubbo.user.exception.ValidateException;
+
+@Service("userQueryService")
+public class UserQueryService implements IUserQueryService{
+    Logger logger= LoggerFactory.getLogger(UserCoreService.class);
+
+    @Autowired
+    UserMapper userMapper;
+
+    RateLimiter rateLimiter=RateLimiter.create(2.0);
+
+    public UserQueryResponse getUserById(UserQueryRequest request) {
+        UserQueryResponse response=new UserQueryResponse();
+        try {
+            beforeValidate(request);
+            response.setMsg(ResponseCodeEnum.SYS_SUCCESS.getMsg());
+            response.setCode(ResponseCodeEnum.SYS_SUCCESS.getCode());
+            User user=userMapper.getUserByUid(request.getUid());
+            if(user!=null){
+                response.setAvatar(user.getAvatar());
+                response.setSex(user.getSex());
+                response.setRealName(user.getRealname());
+                response.setMobile(user.getMobile());
+                return response;
+            }
+            response.setCode(ResponseCodeEnum.QUERY_DATA_NOT_EXIST.getCode());
+            response.setMsg(ResponseCodeEnum.QUERY_DATA_NOT_EXIST.getMsg());
+        }catch (Exception e){
+            ServiceException serviceException=(ServiceException) ExceptionUtil.handlerException4biz(e);
+            response.setCode(serviceException.getErrorCode());
+            response.setMsg(serviceException.getErrorMessage());
+        }
+        return response;
+    }
+
+    private void beforeValidate(UserQueryRequest request){
+        if(null==request){
+            throw new ValidateException("请求对象为空");
+        }
+        if(request.getUid()==null||request.getUid().intValue()==0){
+            throw new ValidateException("用户id不能为空");
+        }
+    }
+
+    public UserQueryResponse getUserByIdWithLimiter(UserQueryRequest request) {
+        UserQueryResponse response=new UserQueryResponse();
+        if(!rateLimiter.tryAcquire()){
+            response.setCode(ResponseCodeEnum.ACCESS_LIMITER.getCode());
+            response.setMsg(ResponseCodeEnum.ACCESS_LIMITER.getMsg());
+            return response;
+        }
+        try {
+            beforeValidate(request);
+            response.setMsg(ResponseCodeEnum.SYS_SUCCESS.getMsg());
+            response.setCode(ResponseCodeEnum.SYS_SUCCESS.getCode());
+            User user=userMapper.getUserByUid(request.getUid());
+            if(user!=null){
+                response.setAvatar(user.getAvatar());
+                response.setSex(user.getSex());
+                response.setRealName(user.getRealname());
+                response.setMobile(user.getMobile());
+                return response;
+            }
+            response.setCode(ResponseCodeEnum.QUERY_DATA_NOT_EXIST.getCode());
+            response.setMsg(ResponseCodeEnum.QUERY_DATA_NOT_EXIST.getMsg());
+        }catch (Exception e){
+            ServiceException serviceException=(ServiceException) ExceptionUtil.handlerException4biz(e);
+            response.setCode(serviceException.getErrorCode());
+            response.setMsg(serviceException.getErrorMessage());
+        }
+        return response;
+    }
+}

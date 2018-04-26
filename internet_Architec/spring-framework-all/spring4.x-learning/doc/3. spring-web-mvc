@@ -1,0 +1,98 @@
+请求是如何从客户端发起， 经过Spring MVC中的组件，最终再返回到客户端的？
+Servlet
+	->DispatcherServlet
+		->HandlerMapping
+			->HandlerAdapter
+				->DataBing & DataValidation
+					->ModelAndView
+						->ViewResolver
+							->ViewRender
+
+
+================Controller================
+路由映射	映射请求到Spring控制器
+	HandlerMapping
+		根据url进行判断，根据请求参数进行判断，请求请求方法类型进行判断
+	HandlerAdapter
+	
+参数绑定	透明地绑定表单参数
+	DataBinding
+
+数据校验和错误处理		校验表单提交
+	@Validation
+	@BindingResult
+		
+================Model================
+模型
+	ModelAndView
+	Model
+	Map
+
+================View================
+视图
+	浏览器：服务端产生数据的载体: html, pdf, execl
+	api：json, xml
+	
+视图解析	将逻辑视图名匹配为一个特定的视图实现
+内容类型协商-多视图的情况下，根据请求内容类型决定选择哪种视图解析器进行视图解析
+配置Spring使用哪一个视图实现来渲染模型---spring内置多个视图解析器时需要根据某个规则来选择视图解析器
+Spring自带了13个视图解析器， 能够将逻辑视图名转换为物理实现
+	ViewResolver	
+		ContentNegotiatingViewResolver	- 根据客户端提供的内容类型来解析视图，委托给另外一个真正能够产生对应内容类型的视图解析器
+		InternalViewResolver - jsp	将视图解析为Web应用的内部资源（一般为JSP）
+		TilesViewResolver - 将视图解析为Apache Tile定义， 其中tile ID与视图名称相同。 注意有两个不同的TilesViewResolver实现， 分别对应于Tiles 2.0和Tiles 3.0
+		ThymeleafViewResolver - 使用Thymeleaf模板进行视图解析
+		BeanNameViewResolver - 将视图解析为Spring应用上下文中的bean， 该bean的ID与返回的逻辑视图的名字相同，该bean需要实现View接口，提供对应的实现。
+		FreeMarkerViewResolver - 将视图解析为FreeMarker模板，通过FreeMarker来渲染返回给客户端的内容
+		VelocityViewResolver - 将视图解析为Velocity模板
+		XmlViewResolver	- 将视图解析为特定XML文件中的bean定义。
+		
+
+
+InternalViewResolver
+	JSP标准标签库 JSTL - JavaServer Pages Standard Tag Library，
+		 使用JSTL标签来处理格式化和信息
+	Spring提供了两个JSP标签库， 用来帮助定义Spring MVC Web的视图：
+		其中一个标签库会用来渲染HTML表单标签， 这些标签可以绑定model中的某个属性。 
+		另外一个标签库包含了一些工具类标签， 我们随时都可以非常便利地使用它们。
+		
+视图渲染	将model中的数据填充到视图模板中
+	jsp模板
+	thymeleaf模板
+	
+================Other================
+重定向
+发起重定向功能的方法该如何发送数据给重定向的目标方法呢？
+	forward: 转发是同一个request，所以request中的属性会传递到目标对象上，可能是一个jsp，也可能是是另一个handler。
+	redirect: 在新的请求属性中， 没有任何的模型数据. 有两种解决办法：
+		1.使用URL模板以路径变量和/或查询参数的形式传递数据；
+		2.传递参数 flash属性：RedirectAttribute addFlashAttribute()
+			Spring提供了将数据设置为flash属性（flash attribute） 的功能。 flash属性会一直携带这些数据直到下一次请求， 然后会自动清除。
+			在重定向执行之前， 所有的flash属性都会复制到用户会话session中。 在重定向后， 存在会话中的flash属性会被取出， 并从会话转移到模型之中。
+
+统一异常处理
+	任意带有@ControllerAdvice注解的类， 这个类会包含一个或多个如下类型的方法：
+	
+	@ExceptionHandler注解标注的方法；
+		对所有Controller统一处理异常
+	
+	@InitBinder注解标注的方法；
+		对所有Controller统一初始化Binder
+	
+	@ModelAttribute注解标注的方法。
+		对所有Controller统一添加Model属性
+		
+	在带有@ControllerAdvice注解的类中， 以上所述的这些方法会运用到整个应用程序所有控制器中带有@RequestMapping注解的方法上。
+	
+	
+文件上传
+	@RequestParam("profilePicture") MultipartFile profilePicture
+	
+	enctype="multipart/form-data"
+	
+	<label>Profile Picture</label>:
+          <input type="file"
+                 name="profilePicture"
+                 accept="image/jpeg,image/png,image/gif" /><br/> 
+	
+	

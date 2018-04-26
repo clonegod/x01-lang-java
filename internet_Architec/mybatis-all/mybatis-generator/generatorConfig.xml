@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <!-- 在类路径中指定mysql驱动的路径 -->
+  <classPathEntry location="E:\playground\tools\mybatis-generator\mysql-connector-java-5.1.44.jar" />
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <commentGenerator>
+      <property name="suppressAllComments" value="true" />
+    </commentGenerator>
+
+    <!-- 数据库URL，用户名，密码 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://192.168.1.201:3306/rocketmq-transaction-balance"
+        userId="alice"
+        password="alice123">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+    
+    <!-- 生成模型类：指定模型类的包名、存储位置 -->
+    <javaModelGenerator targetPackage="bhz.entity" targetProject="E:\playground\tools\mybatis-generator\src">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+    <!-- 生成映射文件：指定映射文件的包名、存储位置 -->
+    <sqlMapGenerator targetPackage="bhz.mapper"  targetProject="E:\playground\tools\mybatis-generator\src">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+    
+    <!-- 生成DAO接口类：指定包名、存储路径 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="bhz.mapper"  targetProject="E:\playground\tools\mybatis-generator\src">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- 指定数据库、表名、Java类名、禁用Example查询 -->
+    <!--
+    <table tableName="pay" domainObjectName="Pay" enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false" />
+    -->
+    <table tableName="balance" domainObjectName="Balance" enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false" />
+    <!-- more table ... -->
+
+  </context>
+</generatorConfiguration>

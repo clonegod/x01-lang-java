@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://www.knowledgemill.com/kmcs"
+  xmlns:kmcs="http://www.knowledgemill.com/kmcs"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+  jaxb:version="2.0"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  jaxb:extensionBindingPrefixes="xjc"
+  elementFormDefault="qualified">
+    <xs:annotation>
+        <xs:appinfo>
+            <jaxb:globalBindings>
+                <xjc:simple />
+            </jaxb:globalBindings>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <xs:element name="Artifact" type="kmcs:Artifact"/>
+    <xs:element name="EmailArtifact" type="kmcs:EmailArtifact"/>
+
+    <xs:complexType name="Artifact">
+        <xs:sequence>
+            <xs:element name="artifactId" type="xs:string" minOccurs="0"/>
+            <xs:element name="artifactType" type="xs:string" minOccurs="0"/>
+            <xs:element name="contentHash" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EmailArtifact">
+        <xs:complexContent>
+            <xs:extension base="kmcs:Artifact">
+                <xs:sequence>
+                    <xs:element name="subject" type="xs:string" minOccurs="0"/>
+                    <xs:element name="threadSubject" type="xs:string" minOccurs="0"/>
+                    <xs:element name="from" type="xs:string" minOccurs="0"/>
+                    <xs:element name="to" type="xs:string" minOccurs="0"/>
+                    <xs:element name="cc" type="xs:string" minOccurs="0"/>
+                    <xs:element name="bcc" type="xs:string" minOccurs="0"/>
+                    <xs:element name="messageId" type="xs:string" minOccurs="0"/>
+                    <xs:element name="date" type="xs:date" minOccurs="0"/>
+                    <xs:element name="size" type="xs:long" minOccurs="0"/>
+                    <xs:element name="hasAttachment" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="sensitivity" type="xs:string" minOccurs="0"/>
+                    <xs:element name="headerHash" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+</xs:schema>
