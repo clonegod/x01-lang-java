@@ -1,4 +1,4 @@
-package com.aysnclife.excel_poi;
+package clonegod.commons.excel;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ public class Test02ReadExcel {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 }
