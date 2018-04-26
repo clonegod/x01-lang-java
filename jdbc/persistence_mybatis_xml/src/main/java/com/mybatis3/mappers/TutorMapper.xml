@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis3.mappers.TutorMapper">
+
+  	<!-- 1对多关联映射 -->
+  	<resultMap type="Address" id="AddressResult">  
+	  <id property="addrId" column="addr_id" />  
+	  <result property="street" column="street" />  
+	  <result property="city" column="city" />  
+	  <result property="state" column="state" />  
+	  <result property="zip" column="zip" />  
+	  <result property="country" column="country" />  
+	</resultMap>
+  	
+  	<resultMap type="Course" id="CourseResult">
+	  <id column="course_id" property="courseId" />
+	  <result column="name" property="name" />
+	  <result column="description" property="description" />
+	  <result column="start_date" property="startDate" />
+	  <result column="end_date" property="endDate" />
+	  <result column="tutor_id" property="tutorId" />
+	</resultMap>
+	
+	<resultMap type="Tutor" id="TutorResult">
+	  <id column="tutor_id" property="tutorId" />
+	  <result column="tutor_name" property="name" />
+	  <result column="email" property="email" />
+	  <association property="address" resultMap="AddressResult"/>
+	  <collection property="courses" resultMap="CourseResult" />
+	</resultMap>
+	
+	<select id="findTutorById" parameterType="int" resultMap="TutorResult">
+		SELECT T.TUTOR_ID, T.NAME AS TUTOR_NAME, EMAIL, 
+			C.COURSE_ID, C.NAME, DESCRIPTION, START_DATE, END_DATE,C.TUTOR_ID,
+			A.ADDR_ID, A.STREET, A.CITY, A.STATE, A.ZIP, A.COUNTRY
+		FROM TUTORS T 
+		LEFT OUTER JOIN ADDRESSES A ON T.ADDR_ID=A.ADDR_ID
+		LEFT OUTER JOIN COURSES C ON T.TUTOR_ID=C.TUTOR_ID
+		WHERE T.TUTOR_ID=#{tutorId}
+	</select>
+	
+</mapper>

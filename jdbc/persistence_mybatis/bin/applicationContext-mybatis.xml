@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- 组件扫描 -->
+	<context:annotation-config />
+	<context:component-scan base-package="com.mybatis3" />
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	
+	<!-- 事务控制 -->
+	<tx:annotation-driven transaction-manager="txManager"/>
+	
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 配置数据域 -->
+	<bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	
+	<!-- 配置mybatis的sqlSession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	  <constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	    <property name="dataSource" ref="dataSource" />  
+	    <property name="typeAliasesPackage" value="com.mybatis3.domain" />  
+	    <property name="typeHandlersPackage" value="com.mybatis3.typehandlers" />  
+	    <property name="typeAliases" value="com.mybatis3.domain.Student,com.mybatis3.domain.Tutor" />  
+	    <property name="mapperLocations" value="classpath*:com/mybatis3/**/*.xml" />  
+	    <!-- 
+	    #引入会造成autowire报错
+	    <property name="typeHandlers" value="com.mybatis3.typehandlers.PhoneTypeHandler" /> 
+	    -->  
+	</bean>
+	
+	<!-- 扫描包（package）中的映射器Mapper接口，并自动地注册为bean。-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	  <property name="basePackage" value="com.mybatis3.mappers" />
+	</bean>
+	
+</beans>

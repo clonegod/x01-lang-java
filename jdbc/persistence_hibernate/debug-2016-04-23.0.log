@@ -1,0 +1,511 @@
+2016-04-23 22:59:52 [LibraryTest:20] - test slf4j log
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@2d928643
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@2d928643
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@2d928643
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@544fe44c
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration true_false -> org.hibernate.type.TrueFalseType@66480dd7
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration yes_no -> org.hibernate.type.YesNoType@78c03f1f
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@6fc6f14e
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@6fc6f14e
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@6fc6f14e
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration character -> org.hibernate.type.CharacterType@4e9ba398
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char -> org.hibernate.type.CharacterType@4e9ba398
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@4e9ba398
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@63753b6d
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@63753b6d
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@63753b6d
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration integer -> org.hibernate.type.IntegerType@3e9b1010
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration int -> org.hibernate.type.IntegerType@3e9b1010
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3e9b1010
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@eec5a4a
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@eec5a4a
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Long -> org.hibernate.type.LongType@eec5a4a
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@1f28c152
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@1f28c152
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@1f28c152
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@2b9627bc
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@2b9627bc
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@2b9627bc
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@5bc79255
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@5bc79255
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@610694f1
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@610694f1
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration string -> org.hibernate.type.StringType@2b552920
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.String -> org.hibernate.type.StringType@2b552920
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration url -> org.hibernate.type.UrlType@35d176f7
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.net.URL -> org.hibernate.type.UrlType@35d176f7
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration date -> org.hibernate.type.DateType@cd2dae5
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Date -> org.hibernate.type.DateType@cd2dae5
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration time -> org.hibernate.type.TimeType@3b084709
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3b084709
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timestamp -> org.hibernate.type.TimestampType@68bbe345
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@68bbe345
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@68bbe345
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@4bbfb90a
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar -> org.hibernate.type.CalendarType@5e853265
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@5e853265
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@5e853265
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5d76b067
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration locale -> org.hibernate.type.LocaleType@614ddd49
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@614ddd49
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration currency -> org.hibernate.type.CurrencyType@26aa12dd
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@26aa12dd
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timezone -> org.hibernate.type.TimeZoneType@51cdd8a
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@51cdd8a
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration class -> org.hibernate.type.ClassType@64729b1e
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@64729b1e
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@394e1a0f
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@394e1a0f
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5f282abb
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@3b088d51
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration binary -> org.hibernate.type.BinaryType@4b1c1ea0
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte[] -> org.hibernate.type.BinaryType@4b1c1ea0
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [B -> org.hibernate.type.BinaryType@4b1c1ea0
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@33f88ab
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@33f88ab
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@33f88ab
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration image -> org.hibernate.type.ImageType@59e5ddf
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters -> org.hibernate.type.CharArrayType@704a52ec
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char[] -> org.hibernate.type.CharArrayType@704a52ec
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [C -> org.hibernate.type.CharArrayType@704a52ec
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4232c52b
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4232c52b
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4232c52b
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration text -> org.hibernate.type.TextType@34cd072c
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration blob -> org.hibernate.type.BlobType@7a187f14
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7a187f14
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@1a8a8f7c
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@42f93a98
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration clob -> org.hibernate.type.ClobType@7a9273a8
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@7a9273a8
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7ce6a65d
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@29b5cd00
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@45820e51
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration serializable -> org.hibernate.type.SerializableType@5bfbf16f
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration object -> org.hibernate.type.ObjectType@262b2c86
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@262b2c86
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@50d0686
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@7a3d45bd
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@1e7c7811
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@77ec78b9
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@1a3869f4
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@a38d7a3
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@77f99a05
+2016-04-23 23:36:19 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@63440df3
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [uuid2] -> [class org.hibernate.id.UUIDGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [guid] -> [class org.hibernate.id.GUIDGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [uuid] -> [class org.hibernate.id.UUIDHexGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [uuid.hex] -> [class org.hibernate.id.UUIDHexGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [hilo] -> [class org.hibernate.id.TableHiLoGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [assigned] -> [class org.hibernate.id.Assigned]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [identity] -> [class org.hibernate.id.IdentityGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [select] -> [class org.hibernate.id.SelectGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [sequence] -> [class org.hibernate.id.SequenceGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [seqhilo] -> [class org.hibernate.id.SequenceHiLoGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [increment] -> [class org.hibernate.id.IncrementGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [foreign] -> [class org.hibernate.id.ForeignGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [sequence-identity] -> [class org.hibernate.id.SequenceIdentityGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [enhanced-sequence] -> [class org.hibernate.id.enhanced.SequenceStyleGenerator]
+2016-04-23 23:36:19 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [enhanced-table] -> [class org.hibernate.id.enhanced.TableGenerator]
+2016-04-23 23:36:19 [org.hibernate.util.DTDEntityResolver:67] - trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd]
+2016-04-23 23:36:19 [org.hibernate.util.DTDEntityResolver:77] - attempting to resolve on classpath under org/hibernate/
+2016-04-23 23:36:19 [org.hibernate.util.DTDEntityResolver:109] - located [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd] in classpath
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2118] - connection.url=jdbc:mysql://127.0.0.1:3306/test
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2118] - connection.driver_class=com.mysql.jdbc.Driver
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2118] - connection.username=root
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2118] - connection.password=root123
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2118] - dialect=org.hibernate.dialect.MySQLDialect
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2118] - hbm2ddl.auto=update
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2118] - show_sql=true
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:2298] - properties: {hibernate.connection.password=root123, java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_91\jre\bin, java.vm.version=25.91-b14, hibernate.connection.username=root, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, user.country=CN, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=Service Pack 1, java.vm.specification.name=Java Virtual Machine Specification, user.dir=E:\practice\persistence_hibernate, java.runtime.version=1.8.0_91-b14, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, hbm2ddl.auto=update, java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 7, sun.jnu.encoding=GBK, java.library.path=C:\Program Files\Java\jdk1.8.0_91\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_91/bin/server;C:/Program Files/Java/jre1.8.0_91/bin;C:/Program Files/Java/jre1.8.0_91/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Java\jdk1.7.0_40\bin;F:\asynclife\local\apache-maven-3.2.3\bin;F:\asynclife\local\nexus-latest-bundle\nexus-2.9.0-04\bin;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\install\mysql\bin;E:\local\eclipse;;., java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=6.1, connection.password=root123, user.home=C:\Users\Administrator, user.timezone=Asia/Shanghai, connection.username=root, java.awt.printerjob=sun.awt.windows.WPrinterJob, file.encoding=UTF-8, java.specification.version=1.8, hibernate.connection.driver_class=com.mysql.jdbc.Driver, show_sql=true, java.class.path=E:\practice\persistence_hibernate\bin;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-core\3.6.10.Final\6b36a1eef76cbccc2757f22a795b5e12ab56b3d5\hibernate-core-3.6.10.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.38\dbbd7cd309ce167ec8367de4e41c63c2c8593cc5\mysql-connector-java-5.1.38.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.1.7\9865cf6994f9ff13fce0bf93f2054ef6c65bb462\logback-classic-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\commons-collections\commons-collections\3.2\f951934aa5ae5a88d7e6dfaa6d32307d834a88be\commons-collections-3.2.jar;E:\repos\gradle\caches\modules-2\files-2.1\javassist\javassist\3.9.0.GA\832df7a8f329ff1285a11576046847a38b749d45\javassist-3.9.0.GA.jar;E:\repos\gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;E:\repos\gradle\caches\modules-2\files-2.1\antlr\antlr\2.7.6\cf4f67dae5df4f9932ae7810f4548ef3e14dd35e\antlr-2.7.6.jar;E:\repos\gradle\caches\modules-2\files-2.1\dom4j\dom4j\1.6.1\5d3ccc056b6f056dbf0dddfdf43894b9065a8f94\dom4j-1.6.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-commons-annotations\3.2.0.Final\ce990611448fc2865469e3b68d2fe76b050e3c4f\hibernate-commons-annotations-3.2.0.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\1.0.1.Final\3306a165afa81938fc3d8a0948e891de9f6b192b\hibernate-jpa-2.0-api-1.0.1.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\javax.transaction\jta\1.1\2ca09f0b36ca7d71b762e14ea2ff09d5eac57558\jta-1.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.1.7\7873092d39ef741575ca91378a6a21c388363ac8\logback-core-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.20\867d63093eff0a0cb527bf13d397d850af3dcae3\slf4j-api-1.7.20.jar;/E:/local/eclipse/configuration/org.eclipse.osgi/383/0/.cp/;/E:/local/eclipse/configuration/org.eclipse.osgi/382/0/.cp/, user.name=Administrator, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, java.vm.specification.version=1.8, sun.java.command=org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 50748 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test HibernateTest:testGet, java.home=C:\Program Files\Java\jdk1.8.0_91\jre, sun.arch.data.model=64, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.connection.url=jdbc:mysql://127.0.0.1:3306/test, user.language=zh, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.8.0_91, java.ext.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\classes, java.vendor=Oracle Corporation, connection.driver_class=com.mysql.jdbc.Driver, file.separator=\, hibernate.hbm2ddl.auto=update, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=windows, connection.url=jdbc:mysql://127.0.0.1:3306/test, dialect=org.hibernate.dialect.MySQLDialect, sun.cpu.isalist=amd64}
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1854] - Preparing to build session factory with filters : {}
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration$MetadataSourceQueue:3995] - Processing hbm.xml files
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration$MetadataSourceQueue:4025] - Process annotated classes
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1466] - processing fk mappings (*ToOne and JoinedSubclass)
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1708] - processing extends queue
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1762] - processing extends queue
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1711] - processing collection mappings
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1721] - processing native query and ResultSetMapping mappings
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1729] - processing association property references
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1751] - processing foreign key constraints
+2016-04-23 23:36:19 [org.hibernate.cfg.Configuration:1896] - Legacy Validator not present in classpath, ignoring event listener registration
+2016-04-23 23:36:19 [org.hibernate.cfg.search.HibernateSearchEventListenerRegister:231] - Search not present in classpath, ignoring event listener registration.
+2016-04-23 23:36:19 [org.hibernate.connection.DriverManagerConnectionProvider:132] - opening new JDBC connection
+2016-04-23 23:36:21 [org.hibernate.connection.DriverManagerConnectionProvider:138] - created connection to: jdbc:mysql://127.0.0.1:3306/test, Isolation Level: 4
+2016-04-23 23:36:21 [org.hibernate.cfg.SettingsFactory:202] - Wrap result sets: disabled
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryImpl:206] - Statistics initialized [enabled=false]}
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@2d928643
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@2d928643
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@2d928643
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@544fe44c
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration true_false -> org.hibernate.type.TrueFalseType@66480dd7
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration yes_no -> org.hibernate.type.YesNoType@78c03f1f
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@6fc6f14e
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@6fc6f14e
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@6fc6f14e
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration character -> org.hibernate.type.CharacterType@4e9ba398
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char -> org.hibernate.type.CharacterType@4e9ba398
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@4e9ba398
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@63753b6d
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@63753b6d
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@63753b6d
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration integer -> org.hibernate.type.IntegerType@3e9b1010
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration int -> org.hibernate.type.IntegerType@3e9b1010
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3e9b1010
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@eec5a4a
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@eec5a4a
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Long -> org.hibernate.type.LongType@eec5a4a
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@1f28c152
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@1f28c152
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@1f28c152
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@2b9627bc
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@2b9627bc
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@2b9627bc
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@5bc79255
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@5bc79255
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@610694f1
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@610694f1
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration string -> org.hibernate.type.StringType@2b552920
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.String -> org.hibernate.type.StringType@2b552920
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration url -> org.hibernate.type.UrlType@35d176f7
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.net.URL -> org.hibernate.type.UrlType@35d176f7
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration date -> org.hibernate.type.DateType@cd2dae5
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Date -> org.hibernate.type.DateType@cd2dae5
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration time -> org.hibernate.type.TimeType@3b084709
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3b084709
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timestamp -> org.hibernate.type.TimestampType@68bbe345
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@68bbe345
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@68bbe345
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@4bbfb90a
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar -> org.hibernate.type.CalendarType@5e853265
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@5e853265
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@5e853265
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5d76b067
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration locale -> org.hibernate.type.LocaleType@614ddd49
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@614ddd49
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration currency -> org.hibernate.type.CurrencyType@26aa12dd
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@26aa12dd
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timezone -> org.hibernate.type.TimeZoneType@51cdd8a
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@51cdd8a
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration class -> org.hibernate.type.ClassType@64729b1e
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@64729b1e
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@394e1a0f
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@394e1a0f
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5f282abb
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@3b088d51
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration binary -> org.hibernate.type.BinaryType@4b1c1ea0
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte[] -> org.hibernate.type.BinaryType@4b1c1ea0
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [B -> org.hibernate.type.BinaryType@4b1c1ea0
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@33f88ab
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@33f88ab
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@33f88ab
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration image -> org.hibernate.type.ImageType@59e5ddf
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters -> org.hibernate.type.CharArrayType@704a52ec
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char[] -> org.hibernate.type.CharArrayType@704a52ec
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [C -> org.hibernate.type.CharArrayType@704a52ec
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4232c52b
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4232c52b
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4232c52b
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration text -> org.hibernate.type.TextType@34cd072c
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration blob -> org.hibernate.type.BlobType@7a187f14
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7a187f14
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@1a8a8f7c
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@42f93a98
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration clob -> org.hibernate.type.ClobType@7a9273a8
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@7a9273a8
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7ce6a65d
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@29b5cd00
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@45820e51
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration serializable -> org.hibernate.type.SerializableType@5bfbf16f
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration object -> org.hibernate.type.ObjectType@262b2c86
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@262b2c86
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@235834f2
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@5656be13
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@4218d6a3
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@76505305
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@14cd1699
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@77888435
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@73a1e9a9
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@71d44a3
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration blob -> org.hibernate.type.BlobType@6dc17b83
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@6dc17b83
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@71809907
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@3ce1e309
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@32eff876
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration clob -> org.hibernate.type.ClobType@8dbdac1
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@8dbdac1
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@6e20b53a
+2016-04-23 23:36:21 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@5e0826e7
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryImpl:228] - Session factory constructed with filter configurations : {}
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryImpl:232] - instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, hibernate.connection.password=root123, sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_91\jre\bin, java.vm.version=25.91-b14, hibernate.connection.username=root, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, user.country=CN, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=Service Pack 1, java.vm.specification.name=Java Virtual Machine Specification, user.dir=E:\practice\persistence_hibernate, java.runtime.version=1.8.0_91-b14, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, hbm2ddl.auto=update, java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 7, sun.jnu.encoding=GBK, java.library.path=C:\Program Files\Java\jdk1.8.0_91\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_91/bin/server;C:/Program Files/Java/jre1.8.0_91/bin;C:/Program Files/Java/jre1.8.0_91/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Java\jdk1.7.0_40\bin;F:\asynclife\local\apache-maven-3.2.3\bin;F:\asynclife\local\nexus-latest-bundle\nexus-2.9.0-04\bin;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\install\mysql\bin;E:\local\eclipse;;., java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=6.1, user.home=C:\Users\Administrator, connection.password=root123, user.timezone=Asia/Shanghai, java.awt.printerjob=sun.awt.windows.WPrinterJob, connection.username=root, java.specification.version=1.8, file.encoding=UTF-8, hibernate.connection.driver_class=com.mysql.jdbc.Driver, show_sql=true, user.name=Administrator, java.class.path=E:\practice\persistence_hibernate\bin;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-core\3.6.10.Final\6b36a1eef76cbccc2757f22a795b5e12ab56b3d5\hibernate-core-3.6.10.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.38\dbbd7cd309ce167ec8367de4e41c63c2c8593cc5\mysql-connector-java-5.1.38.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.1.7\9865cf6994f9ff13fce0bf93f2054ef6c65bb462\logback-classic-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\commons-collections\commons-collections\3.2\f951934aa5ae5a88d7e6dfaa6d32307d834a88be\commons-collections-3.2.jar;E:\repos\gradle\caches\modules-2\files-2.1\javassist\javassist\3.9.0.GA\832df7a8f329ff1285a11576046847a38b749d45\javassist-3.9.0.GA.jar;E:\repos\gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;E:\repos\gradle\caches\modules-2\files-2.1\antlr\antlr\2.7.6\cf4f67dae5df4f9932ae7810f4548ef3e14dd35e\antlr-2.7.6.jar;E:\repos\gradle\caches\modules-2\files-2.1\dom4j\dom4j\1.6.1\5d3ccc056b6f056dbf0dddfdf43894b9065a8f94\dom4j-1.6.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-commons-annotations\3.2.0.Final\ce990611448fc2865469e3b68d2fe76b050e3c4f\hibernate-commons-annotations-3.2.0.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\1.0.1.Final\3306a165afa81938fc3d8a0948e891de9f6b192b\hibernate-jpa-2.0-api-1.0.1.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\javax.transaction\jta\1.1\2ca09f0b36ca7d71b762e14ea2ff09d5eac57558\jta-1.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.1.7\7873092d39ef741575ca91378a6a21c388363ac8\logback-core-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.20\867d63093eff0a0cb527bf13d397d850af3dcae3\slf4j-api-1.7.20.jar;/E:/local/eclipse/configuration/org.eclipse.osgi/383/0/.cp/;/E:/local/eclipse/configuration/org.eclipse.osgi/382/0/.cp/, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, java.vm.specification.version=1.8, sun.arch.data.model=64, java.home=C:\Program Files\Java\jdk1.8.0_91\jre, sun.java.command=org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 50748 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test HibernateTest:testGet, hibernate.connection.url=jdbc:mysql://127.0.0.1:3306/test, hibernate.dialect=org.hibernate.dialect.MySQLDialect, java.specification.vendor=Oracle Corporation, user.language=zh, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.8.0_91, java.ext.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\classes, java.vendor=Oracle Corporation, file.separator=\, connection.driver_class=com.mysql.jdbc.Driver, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, hibernate.hbm2ddl.auto=update, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeLittle, sun.desktop=windows, connection.url=jdbc:mysql://127.0.0.1:3306/test, sun.cpu.isalist=amd64, dialect=org.hibernate.dialect.MySQLDialect}
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryObjectFactory:61] - initializing class SessionFactoryObjectFactory
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryObjectFactory:99] - registered: 14ec2143-783d-4977-8a7f-e73daea674f5 (unnamed)
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryImpl:369] - instantiated session factory
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration$MetadataSourceQueue:3995] - Processing hbm.xml files
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration$MetadataSourceQueue:4025] - Process annotated classes
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration:1466] - processing fk mappings (*ToOne and JoinedSubclass)
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration:1708] - processing extends queue
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration:1762] - processing extends queue
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration:1711] - processing collection mappings
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration:1721] - processing native query and ResultSetMapping mappings
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration:1729] - processing association property references
+2016-04-23 23:36:21 [org.hibernate.cfg.Configuration:1751] - processing foreign key constraints
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryImpl:539] - Checking 0 named HQL queries
+2016-04-23 23:36:21 [org.hibernate.impl.SessionFactoryImpl:559] - Checking 0 named SQL queries
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@192b07fd
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@192b07fd
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@192b07fd
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@a67c67e
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration true_false -> org.hibernate.type.TrueFalseType@5ec0a365
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration yes_no -> org.hibernate.type.YesNoType@2ac273d3
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@2286778
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@2286778
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@2286778
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration character -> org.hibernate.type.CharacterType@3108bc
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char -> org.hibernate.type.CharacterType@3108bc
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@3108bc
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@18eed359
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@18eed359
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@18eed359
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration integer -> org.hibernate.type.IntegerType@67784306
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration int -> org.hibernate.type.IntegerType@67784306
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@67784306
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@3b0143d3
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@3b0143d3
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Long -> org.hibernate.type.LongType@3b0143d3
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@6325a3ee
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@6325a3ee
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@6325a3ee
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@7b49cea0
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@7b49cea0
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7b49cea0
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@5ae63ade
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@5ae63ade
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@627551fb
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@627551fb
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration string -> org.hibernate.type.StringType@551aa95a
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.String -> org.hibernate.type.StringType@551aa95a
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration url -> org.hibernate.type.UrlType@50b494a6
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.net.URL -> org.hibernate.type.UrlType@50b494a6
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration date -> org.hibernate.type.DateType@79be0360
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Date -> org.hibernate.type.DateType@79be0360
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration time -> org.hibernate.type.TimeType@6737fd8f
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@6737fd8f
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timestamp -> org.hibernate.type.TimestampType@7c29daf3
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@7c29daf3
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@7c29daf3
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6c49835d
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar -> org.hibernate.type.CalendarType@2a17b7b6
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2a17b7b6
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2a17b7b6
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@76707e36
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration locale -> org.hibernate.type.LocaleType@131276c2
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@131276c2
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration currency -> org.hibernate.type.CurrencyType@7f13d6e
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7f13d6e
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timezone -> org.hibernate.type.TimeZoneType@4e7dc304
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@4e7dc304
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration class -> org.hibernate.type.ClassType@184f6be2
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@184f6be2
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@167fdd33
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@167fdd33
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@53f65459
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@6acdbdf5
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration binary -> org.hibernate.type.BinaryType@2833cc44
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte[] -> org.hibernate.type.BinaryType@2833cc44
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [B -> org.hibernate.type.BinaryType@2833cc44
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@646d64ab
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@646d64ab
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@646d64ab
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration image -> org.hibernate.type.ImageType@76f2b07d
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters -> org.hibernate.type.CharArrayType@57e1b0c
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char[] -> org.hibernate.type.CharArrayType@57e1b0c
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [C -> org.hibernate.type.CharArrayType@57e1b0c
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@11438d26
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@11438d26
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@11438d26
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration text -> org.hibernate.type.TextType@ea1a8d5
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration blob -> org.hibernate.type.BlobType@2353b3e6
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2353b3e6
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@c46bcd4
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@36b4cef0
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration clob -> org.hibernate.type.ClobType@1500955a
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@1500955a
+2016-04-23 23:49:58 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@60285225
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@42d8062c
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@59906517
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration serializable -> org.hibernate.type.SerializableType@5f3a4b84
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration object -> org.hibernate.type.ObjectType@7a3d45bd
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@7a3d45bd
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@1a3869f4
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@a38d7a3
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@77f99a05
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@63440df3
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@3aeaafa6
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@76a3e297
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@4d3167f4
+2016-04-23 23:49:59 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@ed9d034
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [uuid2] -> [class org.hibernate.id.UUIDGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [guid] -> [class org.hibernate.id.GUIDGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [uuid] -> [class org.hibernate.id.UUIDHexGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [uuid.hex] -> [class org.hibernate.id.UUIDHexGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [hilo] -> [class org.hibernate.id.TableHiLoGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [assigned] -> [class org.hibernate.id.Assigned]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [identity] -> [class org.hibernate.id.IdentityGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [select] -> [class org.hibernate.id.SelectGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [sequence] -> [class org.hibernate.id.SequenceGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [seqhilo] -> [class org.hibernate.id.SequenceHiLoGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [increment] -> [class org.hibernate.id.IncrementGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [foreign] -> [class org.hibernate.id.ForeignGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [sequence-identity] -> [class org.hibernate.id.SequenceIdentityGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [enhanced-sequence] -> [class org.hibernate.id.enhanced.SequenceStyleGenerator]
+2016-04-23 23:49:59 [org.hibernate.id.factory.DefaultIdentifierGeneratorFactory:100] - Registering IdentifierGenerator strategy [enhanced-table] -> [class org.hibernate.id.enhanced.TableGenerator]
+2016-04-23 23:49:59 [org.hibernate.util.DTDEntityResolver:67] - trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd]
+2016-04-23 23:49:59 [org.hibernate.util.DTDEntityResolver:77] - attempting to resolve on classpath under org/hibernate/
+2016-04-23 23:49:59 [org.hibernate.util.DTDEntityResolver:109] - located [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd] in classpath
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2118] - connection.url=jdbc:mysql://127.0.0.1:3306/test
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2118] - connection.driver_class=com.mysql.jdbc.Driver
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2118] - connection.username=root
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2118] - connection.password=root123
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2118] - dialect=org.hibernate.dialect.MySQLDialect
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2118] - hbm2ddl.auto=update
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2118] - show_sql=true
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:2298] - properties: {hibernate.connection.password=root123, java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_91\jre\bin, java.vm.version=25.91-b14, hibernate.connection.username=root, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, user.country=CN, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=Service Pack 1, java.vm.specification.name=Java Virtual Machine Specification, user.dir=E:\practice\persistence_hibernate, java.runtime.version=1.8.0_91-b14, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, hbm2ddl.auto=update, java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 7, sun.jnu.encoding=GBK, java.library.path=C:\Program Files\Java\jdk1.8.0_91\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_91/bin/server;C:/Program Files/Java/jre1.8.0_91/bin;C:/Program Files/Java/jre1.8.0_91/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Java\jdk1.7.0_40\bin;F:\asynclife\local\apache-maven-3.2.3\bin;F:\asynclife\local\nexus-latest-bundle\nexus-2.9.0-04\bin;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\install\mysql\bin;E:\local\eclipse;;., java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=6.1, connection.password=root123, user.home=C:\Users\Administrator, user.timezone=Asia/Shanghai, connection.username=root, java.awt.printerjob=sun.awt.windows.WPrinterJob, file.encoding=UTF-8, java.specification.version=1.8, hibernate.connection.driver_class=com.mysql.jdbc.Driver, show_sql=true, java.class.path=E:\practice\persistence_hibernate\bin;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-core\3.6.10.Final\6b36a1eef76cbccc2757f22a795b5e12ab56b3d5\hibernate-core-3.6.10.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.38\dbbd7cd309ce167ec8367de4e41c63c2c8593cc5\mysql-connector-java-5.1.38.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.1.7\9865cf6994f9ff13fce0bf93f2054ef6c65bb462\logback-classic-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\commons-collections\commons-collections\3.2\f951934aa5ae5a88d7e6dfaa6d32307d834a88be\commons-collections-3.2.jar;E:\repos\gradle\caches\modules-2\files-2.1\javassist\javassist\3.9.0.GA\832df7a8f329ff1285a11576046847a38b749d45\javassist-3.9.0.GA.jar;E:\repos\gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;E:\repos\gradle\caches\modules-2\files-2.1\antlr\antlr\2.7.6\cf4f67dae5df4f9932ae7810f4548ef3e14dd35e\antlr-2.7.6.jar;E:\repos\gradle\caches\modules-2\files-2.1\dom4j\dom4j\1.6.1\5d3ccc056b6f056dbf0dddfdf43894b9065a8f94\dom4j-1.6.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-commons-annotations\3.2.0.Final\ce990611448fc2865469e3b68d2fe76b050e3c4f\hibernate-commons-annotations-3.2.0.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\1.0.1.Final\3306a165afa81938fc3d8a0948e891de9f6b192b\hibernate-jpa-2.0-api-1.0.1.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\javax.transaction\jta\1.1\2ca09f0b36ca7d71b762e14ea2ff09d5eac57558\jta-1.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.1.7\7873092d39ef741575ca91378a6a21c388363ac8\logback-core-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.20\867d63093eff0a0cb527bf13d397d850af3dcae3\slf4j-api-1.7.20.jar;/E:/local/eclipse/configuration/org.eclipse.osgi/383/0/.cp/;/E:/local/eclipse/configuration/org.eclipse.osgi/382/0/.cp/, user.name=Administrator, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, java.vm.specification.version=1.8, sun.java.command=org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 51158 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test HibernateTest:testGet, java.home=C:\Program Files\Java\jdk1.8.0_91\jre, sun.arch.data.model=64, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.connection.url=jdbc:mysql://127.0.0.1:3306/test, user.language=zh, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.8.0_91, java.ext.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\classes, java.vendor=Oracle Corporation, connection.driver_class=com.mysql.jdbc.Driver, file.separator=\, hibernate.hbm2ddl.auto=update, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=windows, connection.url=jdbc:mysql://127.0.0.1:3306/test, dialect=org.hibernate.dialect.MySQLDialect, sun.cpu.isalist=amd64}
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1854] - Preparing to build session factory with filters : {}
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration$MetadataSourceQueue:3995] - Processing hbm.xml files
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration$MetadataSourceQueue:4025] - Process annotated classes
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1466] - processing fk mappings (*ToOne and JoinedSubclass)
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1708] - processing extends queue
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1762] - processing extends queue
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1711] - processing collection mappings
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1721] - processing native query and ResultSetMapping mappings
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1729] - processing association property references
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1751] - processing foreign key constraints
+2016-04-23 23:49:59 [org.hibernate.cfg.Configuration:1896] - Legacy Validator not present in classpath, ignoring event listener registration
+2016-04-23 23:49:59 [org.hibernate.cfg.search.HibernateSearchEventListenerRegister:231] - Search not present in classpath, ignoring event listener registration.
+2016-04-23 23:49:59 [org.hibernate.connection.DriverManagerConnectionProvider:132] - opening new JDBC connection
+2016-04-23 23:49:59 [org.hibernate.connection.DriverManagerConnectionProvider:138] - created connection to: jdbc:mysql://127.0.0.1:3306/test, Isolation Level: 4
+2016-04-23 23:49:59 [org.hibernate.cfg.SettingsFactory:202] - Wrap result sets: disabled
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryImpl:206] - Statistics initialized [enabled=false]}
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@192b07fd
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration boolean -> org.hibernate.type.BooleanType@192b07fd
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@192b07fd
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@a67c67e
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration true_false -> org.hibernate.type.TrueFalseType@5ec0a365
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration yes_no -> org.hibernate.type.YesNoType@2ac273d3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@2286778
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte -> org.hibernate.type.ByteType@2286778
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@2286778
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration character -> org.hibernate.type.CharacterType@3108bc
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char -> org.hibernate.type.CharacterType@3108bc
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@3108bc
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@18eed359
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration short -> org.hibernate.type.ShortType@18eed359
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@18eed359
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration integer -> org.hibernate.type.IntegerType@67784306
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration int -> org.hibernate.type.IntegerType@67784306
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@67784306
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@3b0143d3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration long -> org.hibernate.type.LongType@3b0143d3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Long -> org.hibernate.type.LongType@3b0143d3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@6325a3ee
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration float -> org.hibernate.type.FloatType@6325a3ee
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@6325a3ee
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@7b49cea0
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration double -> org.hibernate.type.DoubleType@7b49cea0
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7b49cea0
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@5ae63ade
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@5ae63ade
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@627551fb
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@627551fb
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration string -> org.hibernate.type.StringType@551aa95a
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.String -> org.hibernate.type.StringType@551aa95a
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration url -> org.hibernate.type.UrlType@50b494a6
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.net.URL -> org.hibernate.type.UrlType@50b494a6
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration date -> org.hibernate.type.DateType@79be0360
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Date -> org.hibernate.type.DateType@79be0360
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration time -> org.hibernate.type.TimeType@6737fd8f
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@6737fd8f
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timestamp -> org.hibernate.type.TimestampType@7c29daf3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@7c29daf3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@7c29daf3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6c49835d
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar -> org.hibernate.type.CalendarType@2a17b7b6
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2a17b7b6
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2a17b7b6
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@76707e36
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration locale -> org.hibernate.type.LocaleType@131276c2
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@131276c2
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration currency -> org.hibernate.type.CurrencyType@7f13d6e
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7f13d6e
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration timezone -> org.hibernate.type.TimeZoneType@4e7dc304
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@4e7dc304
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration class -> org.hibernate.type.ClassType@184f6be2
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@184f6be2
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@167fdd33
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@167fdd33
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@53f65459
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@6acdbdf5
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration binary -> org.hibernate.type.BinaryType@2833cc44
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration byte[] -> org.hibernate.type.BinaryType@2833cc44
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [B -> org.hibernate.type.BinaryType@2833cc44
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@646d64ab
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@646d64ab
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@646d64ab
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration image -> org.hibernate.type.ImageType@76f2b07d
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters -> org.hibernate.type.CharArrayType@57e1b0c
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration char[] -> org.hibernate.type.CharArrayType@57e1b0c
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [C -> org.hibernate.type.CharArrayType@57e1b0c
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@11438d26
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@11438d26
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@11438d26
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration text -> org.hibernate.type.TextType@ea1a8d5
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration blob -> org.hibernate.type.BlobType@2353b3e6
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2353b3e6
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@c46bcd4
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@36b4cef0
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration clob -> org.hibernate.type.ClobType@1500955a
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@1500955a
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@60285225
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@42d8062c
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@59906517
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration serializable -> org.hibernate.type.SerializableType@5f3a4b84
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration object -> org.hibernate.type.ObjectType@7a3d45bd
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@7a3d45bd
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@4218d6a3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@76505305
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@14cd1699
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@77888435
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@73a1e9a9
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@71d44a3
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@7b98f307
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@4802796d
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration characters_clob -> org.hibernate.type.PrimitiveCharacterArrayClobType@158da8e
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration clob -> org.hibernate.type.ClobType@71809907
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@71809907
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@3ce1e309
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration blob -> org.hibernate.type.BlobType@32eff876
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@32eff876
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@8dbdac1
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_materialized_blob -> org.hibernate.type.WrappedMaterializedBlobType@6e20b53a
+2016-04-23 23:50:00 [org.hibernate.type.BasicTypeRegistry:147] - Adding type registration wrapper_characters_clob -> org.hibernate.type.CharacterArrayClobType@6aba2b86
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryImpl:228] - Session factory constructed with filter configurations : {}
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryImpl:232] - instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, hibernate.connection.password=root123, sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_91\jre\bin, java.vm.version=25.91-b14, hibernate.connection.username=root, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, user.country=CN, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=Service Pack 1, java.vm.specification.name=Java Virtual Machine Specification, user.dir=E:\practice\persistence_hibernate, java.runtime.version=1.8.0_91-b14, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, hbm2ddl.auto=update, java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\ADMINI~1\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 7, sun.jnu.encoding=GBK, java.library.path=C:\Program Files\Java\jdk1.8.0_91\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_91/bin/server;C:/Program Files/Java/jre1.8.0_91/bin;C:/Program Files/Java/jre1.8.0_91/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Java\jdk1.7.0_40\bin;F:\asynclife\local\apache-maven-3.2.3\bin;F:\asynclife\local\nexus-latest-bundle\nexus-2.9.0-04\bin;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\install\mysql\bin;E:\local\eclipse;;., java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=6.1, user.home=C:\Users\Administrator, connection.password=root123, user.timezone=Asia/Shanghai, java.awt.printerjob=sun.awt.windows.WPrinterJob, connection.username=root, java.specification.version=1.8, file.encoding=UTF-8, hibernate.connection.driver_class=com.mysql.jdbc.Driver, show_sql=true, user.name=Administrator, java.class.path=E:\practice\persistence_hibernate\bin;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-core\3.6.10.Final\6b36a1eef76cbccc2757f22a795b5e12ab56b3d5\hibernate-core-3.6.10.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.38\dbbd7cd309ce167ec8367de4e41c63c2c8593cc5\mysql-connector-java-5.1.38.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.1.7\9865cf6994f9ff13fce0bf93f2054ef6c65bb462\logback-classic-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\commons-collections\commons-collections\3.2\f951934aa5ae5a88d7e6dfaa6d32307d834a88be\commons-collections-3.2.jar;E:\repos\gradle\caches\modules-2\files-2.1\javassist\javassist\3.9.0.GA\832df7a8f329ff1285a11576046847a38b749d45\javassist-3.9.0.GA.jar;E:\repos\gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;E:\repos\gradle\caches\modules-2\files-2.1\antlr\antlr\2.7.6\cf4f67dae5df4f9932ae7810f4548ef3e14dd35e\antlr-2.7.6.jar;E:\repos\gradle\caches\modules-2\files-2.1\dom4j\dom4j\1.6.1\5d3ccc056b6f056dbf0dddfdf43894b9065a8f94\dom4j-1.6.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate\hibernate-commons-annotations\3.2.0.Final\ce990611448fc2865469e3b68d2fe76b050e3c4f\hibernate-commons-annotations-3.2.0.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\1.0.1.Final\3306a165afa81938fc3d8a0948e891de9f6b192b\hibernate-jpa-2.0-api-1.0.1.Final.jar;E:\repos\gradle\caches\modules-2\files-2.1\javax.transaction\jta\1.1\2ca09f0b36ca7d71b762e14ea2ff09d5eac57558\jta-1.1.jar;E:\repos\gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.1.7\7873092d39ef741575ca91378a6a21c388363ac8\logback-core-1.1.7.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;E:\repos\gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.20\867d63093eff0a0cb527bf13d397d850af3dcae3\slf4j-api-1.7.20.jar;/E:/local/eclipse/configuration/org.eclipse.osgi/383/0/.cp/;/E:/local/eclipse/configuration/org.eclipse.osgi/382/0/.cp/, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, java.vm.specification.version=1.8, sun.arch.data.model=64, java.home=C:\Program Files\Java\jdk1.8.0_91\jre, sun.java.command=org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 51158 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test HibernateTest:testGet, hibernate.connection.url=jdbc:mysql://127.0.0.1:3306/test, hibernate.dialect=org.hibernate.dialect.MySQLDialect, java.specification.vendor=Oracle Corporation, user.language=zh, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.8.0_91, java.ext.dirs=C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\classes, java.vendor=Oracle Corporation, file.separator=\, connection.driver_class=com.mysql.jdbc.Driver, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, hibernate.hbm2ddl.auto=update, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeLittle, sun.desktop=windows, connection.url=jdbc:mysql://127.0.0.1:3306/test, sun.cpu.isalist=amd64, dialect=org.hibernate.dialect.MySQLDialect}
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryObjectFactory:61] - initializing class SessionFactoryObjectFactory
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryObjectFactory:99] - registered: 800afa4b-44f9-4ecb-8e92-786fa8e2cb47 (unnamed)
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryImpl:369] - instantiated session factory
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration$MetadataSourceQueue:3995] - Processing hbm.xml files
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration$MetadataSourceQueue:4025] - Process annotated classes
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration:1466] - processing fk mappings (*ToOne and JoinedSubclass)
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration:1708] - processing extends queue
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration:1762] - processing extends queue
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration:1711] - processing collection mappings
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration:1721] - processing native query and ResultSetMapping mappings
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration:1729] - processing association property references
+2016-04-23 23:50:00 [org.hibernate.cfg.Configuration:1751] - processing foreign key constraints
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryImpl:539] - Checking 0 named HQL queries
+2016-04-23 23:50:00 [org.hibernate.impl.SessionFactoryImpl:559] - Checking 0 named SQL queries

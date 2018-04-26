@@ -1,0 +1,1111 @@
+2016-04-24 14:36:29  [ main:3563 ] - [ ERROR ]  Cannot delete or update a parent row: a foreign key constraint fails (`jbpm`.`jbpm4_execution`, CONSTRAINT `FK_EXEC_INSTANCE` FOREIGN KEY (`INSTANCE_`) REFERENCES `jbpm4_execution` (`DBID_`))
+2016-04-24 14:38:30  [ main:31164 ] - [ ERROR ]  Cannot delete or update a parent row: a foreign key constraint fails (`jbpm`.`jbpm4_execution`, CONSTRAINT `FK_EXEC_INSTANCE` FOREIGN KEY (`INSTANCE_`) REFERENCES `jbpm4_execution` (`DBID_`))
+2016-04-24 14:46:17  [ main:2389 ] - [ ERROR ]  Unsuccessful: create table JBPM4_DEPLOYMENT (DBID_ bigint not null, NAME_ longtext, TIMESTAMP_ bigint, STATE_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2390 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2391 ] - [ ERROR ]  Unsuccessful: create table JBPM4_DEPLOYPROP (DBID_ bigint not null, DEPLOYMENT_ bigint, OBJNAME_ varchar(255), KEY_ varchar(255), STRINGVAL_ varchar(255), LONGVAL_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2391 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2392 ] - [ ERROR ]  Unsuccessful: create table JBPM4_EXECUTION (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, ACTIVITYNAME_ varchar(255), PROCDEFID_ varchar(255), HASVARS_ bit, NAME_ varchar(255), KEY_ varchar(255), ID_ varchar(255) unique, STATE_ varchar(255), SUSPHISTSTATE_ varchar(255), PRIORITY_ integer, HISACTINST_ bigint, PARENT_ bigint, INSTANCE_ bigint, SUPEREXEC_ bigint, SUBPROCINST_ bigint, PARENT_IDX_ integer, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2393 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2394 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_ACTINST (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, HPROCI_ bigint, TYPE_ varchar(255), EXECUTION_ varchar(255), ACTIVITY_NAME_ varchar(255), START_ datetime, END_ datetime, DURATION_ bigint, TRANSITION_ varchar(255), NEXTIDX_ integer, HTASK_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2394 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2394 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_DETAIL (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, USERID_ varchar(255), TIME_ datetime, HPROCI_ bigint, HPROCIIDX_ integer, HACTI_ bigint, HACTIIDX_ integer, HTASK_ bigint, HTASKIDX_ integer, HVAR_ bigint, HVARIDX_ integer, MESSAGE_ longtext, OLD_STR_ varchar(255), NEW_STR_ varchar(255), OLD_INT_ integer, NEW_INT_ integer, OLD_TIME_ datetime, NEW_TIME_ datetime, PARENT_ bigint, PARENT_IDX_ integer, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2395 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2395 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_PROCINST (DBID_ bigint not null, DBVERSION_ integer not null, ID_ varchar(255), PROCDEFID_ varchar(255), KEY_ varchar(255), START_ datetime, END_ datetime, DURATION_ bigint, STATE_ varchar(255), ENDACTIVITY_ varchar(255), NEXTIDX_ integer, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2396 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2396 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_TASK (DBID_ bigint not null, DBVERSION_ integer not null, EXECUTION_ varchar(255), OUTCOME_ varchar(255), ASSIGNEE_ varchar(255), PRIORITY_ integer, STATE_ varchar(255), CREATE_ datetime, END_ datetime, DURATION_ bigint, NEXTIDX_ integer, SUPERTASK_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2397 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2397 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_VAR (DBID_ bigint not null, DBVERSION_ integer not null, PROCINSTID_ varchar(255), EXECUTIONID_ varchar(255), VARNAME_ varchar(255), VALUE_ varchar(255), HPROCI_ bigint, HTASK_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2397 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2398 ] - [ ERROR ]  Unsuccessful: create table JBPM4_ID_GROUP (DBID_ bigint not null, DBVERSION_ integer not null, ID_ varchar(255), NAME_ varchar(255), TYPE_ varchar(255), PARENT_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2398 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2399 ] - [ ERROR ]  Unsuccessful: create table JBPM4_ID_MEMBERSHIP (DBID_ bigint not null, DBVERSION_ integer not null, USER_ bigint, GROUP_ bigint, NAME_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2399 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2400 ] - [ ERROR ]  Unsuccessful: create table JBPM4_ID_USER (DBID_ bigint not null, DBVERSION_ integer not null, ID_ varchar(255), PASSWORD_ varchar(255), GIVENNAME_ varchar(255), FAMILYNAME_ varchar(255), BUSINESSEMAIL_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2400 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2401 ] - [ ERROR ]  Unsuccessful: create table JBPM4_JOB (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, DUEDATE_ datetime, STATE_ varchar(255), ISEXCLUSIVE_ bit, LOCKOWNER_ varchar(255), LOCKEXPTIME_ datetime, EXCEPTION_ longtext, RETRIES_ integer, PROCESSINSTANCE_ bigint, EXECUTION_ bigint, CFG_ bigint, SIGNAL_ varchar(255), EVENT_ varchar(255), REPEAT_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2401 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2402 ] - [ ERROR ]  Unsuccessful: create table JBPM4_LOB (DBID_ bigint not null, DBVERSION_ integer not null, BLOB_VALUE_ longblob, DEPLOYMENT_ bigint, NAME_ longtext, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2402 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2402 ] - [ ERROR ]  Unsuccessful: create table JBPM4_PARTICIPATION (DBID_ bigint not null, DBVERSION_ integer not null, GROUPID_ varchar(255), USERID_ varchar(255), TYPE_ varchar(255), TASK_ bigint, SWIMLANE_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2403 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2403 ] - [ ERROR ]  Unsuccessful: create table JBPM4_PROPERTY (KEY_ varchar(255) not null, VERSION_ integer not null, VALUE_ varchar(255), primary key (KEY_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2404 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2405 ] - [ ERROR ]  Unsuccessful: create table JBPM4_SWIMLANE (DBID_ bigint not null, DBVERSION_ integer not null, NAME_ varchar(255), ASSIGNEE_ varchar(255), EXECUTION_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2405 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2406 ] - [ ERROR ]  Unsuccessful: create table JBPM4_TASK (DBID_ bigint not null, CLASS_ char(1) not null, DBVERSION_ integer not null, NAME_ varchar(255), DESCR_ longtext, STATE_ varchar(255), SUSPHISTSTATE_ varchar(255), ASSIGNEE_ varchar(255), FORM_ varchar(255), PRIORITY_ integer, CREATE_ datetime, DUEDATE_ datetime, PROGRESS_ integer, SIGNALLING_ bit, EXECUTION_ID_ varchar(255), ACTIVITY_NAME_ varchar(255), HASVARS_ bit, SUPERTASK_ bigint, EXECUTION_ bigint, PROCINST_ bigint, SWIMLANE_ bigint, TASKDEFNAME_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2406 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2407 ] - [ ERROR ]  Unsuccessful: create table JBPM4_VARIABLE (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, KEY_ varchar(255), CONVERTER_ varchar(255), HIST_ bit, EXECUTION_ bigint, TASK_ bigint, LOB_ bigint, DATE_VALUE_ datetime, DOUBLE_VALUE_ double precision, CLASSNAME_ varchar(255), LONG_VALUE_ bigint, STRING_VALUE_ varchar(255), TEXT_VALUE_ longtext, EXESYS_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 14:46:17  [ main:2407 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 14:46:17  [ main:2408 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_DEPLOYPROP add index FK_DEPLPROP_DEPL (DEPLOYMENT_), add constraint FK_DEPLPROP_DEPL foreign key (DEPLOYMENT_) references JBPM4_DEPLOYMENT (DBID_)
+2016-04-24 14:46:17  [ main:2408 ] - [ ERROR ]  Table 'jbpm.jbpm4_deployprop' doesn't exist
+2016-04-24 14:46:17  [ main:2409 ] - [ ERROR ]  Unsuccessful: create index IDX_DEPLPROP_DEPL on JBPM4_DEPLOYPROP (DEPLOYMENT_)
+2016-04-24 14:46:17  [ main:2409 ] - [ ERROR ]  Table 'jbpm.jbpm4_deployprop' doesn't exist
+2016-04-24 14:46:17  [ main:2410 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_INSTANCE (INSTANCE_), add constraint FK_EXEC_INSTANCE foreign key (INSTANCE_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:46:17  [ main:2410 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2411 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_PARENT (PARENT_), add constraint FK_EXEC_PARENT foreign key (PARENT_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:46:17  [ main:2411 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2412 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_SUBPI (SUBPROCINST_), add constraint FK_EXEC_SUBPI foreign key (SUBPROCINST_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:46:17  [ main:2412 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2413 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_SUPEREXEC (SUPEREXEC_), add constraint FK_EXEC_SUPEREXEC foreign key (SUPEREXEC_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:46:17  [ main:2413 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2414 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_SUPEREXEC on JBPM4_EXECUTION (SUPEREXEC_)
+2016-04-24 14:46:17  [ main:2414 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2415 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_PARENT on JBPM4_EXECUTION (PARENT_)
+2016-04-24 14:46:17  [ main:2415 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2416 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_INSTANCE on JBPM4_EXECUTION (INSTANCE_)
+2016-04-24 14:46:17  [ main:2416 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2416 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_SUBPI on JBPM4_EXECUTION (SUBPROCINST_)
+2016-04-24 14:46:17  [ main:2423 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:46:17  [ main:2425 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_ACTINST add index FK_HACTI_HPROCI (HPROCI_), add constraint FK_HACTI_HPROCI foreign key (HPROCI_) references JBPM4_HIST_PROCINST (DBID_)
+2016-04-24 14:46:17  [ main:2425 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 14:46:17  [ main:2431 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_ACTINST add index FK_HTI_HTASK (HTASK_), add constraint FK_HTI_HTASK foreign key (HTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 14:46:17  [ main:2432 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 14:46:17  [ main:2432 ] - [ ERROR ]  Unsuccessful: create index IDX_HTI_HTASK on JBPM4_HIST_ACTINST (HTASK_)
+2016-04-24 14:46:17  [ main:2433 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 14:46:17  [ main:2433 ] - [ ERROR ]  Unsuccessful: create index IDX_HACTI_HPROCI on JBPM4_HIST_ACTINST (HPROCI_)
+2016-04-24 14:46:17  [ main:2434 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 14:46:17  [ main:2435 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HVAR (HVAR_), add constraint FK_HDETAIL_HVAR foreign key (HVAR_) references JBPM4_HIST_VAR (DBID_)
+2016-04-24 14:46:17  [ main:2441 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2443 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HPROCI (HPROCI_), add constraint FK_HDETAIL_HPROCI foreign key (HPROCI_) references JBPM4_HIST_PROCINST (DBID_)
+2016-04-24 14:46:17  [ main:2443 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2444 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HTASK (HTASK_), add constraint FK_HDETAIL_HTASK foreign key (HTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 14:46:17  [ main:2444 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2446 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HACTI (HACTI_), add constraint FK_HDETAIL_HACTI foreign key (HACTI_) references JBPM4_HIST_ACTINST (DBID_)
+2016-04-24 14:46:17  [ main:2446 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2447 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HACTI on JBPM4_HIST_DETAIL (HACTI_)
+2016-04-24 14:46:17  [ main:2447 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2448 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HPROCI on JBPM4_HIST_DETAIL (HPROCI_)
+2016-04-24 14:46:17  [ main:2448 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2449 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HTASK on JBPM4_HIST_DETAIL (HTASK_)
+2016-04-24 14:46:17  [ main:2449 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2452 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HVAR on JBPM4_HIST_DETAIL (HVAR_)
+2016-04-24 14:46:17  [ main:2453 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 14:46:17  [ main:2453 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_TASK add index FK_HSUPERT_SUB (SUPERTASK_), add constraint FK_HSUPERT_SUB foreign key (SUPERTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 14:46:17  [ main:2454 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_task' doesn't exist
+2016-04-24 14:46:17  [ main:2455 ] - [ ERROR ]  Unsuccessful: create index IDX_HSUPERT_SUB on JBPM4_HIST_TASK (SUPERTASK_)
+2016-04-24 14:46:17  [ main:2456 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_task' doesn't exist
+2016-04-24 14:46:17  [ main:2457 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_VAR add index FK_HVAR_HPROCI (HPROCI_), add constraint FK_HVAR_HPROCI foreign key (HPROCI_) references JBPM4_HIST_PROCINST (DBID_)
+2016-04-24 14:46:17  [ main:2459 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 14:46:17  [ main:2466 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_VAR add index FK_HVAR_HTASK (HTASK_), add constraint FK_HVAR_HTASK foreign key (HTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 14:46:17  [ main:2466 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 14:46:17  [ main:2467 ] - [ ERROR ]  Unsuccessful: create index IDX_HVAR_HPROCI on JBPM4_HIST_VAR (HPROCI_)
+2016-04-24 14:46:17  [ main:2468 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 14:46:17  [ main:2468 ] - [ ERROR ]  Unsuccessful: create index IDX_HVAR_HTASK on JBPM4_HIST_VAR (HTASK_)
+2016-04-24 14:46:17  [ main:2469 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 14:46:17  [ main:2470 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_ID_GROUP add index FK_GROUP_PARENT (PARENT_), add constraint FK_GROUP_PARENT foreign key (PARENT_) references JBPM4_ID_GROUP (DBID_)
+2016-04-24 14:46:17  [ main:2470 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_group' doesn't exist
+2016-04-24 14:46:17  [ main:2471 ] - [ ERROR ]  Unsuccessful: create index IDX_GROUP_PARENT on JBPM4_ID_GROUP (PARENT_)
+2016-04-24 14:46:17  [ main:2471 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_group' doesn't exist
+2016-04-24 14:46:17  [ main:2472 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_ID_MEMBERSHIP add index FK_MEM_USER (USER_), add constraint FK_MEM_USER foreign key (USER_) references JBPM4_ID_USER (DBID_)
+2016-04-24 14:46:17  [ main:2472 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 14:46:17  [ main:2473 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_ID_MEMBERSHIP add index FK_MEM_GROUP (GROUP_), add constraint FK_MEM_GROUP foreign key (GROUP_) references JBPM4_ID_GROUP (DBID_)
+2016-04-24 14:46:17  [ main:2474 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 14:46:17  [ main:2475 ] - [ ERROR ]  Unsuccessful: create index IDX_MEM_USER on JBPM4_ID_MEMBERSHIP (USER_)
+2016-04-24 14:46:17  [ main:2475 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 14:46:17  [ main:2478 ] - [ ERROR ]  Unsuccessful: create index IDX_MEM_GROUP on JBPM4_ID_MEMBERSHIP (GROUP_)
+2016-04-24 14:46:17  [ main:2478 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 14:46:17  [ main:2479 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_JOB add index FK_JOB_CFG (CFG_), add constraint FK_JOB_CFG foreign key (CFG_) references JBPM4_LOB (DBID_)
+2016-04-24 14:46:17  [ main:2480 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:17  [ main:2481 ] - [ ERROR ]  Unsuccessful: create index IDX_JOBDUEDATE on JBPM4_JOB (DUEDATE_)
+2016-04-24 14:46:17  [ main:2481 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:17  [ main:2482 ] - [ ERROR ]  Unsuccessful: create index IDX_JOB_PRINST on JBPM4_JOB (PROCESSINSTANCE_)
+2016-04-24 14:46:17  [ main:2482 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:17  [ main:2483 ] - [ ERROR ]  Unsuccessful: create index IDX_JOB_EXE on JBPM4_JOB (EXECUTION_)
+2016-04-24 14:46:17  [ main:2483 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:17  [ main:2484 ] - [ ERROR ]  Unsuccessful: create index IDX_JOB_CFG on JBPM4_JOB (CFG_)
+2016-04-24 14:46:17  [ main:2484 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:17  [ main:2485 ] - [ ERROR ]  Unsuccessful: create index IDX_JOBLOCKEXP on JBPM4_JOB (LOCKEXPTIME_)
+2016-04-24 14:46:17  [ main:2485 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:17  [ main:2486 ] - [ ERROR ]  Unsuccessful: create index IDX_JOBRETRIES on JBPM4_JOB (RETRIES_)
+2016-04-24 14:46:17  [ main:2486 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:17  [ main:2487 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_LOB add index FK_LOB_DEPLOYMENT (DEPLOYMENT_), add constraint FK_LOB_DEPLOYMENT foreign key (DEPLOYMENT_) references JBPM4_DEPLOYMENT (DBID_)
+2016-04-24 14:46:17  [ main:2487 ] - [ ERROR ]  Table 'jbpm.jbpm4_lob' doesn't exist
+2016-04-24 14:46:17  [ main:2488 ] - [ ERROR ]  Unsuccessful: create index IDX_LOB_DEPLOYMENT on JBPM4_LOB (DEPLOYMENT_)
+2016-04-24 14:46:17  [ main:2488 ] - [ ERROR ]  Table 'jbpm.jbpm4_lob' doesn't exist
+2016-04-24 14:46:17  [ main:2488 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_PARTICIPATION add index FK_PART_TASK (TASK_), add constraint FK_PART_TASK foreign key (TASK_) references JBPM4_TASK (DBID_)
+2016-04-24 14:46:17  [ main:2489 ] - [ ERROR ]  Table 'jbpm.jbpm4_participation' doesn't exist
+2016-04-24 14:46:17  [ main:2489 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_PARTICIPATION add index FK_PART_SWIMLANE (SWIMLANE_), add constraint FK_PART_SWIMLANE foreign key (SWIMLANE_) references JBPM4_SWIMLANE (DBID_)
+2016-04-24 14:46:17  [ main:2489 ] - [ ERROR ]  Table 'jbpm.jbpm4_participation' doesn't exist
+2016-04-24 14:46:17  [ main:2490 ] - [ ERROR ]  Unsuccessful: create index IDX_PART_TASK on JBPM4_PARTICIPATION (TASK_)
+2016-04-24 14:46:17  [ main:2490 ] - [ ERROR ]  Table 'jbpm.jbpm4_participation' doesn't exist
+2016-04-24 14:46:17  [ main:2491 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_SWIMLANE add index FK_SWIMLANE_EXEC (EXECUTION_), add constraint FK_SWIMLANE_EXEC foreign key (EXECUTION_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:46:17  [ main:2491 ] - [ ERROR ]  Table 'jbpm.jbpm4_swimlane' doesn't exist
+2016-04-24 14:46:17  [ main:2492 ] - [ ERROR ]  Unsuccessful: create index IDX_SWIMLANE_EXEC on JBPM4_SWIMLANE (EXECUTION_)
+2016-04-24 14:46:17  [ main:2492 ] - [ ERROR ]  Table 'jbpm.jbpm4_swimlane' doesn't exist
+2016-04-24 14:46:17  [ main:2493 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_TASK add index FK_TASK_SUPERTASK (SUPERTASK_), add constraint FK_TASK_SUPERTASK foreign key (SUPERTASK_) references JBPM4_TASK (DBID_)
+2016-04-24 14:46:17  [ main:2493 ] - [ ERROR ]  Table 'jbpm.jbpm4_task' doesn't exist
+2016-04-24 14:46:17  [ main:2494 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_TASK add index FK_TASK_SWIML (SWIMLANE_), add constraint FK_TASK_SWIML foreign key (SWIMLANE_) references JBPM4_SWIMLANE (DBID_)
+2016-04-24 14:46:17  [ main:2494 ] - [ ERROR ]  Table 'jbpm.jbpm4_task' doesn't exist
+2016-04-24 14:46:17  [ main:2495 ] - [ ERROR ]  Unsuccessful: create index IDX_TASK_SUPERTASK on JBPM4_TASK (SUPERTASK_)
+2016-04-24 14:46:17  [ main:2495 ] - [ ERROR ]  Table 'jbpm.jbpm4_task' doesn't exist
+2016-04-24 14:46:17  [ main:2495 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_LOB (LOB_), add constraint FK_VAR_LOB foreign key (LOB_) references JBPM4_LOB (DBID_)
+2016-04-24 14:46:17  [ main:2496 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:17  [ main:2496 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_EXESYS (EXESYS_), add constraint FK_VAR_EXESYS foreign key (EXESYS_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:46:17  [ main:2496 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:17  [ main:2497 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_TASK (TASK_), add constraint FK_VAR_TASK foreign key (TASK_) references JBPM4_TASK (DBID_)
+2016-04-24 14:46:17  [ main:2497 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:17  [ main:2498 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_EXECUTION (EXECUTION_), add constraint FK_VAR_EXECUTION foreign key (EXECUTION_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:46:17  [ main:2498 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:17  [ main:2498 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_EXECUTION on JBPM4_VARIABLE (EXECUTION_)
+2016-04-24 14:46:17  [ main:2498 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:17  [ main:2499 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_LOB on JBPM4_VARIABLE (LOB_)
+2016-04-24 14:46:17  [ main:2499 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:17  [ main:2500 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_EXESYS on JBPM4_VARIABLE (EXESYS_)
+2016-04-24 14:46:17  [ main:2500 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:17  [ main:2501 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_TASK on JBPM4_VARIABLE (TASK_)
+2016-04-24 14:46:17  [ main:2501 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 14:46:18  [ DispatcherThread:2859 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 14:46:18  [ main:2887 ] - [ ERROR ]  Table 'jbpm.jbpm4_property' doesn't exist
+2016-04-24 14:46:18  [ DispatcherThread:2891 ] - [ ERROR ]  exception in job executor thread. waiting 5000 milliseconds
+org.hibernate.exception.SQLGrammarException: could not execute query
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:92)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.loader.Loader.doList(Loader.java:2545)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2276)
+	at org.hibernate.loader.Loader.list(Loader.java:2271)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:459)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:365)
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1268)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:890)
+	at org.jbpm.pvm.internal.hibernate.DbSessionImpl.findFirstAcquirableJob(DbSessionImpl.java:317)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:62)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:40)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.acquireJobs(DispatcherThread.java:126)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.run(DispatcherThread.java:67)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'jbpm.jbpm4_job' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2447)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2594)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1901)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2002)
+	at org.hibernate.jdbc.AbstractBatcher.getResultSet(AbstractBatcher.java:208)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:1953)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:802)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:274)
+	at org.hibernate.loader.Loader.doList(Loader.java:2542)
+	... 19 more
+2016-04-24 14:46:18  [ main:2893 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 14:51:46  [ main:4461 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_PARTICIPATION add index FK_PART_TASK (TASK_), add constraint FK_PART_TASK foreign key (TASK_) references JBPM4_TASK (DBID_)
+2016-04-24 14:51:46  [ main:4647 ] - [ ERROR ]  Duplicate key name 'FK_PART_TASK'
+2016-04-24 14:51:47  [ main:5539 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_PARTICIPATION add index FK_PART_SWIMLANE (SWIMLANE_), add constraint FK_PART_SWIMLANE foreign key (SWIMLANE_) references JBPM4_SWIMLANE (DBID_)
+2016-04-24 14:51:47  [ main:5540 ] - [ ERROR ]  Duplicate key name 'FK_PART_SWIMLANE'
+2016-04-24 14:51:47  [ main:5729 ] - [ ERROR ]  Unsuccessful: create index IDX_PART_TASK on JBPM4_PARTICIPATION (TASK_)
+2016-04-24 14:51:47  [ main:5729 ] - [ ERROR ]  Duplicate key name 'IDX_PART_TASK'
+2016-04-24 14:51:48  [ main:6376 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_SWIMLANE add index FK_SWIMLANE_EXEC (EXECUTION_), add constraint FK_SWIMLANE_EXEC foreign key (EXECUTION_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:51:48  [ main:6377 ] - [ ERROR ]  Duplicate key name 'FK_SWIMLANE_EXEC'
+2016-04-24 14:51:48  [ main:6712 ] - [ ERROR ]  Unsuccessful: create index IDX_SWIMLANE_EXEC on JBPM4_SWIMLANE (EXECUTION_)
+2016-04-24 14:51:48  [ main:6713 ] - [ ERROR ]  Duplicate key name 'IDX_SWIMLANE_EXEC'
+2016-04-24 14:51:49  [ main:7770 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_TASK add index FK_TASK_SUPERTASK (SUPERTASK_), add constraint FK_TASK_SUPERTASK foreign key (SUPERTASK_) references JBPM4_TASK (DBID_)
+2016-04-24 14:51:49  [ main:7771 ] - [ ERROR ]  Duplicate key name 'FK_TASK_SUPERTASK'
+2016-04-24 14:51:50  [ main:8516 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_TASK add index FK_TASK_SWIML (SWIMLANE_), add constraint FK_TASK_SWIML foreign key (SWIMLANE_) references JBPM4_SWIMLANE (DBID_)
+2016-04-24 14:51:50  [ main:8516 ] - [ ERROR ]  Duplicate key name 'FK_TASK_SWIML'
+2016-04-24 14:51:50  [ main:8765 ] - [ ERROR ]  Unsuccessful: create index IDX_TASK_SUPERTASK on JBPM4_TASK (SUPERTASK_)
+2016-04-24 14:51:50  [ main:8765 ] - [ ERROR ]  Duplicate key name 'IDX_TASK_SUPERTASK'
+2016-04-24 14:51:51  [ main:9611 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_LOB (LOB_), add constraint FK_VAR_LOB foreign key (LOB_) references JBPM4_LOB (DBID_)
+2016-04-24 14:51:51  [ main:9612 ] - [ ERROR ]  Duplicate key name 'FK_VAR_LOB'
+2016-04-24 14:51:51  [ main:10210 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_EXESYS (EXESYS_), add constraint FK_VAR_EXESYS foreign key (EXESYS_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:51:51  [ main:10210 ] - [ ERROR ]  Duplicate key name 'FK_VAR_EXESYS'
+2016-04-24 14:51:52  [ main:10756 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_TASK (TASK_), add constraint FK_VAR_TASK foreign key (TASK_) references JBPM4_TASK (DBID_)
+2016-04-24 14:51:52  [ main:10757 ] - [ ERROR ]  Duplicate key name 'FK_VAR_TASK'
+2016-04-24 14:51:53  [ main:11942 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_EXECUTION (EXECUTION_), add constraint FK_VAR_EXECUTION foreign key (EXECUTION_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 14:51:53  [ main:11942 ] - [ ERROR ]  Duplicate key name 'FK_VAR_EXECUTION'
+2016-04-24 14:51:53  [ main:12174 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_EXECUTION on JBPM4_VARIABLE (EXECUTION_)
+2016-04-24 14:51:53  [ main:12175 ] - [ ERROR ]  Duplicate key name 'IDX_VAR_EXECUTION'
+2016-04-24 14:51:54  [ main:12615 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_LOB on JBPM4_VARIABLE (LOB_)
+2016-04-24 14:51:54  [ main:12616 ] - [ ERROR ]  Duplicate key name 'IDX_VAR_LOB'
+2016-04-24 14:51:54  [ main:12774 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_EXESYS on JBPM4_VARIABLE (EXESYS_)
+2016-04-24 14:51:54  [ main:12775 ] - [ ERROR ]  Duplicate key name 'IDX_VAR_EXESYS'
+2016-04-24 14:51:54  [ main:12995 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_TASK on JBPM4_VARIABLE (TASK_)
+2016-04-24 14:51:54  [ main:12995 ] - [ ERROR ]  Duplicate key name 'IDX_VAR_TASK'
+2016-04-24 14:54:37  [ main:3585 ] - [ ERROR ]  Cannot delete or update a parent row: a foreign key constraint fails (`jbpm`.`jbpm4_execution`, CONSTRAINT `FK_EXEC_INSTANCE` FOREIGN KEY (`INSTANCE_`) REFERENCES `jbpm4_execution` (`DBID_`))
+2016-04-24 17:07:50  [ main:2422 ] - [ ERROR ]  Unsuccessful: create table JBPM4_DEPLOYMENT (DBID_ bigint not null, NAME_ longtext, TIMESTAMP_ bigint, STATE_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2458 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2459 ] - [ ERROR ]  Unsuccessful: create table JBPM4_DEPLOYPROP (DBID_ bigint not null, DEPLOYMENT_ bigint, OBJNAME_ varchar(255), KEY_ varchar(255), STRINGVAL_ varchar(255), LONGVAL_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2459 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2460 ] - [ ERROR ]  Unsuccessful: create table JBPM4_EXECUTION (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, ACTIVITYNAME_ varchar(255), PROCDEFID_ varchar(255), HASVARS_ bit, NAME_ varchar(255), KEY_ varchar(255), ID_ varchar(255) unique, STATE_ varchar(255), SUSPHISTSTATE_ varchar(255), PRIORITY_ integer, HISACTINST_ bigint, PARENT_ bigint, INSTANCE_ bigint, SUPEREXEC_ bigint, SUBPROCINST_ bigint, PARENT_IDX_ integer, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2461 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2461 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_ACTINST (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, HPROCI_ bigint, TYPE_ varchar(255), EXECUTION_ varchar(255), ACTIVITY_NAME_ varchar(255), START_ datetime, END_ datetime, DURATION_ bigint, TRANSITION_ varchar(255), NEXTIDX_ integer, HTASK_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2462 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2462 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_DETAIL (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, USERID_ varchar(255), TIME_ datetime, HPROCI_ bigint, HPROCIIDX_ integer, HACTI_ bigint, HACTIIDX_ integer, HTASK_ bigint, HTASKIDX_ integer, HVAR_ bigint, HVARIDX_ integer, MESSAGE_ longtext, OLD_STR_ varchar(255), NEW_STR_ varchar(255), OLD_INT_ integer, NEW_INT_ integer, OLD_TIME_ datetime, NEW_TIME_ datetime, PARENT_ bigint, PARENT_IDX_ integer, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2463 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2463 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_PROCINST (DBID_ bigint not null, DBVERSION_ integer not null, ID_ varchar(255), PROCDEFID_ varchar(255), KEY_ varchar(255), START_ datetime, END_ datetime, DURATION_ bigint, STATE_ varchar(255), ENDACTIVITY_ varchar(255), NEXTIDX_ integer, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2464 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2465 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_TASK (DBID_ bigint not null, DBVERSION_ integer not null, EXECUTION_ varchar(255), OUTCOME_ varchar(255), ASSIGNEE_ varchar(255), PRIORITY_ integer, STATE_ varchar(255), CREATE_ datetime, END_ datetime, DURATION_ bigint, NEXTIDX_ integer, SUPERTASK_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2465 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2466 ] - [ ERROR ]  Unsuccessful: create table JBPM4_HIST_VAR (DBID_ bigint not null, DBVERSION_ integer not null, PROCINSTID_ varchar(255), EXECUTIONID_ varchar(255), VARNAME_ varchar(255), VALUE_ varchar(255), HPROCI_ bigint, HTASK_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2466 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2467 ] - [ ERROR ]  Unsuccessful: create table JBPM4_ID_GROUP (DBID_ bigint not null, DBVERSION_ integer not null, ID_ varchar(255), NAME_ varchar(255), TYPE_ varchar(255), PARENT_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2467 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2468 ] - [ ERROR ]  Unsuccessful: create table JBPM4_ID_MEMBERSHIP (DBID_ bigint not null, DBVERSION_ integer not null, USER_ bigint, GROUP_ bigint, NAME_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2468 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2469 ] - [ ERROR ]  Unsuccessful: create table JBPM4_ID_USER (DBID_ bigint not null, DBVERSION_ integer not null, ID_ varchar(255), PASSWORD_ varchar(255), GIVENNAME_ varchar(255), FAMILYNAME_ varchar(255), BUSINESSEMAIL_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2469 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2470 ] - [ ERROR ]  Unsuccessful: create table JBPM4_JOB (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, DUEDATE_ datetime, STATE_ varchar(255), ISEXCLUSIVE_ bit, LOCKOWNER_ varchar(255), LOCKEXPTIME_ datetime, EXCEPTION_ longtext, RETRIES_ integer, PROCESSINSTANCE_ bigint, EXECUTION_ bigint, CFG_ bigint, SIGNAL_ varchar(255), EVENT_ varchar(255), REPEAT_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2471 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2471 ] - [ ERROR ]  Unsuccessful: create table JBPM4_LOB (DBID_ bigint not null, DBVERSION_ integer not null, BLOB_VALUE_ longblob, DEPLOYMENT_ bigint, NAME_ longtext, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2472 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2473 ] - [ ERROR ]  Unsuccessful: create table JBPM4_PARTICIPATION (DBID_ bigint not null, DBVERSION_ integer not null, GROUPID_ varchar(255), USERID_ varchar(255), TYPE_ varchar(255), TASK_ bigint, SWIMLANE_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2473 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2474 ] - [ ERROR ]  Unsuccessful: create table JBPM4_PROPERTY (KEY_ varchar(255) not null, VERSION_ integer not null, VALUE_ varchar(255), primary key (KEY_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2474 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2475 ] - [ ERROR ]  Unsuccessful: create table JBPM4_SWIMLANE (DBID_ bigint not null, DBVERSION_ integer not null, NAME_ varchar(255), ASSIGNEE_ varchar(255), EXECUTION_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2475 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2476 ] - [ ERROR ]  Unsuccessful: create table JBPM4_TASK (DBID_ bigint not null, CLASS_ char(1) not null, DBVERSION_ integer not null, NAME_ varchar(255), DESCR_ longtext, STATE_ varchar(255), SUSPHISTSTATE_ varchar(255), ASSIGNEE_ varchar(255), FORM_ varchar(255), PRIORITY_ integer, CREATE_ datetime, DUEDATE_ datetime, PROGRESS_ integer, SIGNALLING_ bit, EXECUTION_ID_ varchar(255), ACTIVITY_NAME_ varchar(255), HASVARS_ bit, SUPERTASK_ bigint, EXECUTION_ bigint, PROCINST_ bigint, SWIMLANE_ bigint, TASKDEFNAME_ varchar(255), primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2476 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2477 ] - [ ERROR ]  Unsuccessful: create table JBPM4_VARIABLE (DBID_ bigint not null, CLASS_ varchar(255) not null, DBVERSION_ integer not null, KEY_ varchar(255), CONVERTER_ varchar(255), HIST_ bit, EXECUTION_ bigint, TASK_ bigint, LOB_ bigint, DATE_VALUE_ datetime, DOUBLE_VALUE_ double precision, CLASSNAME_ varchar(255), LONG_VALUE_ bigint, STRING_VALUE_ varchar(255), TEXT_VALUE_ longtext, EXESYS_ bigint, primary key (DBID_)) type=InnoDB
+2016-04-24 17:07:50  [ main:2477 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'type=InnoDB' at line 1
+2016-04-24 17:07:50  [ main:2503 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_DEPLOYPROP add index FK_DEPLPROP_DEPL (DEPLOYMENT_), add constraint FK_DEPLPROP_DEPL foreign key (DEPLOYMENT_) references JBPM4_DEPLOYMENT (DBID_)
+2016-04-24 17:07:50  [ main:2504 ] - [ ERROR ]  Table 'jbpm.jbpm4_deployprop' doesn't exist
+2016-04-24 17:07:50  [ main:2505 ] - [ ERROR ]  Unsuccessful: create index IDX_DEPLPROP_DEPL on JBPM4_DEPLOYPROP (DEPLOYMENT_)
+2016-04-24 17:07:50  [ main:2505 ] - [ ERROR ]  Table 'jbpm.jbpm4_deployprop' doesn't exist
+2016-04-24 17:07:50  [ main:2506 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_INSTANCE (INSTANCE_), add constraint FK_EXEC_INSTANCE foreign key (INSTANCE_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 17:07:50  [ main:2506 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2506 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_PARENT (PARENT_), add constraint FK_EXEC_PARENT foreign key (PARENT_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 17:07:50  [ main:2507 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2508 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_SUBPI (SUBPROCINST_), add constraint FK_EXEC_SUBPI foreign key (SUBPROCINST_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 17:07:50  [ main:2508 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2519 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_EXECUTION add index FK_EXEC_SUPEREXEC (SUPEREXEC_), add constraint FK_EXEC_SUPEREXEC foreign key (SUPEREXEC_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 17:07:50  [ main:2519 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2520 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_SUPEREXEC on JBPM4_EXECUTION (SUPEREXEC_)
+2016-04-24 17:07:50  [ main:2520 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2521 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_PARENT on JBPM4_EXECUTION (PARENT_)
+2016-04-24 17:07:50  [ main:2522 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2522 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_INSTANCE on JBPM4_EXECUTION (INSTANCE_)
+2016-04-24 17:07:50  [ main:2523 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2524 ] - [ ERROR ]  Unsuccessful: create index IDX_EXEC_SUBPI on JBPM4_EXECUTION (SUBPROCINST_)
+2016-04-24 17:07:50  [ main:2524 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:50  [ main:2525 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_ACTINST add index FK_HACTI_HPROCI (HPROCI_), add constraint FK_HACTI_HPROCI foreign key (HPROCI_) references JBPM4_HIST_PROCINST (DBID_)
+2016-04-24 17:07:50  [ main:2525 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 17:07:50  [ main:2526 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_ACTINST add index FK_HTI_HTASK (HTASK_), add constraint FK_HTI_HTASK foreign key (HTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 17:07:50  [ main:2527 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 17:07:50  [ main:2528 ] - [ ERROR ]  Unsuccessful: create index IDX_HTI_HTASK on JBPM4_HIST_ACTINST (HTASK_)
+2016-04-24 17:07:50  [ main:2528 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 17:07:50  [ main:2529 ] - [ ERROR ]  Unsuccessful: create index IDX_HACTI_HPROCI on JBPM4_HIST_ACTINST (HPROCI_)
+2016-04-24 17:07:50  [ main:2529 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_actinst' doesn't exist
+2016-04-24 17:07:50  [ main:2537 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HVAR (HVAR_), add constraint FK_HDETAIL_HVAR foreign key (HVAR_) references JBPM4_HIST_VAR (DBID_)
+2016-04-24 17:07:50  [ main:2537 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2538 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HPROCI (HPROCI_), add constraint FK_HDETAIL_HPROCI foreign key (HPROCI_) references JBPM4_HIST_PROCINST (DBID_)
+2016-04-24 17:07:50  [ main:2538 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2539 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HTASK (HTASK_), add constraint FK_HDETAIL_HTASK foreign key (HTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 17:07:50  [ main:2539 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2539 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_DETAIL add index FK_HDETAIL_HACTI (HACTI_), add constraint FK_HDETAIL_HACTI foreign key (HACTI_) references JBPM4_HIST_ACTINST (DBID_)
+2016-04-24 17:07:50  [ main:2540 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2540 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HACTI on JBPM4_HIST_DETAIL (HACTI_)
+2016-04-24 17:07:50  [ main:2540 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2541 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HPROCI on JBPM4_HIST_DETAIL (HPROCI_)
+2016-04-24 17:07:50  [ main:2541 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2542 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HTASK on JBPM4_HIST_DETAIL (HTASK_)
+2016-04-24 17:07:50  [ main:2542 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2543 ] - [ ERROR ]  Unsuccessful: create index IDX_HDET_HVAR on JBPM4_HIST_DETAIL (HVAR_)
+2016-04-24 17:07:50  [ main:2544 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_detail' doesn't exist
+2016-04-24 17:07:50  [ main:2545 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_TASK add index FK_HSUPERT_SUB (SUPERTASK_), add constraint FK_HSUPERT_SUB foreign key (SUPERTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 17:07:50  [ main:2545 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_task' doesn't exist
+2016-04-24 17:07:50  [ main:2546 ] - [ ERROR ]  Unsuccessful: create index IDX_HSUPERT_SUB on JBPM4_HIST_TASK (SUPERTASK_)
+2016-04-24 17:07:50  [ main:2546 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_task' doesn't exist
+2016-04-24 17:07:50  [ main:2547 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_VAR add index FK_HVAR_HPROCI (HPROCI_), add constraint FK_HVAR_HPROCI foreign key (HPROCI_) references JBPM4_HIST_PROCINST (DBID_)
+2016-04-24 17:07:50  [ main:2548 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 17:07:50  [ main:2549 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_HIST_VAR add index FK_HVAR_HTASK (HTASK_), add constraint FK_HVAR_HTASK foreign key (HTASK_) references JBPM4_HIST_TASK (DBID_)
+2016-04-24 17:07:50  [ main:2549 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 17:07:50  [ main:2550 ] - [ ERROR ]  Unsuccessful: create index IDX_HVAR_HPROCI on JBPM4_HIST_VAR (HPROCI_)
+2016-04-24 17:07:50  [ main:2551 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 17:07:50  [ main:2552 ] - [ ERROR ]  Unsuccessful: create index IDX_HVAR_HTASK on JBPM4_HIST_VAR (HTASK_)
+2016-04-24 17:07:50  [ main:2552 ] - [ ERROR ]  Table 'jbpm.jbpm4_hist_var' doesn't exist
+2016-04-24 17:07:50  [ main:2554 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_ID_GROUP add index FK_GROUP_PARENT (PARENT_), add constraint FK_GROUP_PARENT foreign key (PARENT_) references JBPM4_ID_GROUP (DBID_)
+2016-04-24 17:07:50  [ main:2554 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_group' doesn't exist
+2016-04-24 17:07:50  [ main:2555 ] - [ ERROR ]  Unsuccessful: create index IDX_GROUP_PARENT on JBPM4_ID_GROUP (PARENT_)
+2016-04-24 17:07:50  [ main:2555 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_group' doesn't exist
+2016-04-24 17:07:50  [ main:2556 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_ID_MEMBERSHIP add index FK_MEM_USER (USER_), add constraint FK_MEM_USER foreign key (USER_) references JBPM4_ID_USER (DBID_)
+2016-04-24 17:07:50  [ main:2557 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 17:07:50  [ main:2558 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_ID_MEMBERSHIP add index FK_MEM_GROUP (GROUP_), add constraint FK_MEM_GROUP foreign key (GROUP_) references JBPM4_ID_GROUP (DBID_)
+2016-04-24 17:07:50  [ main:2558 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 17:07:50  [ main:2559 ] - [ ERROR ]  Unsuccessful: create index IDX_MEM_USER on JBPM4_ID_MEMBERSHIP (USER_)
+2016-04-24 17:07:50  [ main:2560 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 17:07:50  [ main:2563 ] - [ ERROR ]  Unsuccessful: create index IDX_MEM_GROUP on JBPM4_ID_MEMBERSHIP (GROUP_)
+2016-04-24 17:07:50  [ main:2564 ] - [ ERROR ]  Table 'jbpm.jbpm4_id_membership' doesn't exist
+2016-04-24 17:07:50  [ main:2565 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_JOB add index FK_JOB_CFG (CFG_), add constraint FK_JOB_CFG foreign key (CFG_) references JBPM4_LOB (DBID_)
+2016-04-24 17:07:50  [ main:2566 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:50  [ main:2567 ] - [ ERROR ]  Unsuccessful: create index IDX_JOBDUEDATE on JBPM4_JOB (DUEDATE_)
+2016-04-24 17:07:50  [ main:2567 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:50  [ main:2568 ] - [ ERROR ]  Unsuccessful: create index IDX_JOB_PRINST on JBPM4_JOB (PROCESSINSTANCE_)
+2016-04-24 17:07:50  [ main:2568 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:50  [ main:2569 ] - [ ERROR ]  Unsuccessful: create index IDX_JOB_EXE on JBPM4_JOB (EXECUTION_)
+2016-04-24 17:07:50  [ main:2569 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:50  [ main:2570 ] - [ ERROR ]  Unsuccessful: create index IDX_JOB_CFG on JBPM4_JOB (CFG_)
+2016-04-24 17:07:50  [ main:2570 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:50  [ main:2571 ] - [ ERROR ]  Unsuccessful: create index IDX_JOBLOCKEXP on JBPM4_JOB (LOCKEXPTIME_)
+2016-04-24 17:07:50  [ main:2571 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:50  [ main:2572 ] - [ ERROR ]  Unsuccessful: create index IDX_JOBRETRIES on JBPM4_JOB (RETRIES_)
+2016-04-24 17:07:50  [ main:2572 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:50  [ main:2572 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_LOB add index FK_LOB_DEPLOYMENT (DEPLOYMENT_), add constraint FK_LOB_DEPLOYMENT foreign key (DEPLOYMENT_) references JBPM4_DEPLOYMENT (DBID_)
+2016-04-24 17:07:50  [ main:2573 ] - [ ERROR ]  Table 'jbpm.jbpm4_lob' doesn't exist
+2016-04-24 17:07:50  [ main:2573 ] - [ ERROR ]  Unsuccessful: create index IDX_LOB_DEPLOYMENT on JBPM4_LOB (DEPLOYMENT_)
+2016-04-24 17:07:50  [ main:2573 ] - [ ERROR ]  Table 'jbpm.jbpm4_lob' doesn't exist
+2016-04-24 17:07:50  [ main:2574 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_PARTICIPATION add index FK_PART_TASK (TASK_), add constraint FK_PART_TASK foreign key (TASK_) references JBPM4_TASK (DBID_)
+2016-04-24 17:07:50  [ main:2574 ] - [ ERROR ]  Table 'jbpm.jbpm4_participation' doesn't exist
+2016-04-24 17:07:50  [ main:2574 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_PARTICIPATION add index FK_PART_SWIMLANE (SWIMLANE_), add constraint FK_PART_SWIMLANE foreign key (SWIMLANE_) references JBPM4_SWIMLANE (DBID_)
+2016-04-24 17:07:50  [ main:2575 ] - [ ERROR ]  Table 'jbpm.jbpm4_participation' doesn't exist
+2016-04-24 17:07:50  [ main:2576 ] - [ ERROR ]  Unsuccessful: create index IDX_PART_TASK on JBPM4_PARTICIPATION (TASK_)
+2016-04-24 17:07:50  [ main:2576 ] - [ ERROR ]  Table 'jbpm.jbpm4_participation' doesn't exist
+2016-04-24 17:07:50  [ main:2576 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_SWIMLANE add index FK_SWIMLANE_EXEC (EXECUTION_), add constraint FK_SWIMLANE_EXEC foreign key (EXECUTION_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 17:07:50  [ main:2577 ] - [ ERROR ]  Table 'jbpm.jbpm4_swimlane' doesn't exist
+2016-04-24 17:07:50  [ main:2577 ] - [ ERROR ]  Unsuccessful: create index IDX_SWIMLANE_EXEC on JBPM4_SWIMLANE (EXECUTION_)
+2016-04-24 17:07:50  [ main:2577 ] - [ ERROR ]  Table 'jbpm.jbpm4_swimlane' doesn't exist
+2016-04-24 17:07:50  [ main:2578 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_TASK add index FK_TASK_SUPERTASK (SUPERTASK_), add constraint FK_TASK_SUPERTASK foreign key (SUPERTASK_) references JBPM4_TASK (DBID_)
+2016-04-24 17:07:50  [ main:2578 ] - [ ERROR ]  Table 'jbpm.jbpm4_task' doesn't exist
+2016-04-24 17:07:50  [ main:2579 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_TASK add index FK_TASK_SWIML (SWIMLANE_), add constraint FK_TASK_SWIML foreign key (SWIMLANE_) references JBPM4_SWIMLANE (DBID_)
+2016-04-24 17:07:50  [ main:2579 ] - [ ERROR ]  Table 'jbpm.jbpm4_task' doesn't exist
+2016-04-24 17:07:50  [ main:2580 ] - [ ERROR ]  Unsuccessful: create index IDX_TASK_SUPERTASK on JBPM4_TASK (SUPERTASK_)
+2016-04-24 17:07:50  [ main:2580 ] - [ ERROR ]  Table 'jbpm.jbpm4_task' doesn't exist
+2016-04-24 17:07:50  [ main:2581 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_LOB (LOB_), add constraint FK_VAR_LOB foreign key (LOB_) references JBPM4_LOB (DBID_)
+2016-04-24 17:07:50  [ main:2581 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:50  [ main:2582 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_EXESYS (EXESYS_), add constraint FK_VAR_EXESYS foreign key (EXESYS_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 17:07:50  [ main:2582 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:50  [ main:2582 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_TASK (TASK_), add constraint FK_VAR_TASK foreign key (TASK_) references JBPM4_TASK (DBID_)
+2016-04-24 17:07:50  [ main:2583 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:50  [ main:2583 ] - [ ERROR ]  Unsuccessful: alter table JBPM4_VARIABLE add index FK_VAR_EXECUTION (EXECUTION_), add constraint FK_VAR_EXECUTION foreign key (EXECUTION_) references JBPM4_EXECUTION (DBID_)
+2016-04-24 17:07:50  [ main:2583 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:50  [ main:2584 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_EXECUTION on JBPM4_VARIABLE (EXECUTION_)
+2016-04-24 17:07:50  [ main:2584 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:50  [ main:2585 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_LOB on JBPM4_VARIABLE (LOB_)
+2016-04-24 17:07:50  [ main:2585 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:50  [ main:2585 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_EXESYS on JBPM4_VARIABLE (EXESYS_)
+2016-04-24 17:07:50  [ main:2586 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:50  [ main:2586 ] - [ ERROR ]  Unsuccessful: create index IDX_VAR_TASK on JBPM4_VARIABLE (TASK_)
+2016-04-24 17:07:50  [ main:2587 ] - [ ERROR ]  Table 'jbpm.jbpm4_variable' doesn't exist
+2016-04-24 17:07:51  [ main:2974 ] - [ ERROR ]  Table 'jbpm.jbpm4_property' doesn't exist
+2016-04-24 17:07:51  [ DispatcherThread:2976 ] - [ ERROR ]  Table 'jbpm.jbpm4_job' doesn't exist
+2016-04-24 17:07:51  [ main:2980 ] - [ ERROR ]  Table 'jbpm.jbpm4_execution' doesn't exist
+2016-04-24 17:07:51  [ DispatcherThread:2982 ] - [ ERROR ]  exception in job executor thread. waiting 5000 milliseconds
+org.hibernate.exception.SQLGrammarException: could not execute query
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:92)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.loader.Loader.doList(Loader.java:2545)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2276)
+	at org.hibernate.loader.Loader.list(Loader.java:2271)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:459)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:365)
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1268)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:890)
+	at org.jbpm.pvm.internal.hibernate.DbSessionImpl.findFirstAcquirableJob(DbSessionImpl.java:317)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:62)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:40)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.acquireJobs(DispatcherThread.java:126)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.run(DispatcherThread.java:67)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'jbpm.jbpm4_job' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2447)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2594)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1901)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2002)
+	at org.hibernate.jdbc.AbstractBatcher.getResultSet(AbstractBatcher.java:208)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:1953)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:802)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:274)
+	at org.hibernate.loader.Loader.doList(Loader.java:2542)
+	... 19 more
+2016-04-24 17:52:37  [ main:2314 ] - [ ERROR ]  could not get database metadata
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:375)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1872)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionFactoryDescriptor.construct(HibernateSessionFactoryDescriptor.java:62)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:154)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:711)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:63)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:207)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:196)
+	at org.jbpm.pvm.internal.cmd.CheckDbCmd.execute(CheckDbCmd.java:44)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.checkDb(ProcessEngineImpl.java:152)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.<init>(ProcessEngineImpl.java:105)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.instantiateProcessEngine(ConfigurationImpl.java:100)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.buildProcessEngine(ConfigurationImpl.java:92)
+	at com.asynclife.jbpm.JBPM_FORK_JOIN_Test.test01_DeployProcessDefinition(JBPM_FORK_JOIN_Test.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+2016-04-24 17:52:38  [ main:2352 ] - [ ERROR ]  could not complete schema update
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:375)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1872)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionFactoryDescriptor.construct(HibernateSessionFactoryDescriptor.java:62)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:154)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:711)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:63)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:207)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:196)
+	at org.jbpm.pvm.internal.cmd.CheckDbCmd.execute(CheckDbCmd.java:44)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.checkDb(ProcessEngineImpl.java:152)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.<init>(ProcessEngineImpl.java:105)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.instantiateProcessEngine(ConfigurationImpl.java:100)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.buildProcessEngine(ConfigurationImpl.java:92)
+	at com.asynclife.jbpm.JBPM_FORK_JOIN_Test.test01_DeployProcessDefinition(JBPM_FORK_JOIN_Test.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+2016-04-24 17:52:38  [ DispatcherThread:2683 ] - [ ERROR ]  Unknown database 'jbpm'
+2016-04-24 17:52:38  [ DispatcherThread:2683 ] - [ ERROR ]  hibernate transaction begin failed.  closing hibernate session
+org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:92)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)
+	at org.hibernate.jdbc.JDBCContext.connection(JDBCContext.java:160)
+	at org.hibernate.transaction.JDBCTransaction.begin(JDBCTransaction.java:81)
+	at org.hibernate.impl.SessionImpl.beginTransaction(SessionImpl.java:1473)
+	at org.jbpm.pvm.internal.tx.HibernateSessionResource.<init>(HibernateSessionResource.java:44)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:87)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.wire.descriptor.DbSessionDescriptor.initialize(DbSessionDescriptor.java:49)
+	at org.jbpm.pvm.internal.wire.WireContext.performInitialization(WireContext.java:551)
+	at org.jbpm.pvm.internal.wire.WireContext.initialize(WireContext.java:513)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:467)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:59)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:40)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.acquireJobs(DispatcherThread.java:126)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.run(DispatcherThread.java:67)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)
+	... 32 more
+2016-04-24 17:52:38  [ DispatcherThread:2688 ] - [ ERROR ]  exception in job executor thread. waiting 5000 milliseconds
+org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:92)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)
+	at org.hibernate.jdbc.JDBCContext.connection(JDBCContext.java:160)
+	at org.hibernate.transaction.JDBCTransaction.begin(JDBCTransaction.java:81)
+	at org.hibernate.impl.SessionImpl.beginTransaction(SessionImpl.java:1473)
+	at org.jbpm.pvm.internal.tx.HibernateSessionResource.<init>(HibernateSessionResource.java:44)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:87)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.wire.descriptor.DbSessionDescriptor.initialize(DbSessionDescriptor.java:49)
+	at org.jbpm.pvm.internal.wire.WireContext.performInitialization(WireContext.java:551)
+	at org.jbpm.pvm.internal.wire.WireContext.initialize(WireContext.java:513)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:467)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:59)
+	at org.jbpm.pvm.internal.jobexecutor.AcquireJobsCmd.execute(AcquireJobsCmd.java:40)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.acquireJobs(DispatcherThread.java:126)
+	at org.jbpm.pvm.internal.jobexecutor.DispatcherThread.run(DispatcherThread.java:67)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)
+	... 32 more
+2016-04-24 17:52:38  [ main:2705 ] - [ ERROR ]  Unknown database 'jbpm'
+2016-04-24 17:52:38  [ main:2706 ] - [ ERROR ]  hibernate transaction begin failed.  closing hibernate session
+org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:92)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)
+	at org.hibernate.jdbc.JDBCContext.connection(JDBCContext.java:160)
+	at org.hibernate.transaction.JDBCTransaction.begin(JDBCTransaction.java:81)
+	at org.hibernate.impl.SessionImpl.beginTransaction(SessionImpl.java:1473)
+	at org.jbpm.pvm.internal.tx.HibernateSessionResource.<init>(HibernateSessionResource.java:44)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:87)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:207)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:196)
+	at org.jbpm.pvm.internal.cmd.CheckDbCmd.execute(CheckDbCmd.java:44)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.checkDb(ProcessEngineImpl.java:152)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.<init>(ProcessEngineImpl.java:105)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.instantiateProcessEngine(ConfigurationImpl.java:100)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.buildProcessEngine(ConfigurationImpl.java:92)
+	at com.asynclife.jbpm.JBPM_FORK_JOIN_Test.test01_DeployProcessDefinition(JBPM_FORK_JOIN_Test.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)
+	... 51 more
+2016-04-24 17:54:53  [ main:2372 ] - [ ERROR ]  could not get database metadata
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:375)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1872)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionFactoryDescriptor.construct(HibernateSessionFactoryDescriptor.java:62)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:154)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:711)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:63)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:207)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:196)
+	at org.jbpm.pvm.internal.cmd.CheckDbCmd.execute(CheckDbCmd.java:44)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.checkDb(ProcessEngineImpl.java:152)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.<init>(ProcessEngineImpl.java:105)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.instantiateProcessEngine(ConfigurationImpl.java:100)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.buildProcessEngine(ConfigurationImpl.java:92)
+	at com.asynclife.jbpm.JBPM_FORK_JOIN_Test.test01_DeployProcessDefinition(JBPM_FORK_JOIN_Test.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+2016-04-24 17:54:53  [ main:2375 ] - [ ERROR ]  could not complete schema update
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:168)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:375)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1872)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionFactoryDescriptor.construct(HibernateSessionFactoryDescriptor.java:62)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:154)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:711)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:63)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:207)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:196)
+	at org.jbpm.pvm.internal.cmd.CheckDbCmd.execute(CheckDbCmd.java:44)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.checkDb(ProcessEngineImpl.java:152)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.<init>(ProcessEngineImpl.java:105)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.instantiateProcessEngine(ConfigurationImpl.java:100)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.buildProcessEngine(ConfigurationImpl.java:92)
+	at com.asynclife.jbpm.JBPM_FORK_JOIN_Test.test01_DeployProcessDefinition(JBPM_FORK_JOIN_Test.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+2016-04-24 17:54:54  [ main:2657 ] - [ ERROR ]  Unknown database 'jbpm'
+2016-04-24 17:54:54  [ main:2657 ] - [ ERROR ]  hibernate transaction begin failed.  closing hibernate session
+org.hibernate.exception.SQLGrammarException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:92)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449)
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)
+	at org.hibernate.jdbc.JDBCContext.connection(JDBCContext.java:160)
+	at org.hibernate.transaction.JDBCTransaction.begin(JDBCTransaction.java:81)
+	at org.hibernate.impl.SessionImpl.beginTransaction(SessionImpl.java:1473)
+	at org.jbpm.pvm.internal.tx.HibernateSessionResource.<init>(HibernateSessionResource.java:44)
+	at org.jbpm.pvm.internal.wire.descriptor.HibernateSessionDescriptor.construct(HibernateSessionDescriptor.java:87)
+	at org.jbpm.pvm.internal.wire.WireContext.construct(WireContext.java:487)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:466)
+	at org.jbpm.pvm.internal.wire.WireContext.create(WireContext.java:455)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:429)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:339)
+	at org.jbpm.pvm.internal.wire.WireContext.get(WireContext.java:704)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:132)
+	at org.jbpm.pvm.internal.env.BasicEnvironment.get(BasicEnvironment.java:123)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:207)
+	at org.jbpm.pvm.internal.env.EnvironmentImpl.getFromCurrent(EnvironmentImpl.java:196)
+	at org.jbpm.pvm.internal.cmd.CheckDbCmd.execute(CheckDbCmd.java:44)
+	at org.jbpm.pvm.internal.svc.DefaultCommandService.execute(DefaultCommandService.java:42)
+	at org.jbpm.pvm.internal.tx.StandardTransactionInterceptor.execute(StandardTransactionInterceptor.java:50)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.executeInNewEnvironment(EnvironmentInterceptor.java:53)
+	at org.jbpm.pvm.internal.svc.EnvironmentInterceptor.execute(EnvironmentInterceptor.java:40)
+	at org.jbpm.pvm.internal.svc.RetryInterceptor.execute(RetryInterceptor.java:56)
+	at org.jbpm.pvm.internal.svc.SkipInterceptor.execute(SkipInterceptor.java:43)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.checkDb(ProcessEngineImpl.java:152)
+	at org.jbpm.pvm.internal.processengine.ProcessEngineImpl.<init>(ProcessEngineImpl.java:105)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.instantiateProcessEngine(ConfigurationImpl.java:100)
+	at org.jbpm.pvm.internal.cfg.ConfigurationImpl.buildProcessEngine(ConfigurationImpl.java:92)
+	at com.asynclife.jbpm.JBPM_FORK_JOIN_Test.test01_DeployProcessDefinition(JBPM_FORK_JOIN_Test.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'jbpm'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.Util.getInstance(Util.java:383)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:980)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3847)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3783)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1665)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2249)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2079)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:400)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)
+	... 51 more
+2016-04-24 22:42:08  [ main:3951 ] - [ ERROR ]  Duplicate entry 'decision01.10' for key 'ID_'

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	name: 流程的名称 
+	
+	key : 如果未指定该属性，则默认取name作为pdkey
+	
+	注意：
+		name与key之间的映射是绑定的，流程部署到数据库后，name与key就不能修改了。
+		如果流程已经部署，两者都不变的情况下，每次部署后该流程的版本号version会递增。
+		如果两者都变了，则会按新的流程定义进行部署。
+	
+	version: 同一个流程的不同部署版本号，一般由JBPM来维护，每次部署后自增1，不需要手动指定。
+		version="1" => error: process 'process_01-1' already exists
+		
+	pdid: key-version，由流程定义的key与version组成。 
+ -->
+<process name="LoanRequest" key="process_01" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="332,101,48,48" name="start1">
+      <transition g="-69,-22" name="to 张三审批" to="张三审批"/>
+   </start>
+   <task assignee="张三" g="309,208,92,52" name="张三审批">
+      <transition g="-69,-22" name="to 李四审批" to="李四审批"/>
+   </task>
+   <task assignee="李四" g="305,310,92,52" name="李四审批">
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+   <end g="326,413,48,48" name="end1"/>
+</process>

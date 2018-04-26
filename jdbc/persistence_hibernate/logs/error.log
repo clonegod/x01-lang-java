@@ -1,0 +1,4 @@
+2016-04-24 00:17:57 [org.hibernate.util.XMLHelper$ErrorLogger:89] - Error parsing XML: /hibernate.cfg.xml(32) 必须声明元素类型 "list"。
+2016-04-24 00:17:57 [org.hibernate.util.XMLHelper$ErrorLogger:89] - Error parsing XML: /hibernate.cfg.xml(33) 必须声明元素类型 "value"。
+2016-04-24 00:17:57 [org.hibernate.util.XMLHelper$ErrorLogger:89] - Error parsing XML: /hibernate.cfg.xml(35) 元素类型为 "property" 的内容必须匹配 "null"。
+2016-04-24 00:21:00 [org.hibernate.util.XMLHelper$ErrorLogger:89] - Error parsing XML: /hibernate.cfg.xml(31) 必须为元素类型 "property" 声明属性 "value"。

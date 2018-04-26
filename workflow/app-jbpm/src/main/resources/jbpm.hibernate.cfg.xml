@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库链接的相关配置 -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/app</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root123</property>
+		
+		<!-- 数据库方言 -->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        
+        <!-- 自动打印出SQL语句 -->
+		<property name="show_sql">true</property>
+		
+		<!-- 自动创建数据库表 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- 映射文件列表 -->
+		<mapping resource="jbpm.execution.hbm.xml"/>
+		<mapping resource="jbpm.history.hbm.xml"/>
+		<mapping resource="jbpm.identity.hbm.xml"/>
+		<mapping resource="jbpm.repository.hbm.xml"/>
+		<mapping resource="jbpm.task.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
+

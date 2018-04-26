@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="LoanRequest_Decision02" key="decision02" xmlns="http://jbpm.org/4.4/jpdl">
+   <start name="start1" g="27,165,48,48">
+      <transition name="to 判断贷款金额" to="判断贷款金额" g="-54,-31"/>
+   </start>
+   <decision name="判断贷款金额" g="219,160,48,48" lang="java">
+      <transition name="贷款金额小于50000.00" to="张三审批" g="-45,-27">
+      	<!-- 条件判断，表达式返回true，则流转到该transition -->
+      	<condition expr="#{loanAmount lt 50000.00}"/>
+      </transition>
+      <transition name="贷款金额大于等于50000.00" to="李四审批" g="-49,10">
+      	<!-- 条件判断，表达式返回true，则流转到该transition -->
+      	<condition expr="#{loanAmount ge 50000.00}"/>
+      </transition>
+   </decision>
+   <task name="张三审批" g="380,90,92,52" assignee="张三">
+      <transition name="to end1" to="end1" g="-18,-29"/>
+   </task>
+   <task name="李四审批" g="392,207,92,52" assignee="李四">
+      <transition name="to end1" to="end1" g="-15,12"/>
+   </task>
+   <end name="end1" g="623,160,48,48"/>
+</process>

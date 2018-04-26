@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+repositories {
+	//mavenCentral()
+    maven {
+	  url 'http://maven.oschina.net/content/groups/public/'
+	}
+    jcenter()
+}
+
+dependencies {
+
+    compile 'org.slf4j:slf4j-api:1.7.18'
+    compile 'commons-dbcp:commons-dbcp:1.4'
+    compile 'commons-logging:commons-logging:1.2'
+    compile 'commons-pool:commons-pool:1.6'
+    compile 'org.mybatis:mybatis:3.2.2'
+    compile 'org.mybatis:mybatis-spring:1.1.1'
+    compile 'mysql:mysql-connector-java:5.1.18'
+    
+    compile fileTree(dir: 'libs', include: '*.jar')
+
+    testCompile 'junit:junit:4.12'
+}

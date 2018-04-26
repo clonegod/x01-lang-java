@@ -1,0 +1,135 @@
+6、tomcat性能测试
+环境：
+	容器：Tomcat8 - 由springboot内嵌
+	api接口: 
+		http://localhost:8080/jvm/test
+		该接口中简单的new一个1M的byte[]，然后直接返回。
+工具：
+	JMeter 
+原理：
+	通过JMeter对Tomcat增加压力，测试使用不同JVM参数时系统具有的不同表现。
+	观察不同参数配置下对吞吐量的影响。
+
+-----------------------------------------------------------------
+
+说明：下面的测试案例执行次数有限，结果没有严格的可参考性，仅作为实践jvm参数调整思路的一个练习而已！
+
+【案例1】 
+>>> 测试串行回收器的性能
+
+>>> jvm参数：
+-Xms64M -Xmx64M
+-XX:PermSize=32M
+-XX:+UseSerialGC
+-XX:+PrintGCDetails
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/test01.dump
+
+
+>>> 测试结果：
+	吞吐量（每秒处理的请求数）	950/sec	
+	流量（每秒流量）			116KB/sec
+
+
+【案例2】 
+>>> 测试扩大最大堆内存以提升系统性能
+
+>>> jvm参数：
+-Xms64M -Xmx512M
+-XX:PermSize=32M
+-XX:+UseSerialGC
+-XX:+PrintGCDetails
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/test02.dump
+-Xloggc:/var/gc.log #将gc日志输出到文件，而不是打印到控制台
+
+
+>>> 测试结果：
+	吞吐量（每秒处理的请求数）	1272/sec	
+	流量（每秒流量）			155KB/sec
+	
+【案例3】 
+>>> 调整初始堆大小以提升性能（最佳实践：初始堆设置为与最大堆相等）
+
+>>> jvm参数：
+-Xms128M -Xmx512M
+-XX:PermSize=32M
+-XX:+UseSerialGC
+-XX:+PrintGCDetails
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/test03.dump
+-Xloggc:/var/gc.log
+
+
+>>> 测试结果：
+	吞吐量（每秒处理的请求数）	1414/sec	
+	流量（每秒流量）			172KB/sec
+	
+【案例4】 
+>>> 测试新生代并行回收器的性能（新生代使用多线程进行回收，老年代使用串行回收器）
+
+>>> jvm参数：
+-Xms128M -Xmx512M
+-XX:PermSize=32M
+-XX:+UseParNewGC
+-XX:+PrintGCDetails
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/test04.dump
+-Xloggc:/var/gc.log
+
+
+>>> 测试结果：
+	吞吐量（每秒处理的请求数）	1452/sec	
+	流量（每秒流量）			177KB/sec
+	
+
+【案例5】 
+>>> 测试并行回收器/吞吐量回收器的性能（新生代，老年代都使用多线程并行垃圾回收）
+
+>>> jvm参数：
+-Xms128M -Xmx512M
+-XX:PermSize=32M
+-XX:+UseParallelGC
+-XX:+UseParallelOldGC
+-XX:ParallelGCThreads=4
+-XX:+PrintGCDetails
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/test05.dump
+-Xloggc:/var/gc.log
+
+
+>>> 测试结果：
+	吞吐量（每秒处理的请求数）	1311/sec	
+	流量（每秒流量）			160KB/sec
+	
+	
+【案例6】 
+>>> 测试CMS回收器的性能（新生代使用并行回收，老年代使用cms回收）
+
+>>> jvm参数：
+-Xms128M -Xmx512M
+-XX:PermSize=32M
+-XX:+UseParNewGC
+-XX:+UseConcMarkSweepGC
+-XX:ConcGCThreads=4
+-XX:CMSInitiatingOccupancyFraction=80
+-XX:+UseCMSCompactAtFullCollection
+-XX:CMSFullGCsBeforeCompaction=10
+-XX:+PrintGCDetails
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/test06.dump
+-Xloggc:/var/gc.log
+
+
+>>> 测试结果：
+	吞吐量（每秒处理的请求数）	1381/sec	
+	流量（每秒流量）			168KB/sec
+	
+
+【案例7】
+ >>> 测试tomcat默认的配置
+
+>>> jvm参数：
+无
+
+>>> 测试结果：
+	吞吐量（每秒处理的请求数）	1476/sec	
+	流量（每秒流量）			180KB/sec
+	
+结论：
+	每种垃圾回收器的侧重点不同，没有哪个好哪个不好的说法，具体该使用哪种垃圾回收器，需要根据实际系统所在环境进行多次测试，最终才能知道哪个最合适！
+	

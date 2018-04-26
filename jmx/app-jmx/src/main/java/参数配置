@@ -1,0 +1,19 @@
+在服务器(192.168.1.89)侧配置虚拟机的参数:
+                -Dcom.sun.management.jmxremote.port=9050
+                -Dcom.sun.management.jmxremote.authenticate=false
+                -Dcom.sun.management.jmxremote.ssl=false
+                -Djava.server.hostname=192.168.1.89
+                选项中最重要的是port,虽然在配置文件中已经指定。
+           监控服务器的JVM通过jconsole的远程访问来实现
+                service:jmx:rmi://192.168.1.89:9050/jndi/rmi://192.168.1.89:9050/jmxrmi
+           这是不需要用户名和密码的情况下，如果想要更安全点，可以配置用户名和密码
+                 当然-Dcom.sun.management.jmxremote.authenticate=false要取消
+                 用户名和密码需要在服务器etc目录下配置
+                   用户名文件jmx.access
+                   内容如下:
+                          monitor  readonly
+                          admin     readwrite  
+                   密码文件jmx.password
+                   内容如下:
+                          monitor   monitor_password
+                          admin      admin_password

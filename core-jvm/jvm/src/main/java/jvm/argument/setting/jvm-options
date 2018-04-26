@@ -1,0 +1,30 @@
+//-Xms10M -Xmx20M  -Xmn10M 
+//重定向GC日志到文件中保存
+//-XX:+PrintGCDetails -Xloggc:/tmp/logs/gc.log 
+//当发生堆内存溢出时，dump出堆内存供分析。
+//-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=E:/tmp/logs/app.dump
+//打印JVM启动时应用的参数，包含JVM自动设置的默认参数
+//-XX:+PrintCommandLineFlags
+//用户主动设置的参数
+//-XX:+PrintVMOptions 
+
+
+-d64 -Xms10M -Xmx20M -XX:+PrintVMOptions 
+-d64 -Xms10M -Xmx20M -XX:+PrintVMOptions -XX:+PrintCommandLineFlags
+-d64 -Xms10M -Xmx20M -verbose:gc
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails
+-d64 -Xms10M -Xmx20M -Xloggc:/tmp/logs/gc.log 
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -Xloggc:/tmp/logs/gc.log 
+
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -XX:+UseSerialGC
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -XX:+UseParNewGC
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -XX:+UseParallelGC
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -XX:+UseParallelOldGC
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -XX:+UseParNewGC -XX:+UseConcMarkSweepGC
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:G1ReservePercent=30
+
+-d64 -Xms10M -Xmx20M -XX:+PrintGCDetails
+-XX:+UseConcMarkSweepGC
+-XX:+UseParNewGC
+

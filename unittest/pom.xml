@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.clonegod</groupId>
+	<artifactId>unittest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>unittest</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.3.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			<version>1.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JSON断言 -->
+		<dependency>
+			<groupId>uk.co.datumedge</groupId>
+			<artifactId>hamcrest-json</artifactId>
+			<version>0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+		</dependency>
+
+
+		<!-- A TestNG like dataprovider runner for JUnit -->
+		<dependency>
+			<groupId>com.tngtech.java</groupId>
+			<artifactId>junit-dataprovider</artifactId>
+			<version>1.12.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- 更方便的为单元测试注入参数：但是无法与SpringJUnit4ClassRunner一起使用、有其它解决方案 -->
+		<dependency>
+			<groupId>pl.pragmatists</groupId>
+			<artifactId>JUnitParams</artifactId>
+			<version>1.1.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				
+				<configuration>
+				    <!-- 设置执行测试时的命令行参数 -->
+				    <!-- <argLine>-Xmx512m -XX:MaxPermSize=256m -Dsurefire.junit4.upgradecheck</argLine> -->
+				    
+				    <!-- 多线程执行测试案例 -->
+ 					<!-- <parallel>methods</parallel> -->
+					<!-- <threadCount>10</threadCount> -->
+					<!-- <forkMode>once</forkMode> -->
+					
+					<!--配置是否跳过测试用例执行-->
+                    <!-- <skipTests>true</skipTests> -->
+                    
+                    <!-- 指定需要执行的测试类 -->
+                    <includes>
+                        <include>FeatureTestSuite.java</include>
+			            <include>**/*Test.java</include>
+			            <!-- <include>**/Test*.java</include> -->
+			        </includes>
+			        
+			        <!-- 若设置了groups，则只有那些标记了对应Category的test才会被执行。多个组之间使用逗号分隔 -->
+			        <!-- This will execute only those tests annotated with the @Category(xxx.FastTests.class) annotation  -->
+			        <!-- <groups>com.clonegod.unittest.junit.category.FastTests</groups> -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

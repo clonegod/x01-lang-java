@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="请假流程" key="LEAVE" xmlns="http://jbpm.org/4.4/jpdl">
+   <start name="start" g="273,41,11,5">
+      <transition name="to 张三审批" to="张三审批" g="-69,-22"/>
+   </start>
+   <task name="张三审批" g="259,129,92,52" assignee="张三">
+      <transition name="to 李四审批" to="李四审批" g="-69,-22"/>
+   </task>
+   <task name="李四审批" g="262,223,92,52" assignee="李四">
+      <transition name="to end" to="end" g="-43,-22"/>
+   </task>
+   <end name="end" g="285,308,48,48"/>
+</process>

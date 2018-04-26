@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="event02" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="71,117,48,48" name="start1">
+      <transition name="to 领导审批" to="领导审批" g="-69,-22">
+      	<event-listener class="com.asynclife.jbpm.MyEventListener02"/>
+      </transition>
+   </start>
+   <end g="561,115,48,48" name="end1"/>
+   <task assignee="#{leader}" g="284,114,92,52" name="领导审批">
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+</process>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="event01" xmlns="http://jbpm.org/4.4/jpdl">
+   <start name="start1" g="71,117,48,48">
+      <transition name="to 张三审批" to="张三审批" g="-69,-22"/>
+   </start>
+   <end name="end1" g="561,115,48,48"/>
+   <task name="张三审批" g="284,114,92,52" assignee="张三">
+   		<!-- 进入某个任务节点后，发送邮件通知。 -->
+   		<on event="start">
+   			<event-listener class="com.asynclife.jbpm.MyEventListener01">
+   				<field name="email">
+   					<string value="zhangsan@email.com"/>
+   				</field>
+   			</event-listener>
+   		</on>
+      <transition name="to end1" to="end1" g="-50,-22"/>
+   </task>
+</process>

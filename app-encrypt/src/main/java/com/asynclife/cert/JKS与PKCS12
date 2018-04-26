@@ -1,0 +1,69 @@
+JKS和PKCS#12都是比较常用的两种密钥库格式/标准。
+对于前者，搞Java开发，尤其是接触过HTTPS平台的朋友，并不陌生。
+JKS文件（通常为*.jks或*.keystore，扩展名无关）可以通过Java原生工具——KeyTool生成；
+而后者PKCS#12文件（通常为*.p12或*.pfx，意味个人信息交换文件），则是通过更为常用的OpenSSL工具产生。 
+当然，这两者之间是可以通过导入/导出的方式进行转换的！
+当然，这种转换需要通过KeyTool工具进行！ 
+合作方交给他们一个*.pfx文件，需要他们从中提取密钥，然后进行加密交互。
+
+方案： 
+通过keytool密钥库导入命令importkeystore，将密钥库格式由PKCS#12转换为JKS。
+检索新生成的密钥库文件，提取别名信息。
+由密钥库文件导出数字证书（这里将用到别名）。
+通过代码提取公钥/私钥、签名算法等
+
+==================>>>
+echo 格式转换  
+keytool 
+	-importkeystore 
+	-v  
+	-srckeystore zlex.pfx 
+	-srcstoretype pkcs12 
+	-srcstorepass 123456 
+	-destkeystore zlex.keystore 
+	-deststoretype jks 
+	-deststorepass 123456  
+	
+	
+-importkeystore导入密钥库，通过格式设定，我们可以将PKCS#12文件转换为JKS格式。 
+-v显示详情 
+-srckeystore源密钥库，这里是zlex.pfx 
+-srcstoretype源密钥库格式，这里为pkcs12 
+-srcstorepass源密钥库密码，这里为123456 
+-destkeystore目标密钥库，这里为zlex.keystore 
+-deststoretype目标密钥库格式，这里为jks，默认值也如此 
+-deststorepass目标密钥库密码，这里为123456 	
+	
+
+这时，我们已经获得了密钥库文件，只要确定对应的别名信息，就可以提取公钥/私钥，以及数字证书，进行加密交互了！
+
+==================>>>
+echo 查看证书  
+keytool 
+	-list 
+	-v 
+	-keystore zlex.keystore 
+	-storepass 123456 
+
+-list列举密钥库 
+-keystore密钥库，这里是zlex.keystore 
+-storepass密钥库密码，这里是123456 
+-v显示详情 
+
+==================>>>
+echo 导出证书  
+keytool 
+	-exportcert 
+	-alias 1 
+	-keystore zlex.keystore 
+	-file zlex.crt 
+	-storepass 123456 
+
+-exportcert导出证书 
+-alias别名，这里是1 
+-keystore密钥库，这里是zlex.keystore 
+-file证书文件，这里是zlex.crt 
+-storepass密钥库密码，这里是123456 
+
+现在证书也导出了，我们可以提取公钥/私钥，进行加密/解密，签名/验证操作了！
+当然，即便没有证书，我们也能够通过密钥库（JKS格式）文件获得证书，以及公钥/私钥、签名算法等。 	

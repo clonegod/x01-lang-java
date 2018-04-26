@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process key="forkjoin" name="LoanRequest2" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="25,163,48,48" name="start1">
+      <transition g="-40,-31" name="to 张三审批" to="张三审批"/>
+   </start>
+   <task g="132,160,92,52" name="张三审批" assignee="张三">
+      <transition g="-26,-38" name="to fork1" to="fork1"/>
+   </task>
+   <fork g="279,161,48,48" name="fork1">
+      <transition g="-49,-45" name="to 技术部审批" to="技术部审批"/>
+      <transition g="-39,24" name="to 财务部审批" to="财务部审批"/>
+   </fork>
+   <task g="385,102,92,52" name="技术部审批" assignee="技术部主管">
+      <transition name="to join1" to="join1" g="-9,-26"/>
+   </task>
+   <task g="379,203,92,52" name="财务部审批" assignee="财务部主管">
+      <transition name="to join1" to="join1" g="-49,-22"/>
+   </task>
+   <task g="614,153,92,52" name="老板审批" assignee="BOSS">
+      <transition g="-14,-24" name="to end1" to="end1"/>
+   </task>
+   <end g="766,156,48,48" name="end1"/>
+   <join name="join1" g="532,159,48,48">
+      <transition name="to 老板审批" to="老板审批" g="-32,-40"/>
+   </join>
+</process>
