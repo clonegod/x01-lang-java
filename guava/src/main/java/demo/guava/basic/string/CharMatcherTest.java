@@ -25,7 +25,7 @@ public class CharMatcherTest {
 					break;
 				}
 			}
-			String oneline = CharMatcher.BREAKING_WHITESPACE.replaceFrom(charBuffer.toString(), " ");
+			String oneline = CharMatcher.breakingWhitespace().replaceFrom(charBuffer.toString(), " ");
 			System.out.println(oneline);
 		} finally {
 			
@@ -37,7 +37,7 @@ public class CharMatcherTest {
 	public void testCollapseWhiteSpace(){
 		String tabsAndSpaces = "String with 	spaces and tabs";
 		String expected = "String with spaces and tabs";
-		String scrubbed = CharMatcher.WHITESPACE.collapseFrom(tabsAndSpaces, ' ');
+		String scrubbed = CharMatcher.whitespace().collapseFrom(tabsAndSpaces, ' ');
 		assertThat(scrubbed, is(expected));
 	}
 	
@@ -46,7 +46,7 @@ public class CharMatcherTest {
 	public void testTrimCollapseWhiteSpace(){
 		String tabsAndSpaces = " String with spaces and tabs";
 		String expected = "String with spaces and tabs";
-		String scrubbed = CharMatcher.WHITESPACE.trimAndCollapseFrom(tabsAndSpaces,' ');
+		String scrubbed = CharMatcher.whitespace().trimAndCollapseFrom(tabsAndSpaces,' ');
 		assertThat(scrubbed,is(expected));
 	}
 	
@@ -61,13 +61,13 @@ public class CharMatcherTest {
 	public void testRetainFrom(){
 		String lettersAndNumbers = "foo989yxbar234";
 		String expected = "989234";
-		String retained = CharMatcher.JAVA_DIGIT.retainFrom(lettersAndNumbers);
+		String retained = CharMatcher.javaDigit().retainFrom(lettersAndNumbers);
 		assertThat(expected,is(retained));
 	}
 	
 	@Test
 	public void testMoreCharamtcher() {
-		CharMatcher cm = CharMatcher.JAVA_DIGIT.or(CharMatcher.WHITESPACE);
+		CharMatcher cm = CharMatcher.javaDigit().or(CharMatcher.whitespace());
 		System.out.println(cm.countIn("as1 2"));
 	}
 }
