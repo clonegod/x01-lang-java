@@ -1,10 +1,8 @@
 package clonegod.java8.concurrency;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
 
 import clonegod.commons.log.Console;
 
