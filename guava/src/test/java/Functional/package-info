@@ -1,0 +1,22 @@
+Specifically, we will be covering the following topics in this chapter:
+
+• The Function interface: This explains how we can introduce functional
+programming to our Java programs. It also explains how best we can use
+the Function interface and recognize where its usage is not appropriate
+
+• The Functions class: This class is a collection of static methods that are
+used to work with implementations of the Function interface
+
+• The Predicate interface: This is an interface that evaluates a given object
+for certain criteria and returns true if the object has met the criteria
+
+• The Predicates class: This is a companion class to the Predicate
+interface that has static utility methods for working with implementations
+of the Predicate interface
+
+• The Supplier interface: This is an interface used to supply an object of
+a given type. We will see how to use the Supplier interface to implement
+a variety of patterns to create objects
+
+• The Suppliers class: This is a class that provides some default
+implementations of the Supplier interface

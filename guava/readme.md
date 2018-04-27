@@ -1,4 +1,13 @@
-【Basic Guava Utilities】
+## wiki
+	https://github.com/google/guava/wiki
+
+## unit test
+	https://github.com/google/guava/tree/master/guava-tests/test/com/google/common
+	
+--------------------------------
+
+## 【Basic Guava Utilities】
+
 	Joiner
 	Splitter
 	strings
@@ -13,13 +22,15 @@
 		CompareTo:	ComparisonChain.start().xxx.result();
 
 
-【Functional Programming】
+## 【Functional Programming】
+
 	Function & Functions
 	Predicate & Predicates
 	Supplier & Suppliers
 
 
-【Collections】
+## 【Collections】
+
 	FluentIterable
 		FluentIterable.from(Iterable)
 					.transform(Function)
@@ -63,7 +74,8 @@
 		Secondary sorting
 		minimum and maximum
 
-【Concurrency】
+## 【Concurrency】
+
 	Monitor & Guard
 	
 	ListeningExecutorService
@@ -79,7 +91,8 @@
 	RateLimiter
 	
 	
-【Cache】
+## 【Cache】
+
 	MapMaker - ConcurrentMap
 	
 	CacheBuilder
@@ -94,7 +107,8 @@
 		get,getAll,refresh...
 		
 		
-【EventBus】
+## 【EventBus】
+
 	EventBus
 		post
 		register
@@ -112,7 +126,8 @@
 	Dependency Injection - By SpringFramework
 	
 	
-【Files】
+## 【Files】
+
 	Files
 		copy,move,reading, Writing
 	Closer
@@ -122,8 +137,12 @@
 	ByteStreams,CharStreams
 	BaseEncoding
 
-【Odds and Ends】
+## 【Odds and Ends】
+
 	Hashing/HashFunction
 	BloomFilter
 	Optional
 	Throwable
+	
+
+	
