@@ -1,0 +1,30 @@
+In this chapter we will be covering:
+
+• The use of the Joiner class to concatenate strings together with a specified
+delimiter. We will also cover the MapJoiner class that performs the same
+operation on the key value pairs of a map.
+
+• The use of the Splitter class, which is the logical inverse of the Joiner
+class. Given a string and a delimiter, the Splitter class will produce
+substrings broken out by the provided delimiter.
+
+• Working with strings; specifically, how to perform common operations
+such as removing parts of a string, matching strings, and more using the
+CharMatcher and Strings classes.
+
+• The Preconditions class, which provides methods for asserting certain
+conditions you expect variables, arguments, or methods to adhere to.
+
+• Some basic utilities for working with any Java object, including help with
+the toString and hashCode methods and an easier way of implementing
+the Comparable interface.
+
+
+------Summary
+We have covered a lot of ground in this chapter. 
+We learned how Guava makes life easier when working with delimited strings using Joiner, Splitter, 
+and the very useful MapJoiner and MapSplitter classes. 
+We also learned about Guava's ability to work with strings using the Charsets, CharMatcher, and Strings classes.
+We saw how to make our code more robust and improve debugging with the use of the Preconditions class. 
+In the Objects class, we learned about some useful methods to help with setting default values and creating toString and hashCode methods. 
+We also saw how to use the ComparisonChain class to make implementing the compareTo method easier.
