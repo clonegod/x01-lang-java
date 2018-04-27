@@ -7,7 +7,7 @@ import java.time.Instant;
  * Instant类是用在机器可读的时间格式上的，它以Unix时间戳的形式存储日期时间
  *
  */
-public class Test4_InstantExample {
+public class Test04InstantExample {
 
 	public static void main(String[] args) {
 		// Current timestamp

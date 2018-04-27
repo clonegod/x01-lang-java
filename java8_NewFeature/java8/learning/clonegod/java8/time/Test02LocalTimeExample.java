@@ -8,7 +8,7 @@ import java.time.ZoneId;
  * 像LocalDate一样，该类也提供了时区支持，同时也可以传入小时、分钟和秒等输入参数创建实例
  * 
  */
-public class Test2_LocalTimeExample {
+public class Test02LocalTimeExample {
 
 	public static void main(String[] args) {
 

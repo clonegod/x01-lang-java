@@ -12,7 +12,7 @@ import java.time.ZoneOffset;
  * 它提供了一个工厂方法，接收LocalDate和LocalTime输入参数，创建LocalDateTime实例。
  *
  */
-public class Test3_LocalDateTimeExample {
+public class Test03LocalDateTimeExample {
 
 	public static void main(String[] args) {
 

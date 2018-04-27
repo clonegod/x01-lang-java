@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  * 2、解析一个字符串，得到日期时间对象
  *
  */
-public class Test6_DateParseFormatExample {
+public class Test06DateParseFormatExample {
 
 	public static void main(String[] args) {
 

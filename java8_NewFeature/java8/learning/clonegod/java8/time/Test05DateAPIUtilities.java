@@ -10,7 +10,7 @@ import java.time.temporal.TemporalAdjusters;
  * 还有其他的工具方法能够使用TemporalAdjuster调整日期，并计算两个日期间的周期。
  *
  */
-public class Test5_DateAPIUtilities {
+public class Test05DateAPIUtilities {
 
 	public static void main(String[] args) {
 

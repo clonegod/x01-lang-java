@@ -12,7 +12,7 @@ import java.time.ZoneId;
  * 该类为now()方法提供了重载方法，我们可以传入ZoneId来获得指定时区的日期。
  *
  */
-public class Test1_LocalDateExample {
+public class Test01LocalDateExample {
  
     public static void main(String[] args) {
  

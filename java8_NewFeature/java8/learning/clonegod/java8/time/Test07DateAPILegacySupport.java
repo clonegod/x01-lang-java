@@ -14,7 +14,7 @@ import java.util.TimeZone;
  *  这也是为什么会有若干工具方法帮助我们将旧的类转换为新的类，反之亦然。
  *
  */
-public class Test7_DateAPILegacySupport {
+public class Test07DateAPILegacySupport {
 
 	public static void main(String[] args) {
 
