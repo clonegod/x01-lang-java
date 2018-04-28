@@ -1,3 +1,18 @@
+# Java 8  Tutorial
+## [Java 8 Tutorial](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)
+
+## [Java 8 Stream Tutorial](http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/)
+
+## [Concurrency Part 1: Threads and Executors](http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/)
+
+## [Concurrency Part 2: Synchronization and Locks](http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
+
+## [Concurrency Part 3: Atomic Variables and ConcurrentMap](http://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/)
+
+
+-------
+
+
 # Java8 新特性学习
 
 ## 1、lambada表达式、函数式编程
@@ -70,3 +85,7 @@
 	编程模型
 		CompletionStage
 		CompletableFuture
+		
+		
+
+
