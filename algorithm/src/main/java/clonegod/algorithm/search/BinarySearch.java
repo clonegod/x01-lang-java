@@ -5,10 +5,10 @@ import java.util.Arrays;
 import clonegod.algorithm.sort.QuickSort;
 
 /**
- * 算法描述：折半查找的前提条件是在一个有序的序列中。首先确定待查记录所在的区间，然后逐步的缩小范围区间直到找到或者找不到该记录为止。与数学中的二分法一样。 
+ * 算法描述：
+ * 	折半查找的前提条件是在一个有序的序列中。
+ * 	首先确定待查记录所在的区间，然后逐步的缩小范围区间直到找到或者找不到该记录为止。
  * 
- * @author clonegod@163.com
- *
  */
 public class BinarySearch {
 	public static void main(String[] args) {
