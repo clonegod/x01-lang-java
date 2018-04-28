@@ -1,3 +1,9 @@
+
+### [Java 8 Concurrency Tutorial](http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/)
+
+
+
+
 # Java8 新特性学习
 
 ## 1、lambada表达式、函数式编程
@@ -74,6 +80,3 @@
 		
 
 -----
-
-### [Java 8 Concurrency Tutorial](http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/)
-
