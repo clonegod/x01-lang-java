@@ -1,4 +1,4 @@
-package clonegod.java7.io.file;
+package java7.io.file;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,17 +10,14 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * 文件读写
  * 	注意：读写都需要设置正确的字符编码
  * 
- * @author clonegod@163.com
- *
  */
-public class FileReadWriteTest {
+public class TestFileReadAndWrite {
 	
 	@Test
 	public void testReadFile() {

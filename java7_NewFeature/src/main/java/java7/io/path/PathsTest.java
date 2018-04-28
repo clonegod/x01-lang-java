@@ -1,4 +1,4 @@
-package clonegod.java7.io.file;
+package java7.io.path;
 
 import java.io.File;
 import java.net.URI;

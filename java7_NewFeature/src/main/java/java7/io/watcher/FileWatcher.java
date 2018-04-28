@@ -1,4 +1,4 @@
-package clonegod.java7.io.file;
+package java7.io.watcher;
 
 import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;

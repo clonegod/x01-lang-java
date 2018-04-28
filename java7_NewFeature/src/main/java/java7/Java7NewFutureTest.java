@@ -1,4 +1,4 @@
-package clonegod.java7;
+package java7;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,7 +41,12 @@ public class Java7NewFutureTest {
 	@Test
 	public void testNumber() {
 		long num = 100_000_000;
-		int bitPatten = 0b11110000;
+		
+		int bitPattern = 0b11110000;
+		
+		System.out.println(num);
+		
+		System.out.println(bitPattern);
 	}
 	
 	/**
@@ -52,7 +57,21 @@ public class Java7NewFutureTest {
 	public void testCatchGroupException() {
 		getConfig("abc.txt");
 	}
-	
+	public Configuration getConfig(String fileName) {
+		Configuration cfg = null;
+		
+		try {
+			String fileText = getFile(fileName);
+			cfg = verifyConfig(parseConfig(fileText));
+		} catch (FileNotFoundException | ParseException | ConfigurationException  e) { 
+			// 将同类异常归类到一起进行处理
+			System.err.println("Config file '" + fileName + "' is missing or malformed.");
+		} catch (IOException e) {
+			System.err.println("Error while processing file '" + fileName + "'");
+		}
+		
+		return cfg;
+	}
 	
 	/**
 	 * 新特性4
@@ -83,23 +102,8 @@ public class Java7NewFutureTest {
 	 */
 	@Test
 	public void testTypeInfer() {
-		Map<Integer, Map<String,String>> userslists = new HashMap<>(); // 编译器自动推断右边的泛型类型
-	}
-	
-	public Configuration getConfig(String fileName) {
-		Configuration cfg = null;
-		
-		try {
-			String fileText = getFile(fileName);
-			cfg = verifyConfig(parseConfig(fileText));
-		} catch (FileNotFoundException | ParseException | ConfigurationException  e) { 
-			// 将同类异常归类到一起进行处理
-			System.err.println("Config file '" + fileName + "' is missing or malformed.");
-		} catch (IOException e) {
-			System.err.println("Error while processing file '" + fileName + "'");
-		}
-		
-		return cfg;
+		Map<Integer, Map<String,String>> userLists = new HashMap<>(); // 编译器自动推断右边的泛型类型
+		System.out.println(userLists);
 	}
 	
 	/**

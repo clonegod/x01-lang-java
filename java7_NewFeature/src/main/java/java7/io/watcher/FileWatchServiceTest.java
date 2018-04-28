@@ -1,4 +1,4 @@
-package clonegod.java7.io.file;
+package java7.io.watcher;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;

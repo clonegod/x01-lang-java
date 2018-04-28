@@ -1,4 +1,4 @@
-package clonegod.java7.io.file;
+package java7.io.file;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
@@ -16,14 +16,14 @@ import java.util.Set;
 
 import org.junit.Test;
 
-public class FilesTest {
+public class TestFiles {
 	
 	/**
 	 * 在目录下查找文件
 	 */
 	@Test
 	public void testFindFileUnderSpecifyDir() {
-		Path dir = Paths.get("src/main/java/clonegod/java7");
+		Path dir = Paths.get("src/main/java/java7");
 		try (DirectoryStream<Path> stream = 
 				Files.newDirectoryStream(dir, "*.java")) {
 			for(Path entry : stream) {
@@ -40,14 +40,14 @@ public class FilesTest {
 	@Test
 	public void testLoopDirectory() throws IOException {
 		Path startingDir = Paths.get("src/main/java");
-		Files.walkFileTree(startingDir, new FindJavaVisit());
+		Files.walkFileTree(startingDir, new FindJavaVisitor());
 	}
 	
 	/**
 	 * 扩展SimpleFileVisitor<Path>
 	 *
 	 */
-	private static class FindJavaVisit extends SimpleFileVisitor<Path> {
+	private static class FindJavaVisitor extends SimpleFileVisitor<Path> {
 		/** 重写访问文件的处理逻辑 */
 		@Override
 		public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
@@ -65,7 +65,8 @@ public class FilesTest {
 		if(target.toFile().exists()) {
 			Files.delete(target);
 		}
-		Path file = Files.createFile(target);
+		Path path = Files.createFile(target);
+		System.out.println(path);
 	}
 	
 	@Test
