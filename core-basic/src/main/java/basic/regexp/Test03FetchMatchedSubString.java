@@ -1,4 +1,4 @@
-package clonegod.java.regexp;
+package basic.regexp;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
