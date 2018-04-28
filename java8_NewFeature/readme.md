@@ -1,8 +1,8 @@
-## [Part 1: Threads and Executors] (http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/)
+## [Part 1: Threads and Executors](http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/)
 
-## [Part 2: Synchronization and Locks] (http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
+## [Part 2: Synchronization and Locks](http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/)
 
-## [Part 3: Atomic Variables and ConcurrentMap] (http://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/)
+## [Part 3: Atomic Variables and ConcurrentMap](http://winterbe.com/posts/2015/05/22/java8-concurrency-tutorial-atomic-concurrent-map-examples/)
 
 
 -------
