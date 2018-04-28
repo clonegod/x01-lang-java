@@ -1,4 +1,4 @@
-package clonegod.java8.concurrency;
+package java8.core.concurrency;
 
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;

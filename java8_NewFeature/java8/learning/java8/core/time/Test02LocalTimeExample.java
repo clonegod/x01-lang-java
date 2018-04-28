@@ -1,4 +1,4 @@
-package clonegod.java8.time;
+package java8.core.time;
 
 import java.time.LocalTime;
 import java.time.ZoneId;

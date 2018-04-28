@@ -1,4 +1,4 @@
-package clonegod.java8.concurrency;
+package java8.core.concurrency;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

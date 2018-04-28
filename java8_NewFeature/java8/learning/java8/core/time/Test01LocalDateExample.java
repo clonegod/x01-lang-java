@@ -1,4 +1,4 @@
-package clonegod.java8.time;
+package java8.core.time;
 
 import java.time.LocalDate;
 import java.time.Month;

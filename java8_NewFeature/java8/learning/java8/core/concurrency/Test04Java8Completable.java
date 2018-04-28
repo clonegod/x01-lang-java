@@ -1,4 +1,4 @@
-package clonegod.java8.concurrency;
+package java8.core.concurrency;
 
 import java.time.LocalDate;
 import java.util.concurrent.CompletableFuture;

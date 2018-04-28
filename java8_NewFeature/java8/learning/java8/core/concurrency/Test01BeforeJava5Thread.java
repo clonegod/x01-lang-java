@@ -1,4 +1,4 @@
-package clonegod.java8.concurrency;
+package java8.core.concurrency;
 
 public class Test01BeforeJava5Thread {
 	
