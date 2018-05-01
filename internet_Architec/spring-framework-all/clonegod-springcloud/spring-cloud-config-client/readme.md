@@ -180,7 +180,8 @@
 
 
 ### Spring Boot Actuator
-	/env		备注：打印系统相关的环境变量参数
+	/env		备注：打印系统相关的环境变量参数。
+				作用：可用来排查问题---通过env的输出，可验证配置的参数是否生效。
 		profiles				环境标识
 		commandLineArgs		命令行启动参数
 		systemProperties	与JVM相关
