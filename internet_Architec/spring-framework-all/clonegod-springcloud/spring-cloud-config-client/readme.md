@@ -73,7 +73,7 @@
 				spring.factories
 ```
 
-### Application Listeners   - spring cloud 中配置的多个事件监听器
+### Application Listeners   - spring cloud 中配置的多个事件监听器，引入spring cloud 相关组件
 	org.springframework.context.ApplicationListener=\
 	org.springframework.cloud.bootstrap.BootstrapApplicationListener,\
 	org.springframework.cloud.bootstrap.LoggingSystemShutdownListener,\
