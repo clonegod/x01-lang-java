@@ -3,7 +3,8 @@ package clonegod.springcloud.configclient.git;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
+
+import clonegod.springcloud.configclient.git.health.MyApplicationHealthIndicator;
 
 @SpringBootApplication
 public class SpringCloudConfigClientGitApplication {
@@ -13,7 +14,8 @@ public class SpringCloudConfigClientGitApplication {
 	}
 	
 	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
+	public MyApplicationHealthIndicator healthIndicator() {
+		return new MyApplicationHealthIndicator();
 	}
+	
 }

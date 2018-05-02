@@ -32,5 +32,46 @@
 			git server 支持更新通知的功能？
 			
 		
+## 动态配置属性 Bean
 	
+	@RefreshScope - 指定可动态刷新的Bean的范围
+	只有被该注解标记后，对应Bean下的相关属性才可能被动态刷新为最新配置（config server上配置）
+	
+	RefreshEndpoint - refresh 端点
+	org.springframework.cloud.endpoint.RefreshEndpoint.refresh()
+	
+	ContextRefresher - 刷新上下文环境配置
+	org.springframework.cloud.context.refresh.ContextRefresher
+
+
+## 健康指标 - 应用程序各个方面的健康指标，比如diskSpace，memoryUsage, configServer等
+	
+	/health	
+		endpoints.health.sensitive=false
+		management.security.enabled=false
 		
+	HealthEndpoint
+		1个HealthEndpoint可以聚合多个HealthIndicator
+		每个HealthIndicator表示一个功能/方面的健康状态
+		
+	HealthIndicator	
+	
+
+## Actuator - 为生产而准备的特性---在线监控与管理系统的运行状态/参数
+	/actuator 
+		spring boot 激活actuator，必须添加 Hateoas 的依赖
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
+		</dependency>
+	
+
+#### what's HATEOAS ?
+	HATEOAS 可以理解为 REST 服务API的发现入口
+	类似 /users, /withdraw 等，提供所有rest api的统一访问入口
+	
+
+-------------
+	
+https://blogs.sap.com/2017/11/08/centralized-configuration-of-spring-boot-applications-using-sap-cloud-platform/
+	
