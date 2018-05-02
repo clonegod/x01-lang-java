@@ -1,3 +1,13 @@
+What's Netty ?
+	
+	- nio -> nio 基于 reactor 模式  -> 同步非阻塞模式，基于事件驱动方式处理数据   + IO多路复用
+	
+whait's Reactive ?	
+	reactive = reactor + Async  -> 异步非阻塞 + 多工处理
+
+
+-------------------
+
 开源网络通信框架： 
 	MINA
 	NETTY  
