@@ -53,7 +53,7 @@
 			http://localhost:9090/myapp/prod/master/		-> myapp-prod.properties	
 	
 			
-	4、客户端配置
+	4、客户端配置，参考 spring-cloud-config-client-git
 			spring.cloud.config.uri
 			spring.cloud.config.name
 			spring.cloud.config.profile
