@@ -1,17 +1,25 @@
 package java8.core.concurrency;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import org.junit.Test;
 
+/**
+ * 线程池，异步任务执行 
+ *
+ */
 public class TestJava8ConcurrentPart1 {
 	
 	/**
@@ -183,19 +191,12 @@ public class TestJava8ConcurrentPart1 {
 		    .forEach(System.out::println);
 	}
 	
+	
 	/**
 	 * InvokeAny - 返回第一个执行完成的异步结果，。多个异步任务，哪个最先执行完成，就返回哪个。其它未完成的任务被cancel
 	 * 
 	 * 	Instead of returning future objects this method blocks until the first callable terminates and returns the result of that callable.
 	 */
-	private Callable<String> callable(String result, long sleepSeconds) {
-		return () -> {
-			System.out.println(Thread.currentThread().getName() + " Starting ..");
-			TimeUnit.SECONDS.sleep(sleepSeconds);
-			return result;
-		};
-	}
-	
 	@Test
 	public void testInvokeAny() throws InterruptedException, ExecutionException {
 		
@@ -209,14 +210,76 @@ public class TestJava8ConcurrentPart1 {
 		    callable("task2", 1),
 		    callable("task3", 3));
 
-		String result = executor.invokeAny(callables);
+		String result = executor.invokeAny(callables); // returning the result of one that has completed successfully
 		System.out.println(result);
+		
+		TimeUnit.SECONDS.sleep(2);
+		
+		System.out.println(((ForkJoinPool)executor));
+		
+		// [Running, parallelism = 8, size = 5, active = 2, running = 1, steals = 1, tasks = 0, submissions = 0]
+		
 	}
 	
+	private Callable<String> callable(String result, long sleepSeconds) {
+		return () -> {
+			System.out.println(Thread.currentThread().getName() + " Starting ..");
+			TimeUnit.SECONDS.sleep(sleepSeconds);
+			return result;
+		};
+	}
+	
+	/**
+	 * 任务调度线程池
+	 */
+	@Test
+	public void testScheduledExecutors1() throws InterruptedException {
+		ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+
+		Runnable task = () -> System.out.println("Scheduling: " + System.nanoTime());
+		
+		// 延迟3s后，启动任务的执行
+		ScheduledFuture<?> future = executor.schedule(task, 3, TimeUnit.SECONDS);
+
+		TimeUnit.MILLISECONDS.sleep(1337);
+
+		long remainingDelay = future.getDelay(TimeUnit.MILLISECONDS);
+		System.out.printf("Remaining Delay: %sms", remainingDelay);
+	}
 	
 	@Test
-	public void testScheduledExecutors() {
+	public void testScheduledExecutors2() throws IOException {
+		ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+
+		Runnable task = () -> System.out.println("Scheduling: " + System.nanoTime());
+
+		int initialDelay = 0;
+		int period = 1;
 		
+		// 不管之前的任务是否已经结束，都按每隔1s的频率，执行下一次调度，
+		executor.scheduleAtFixedRate(task, initialDelay, period, TimeUnit.SECONDS);
+		
+		System.in.read();
+	}
+	
+	@Test
+	public void testScheduledExecutors3() throws IOException {
+		ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+
+		Runnable task = () -> {
+		    try {
+		        TimeUnit.SECONDS.sleep(2);
+		        System.out.println("Scheduling: " + System.nanoTime());
+		    }
+		    catch (InterruptedException e) {
+		        System.err.println("task interrupted");
+		    }
+		};
+
+		// 上一个任务执行完成后，延迟1s，再执行下一次调度
+		executor.scheduleWithFixedDelay(task, 0, 1, TimeUnit.SECONDS);
+		
+		System.in.read();
 	}
 	
 	

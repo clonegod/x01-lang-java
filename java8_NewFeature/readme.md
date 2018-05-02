@@ -1,4 +1,5 @@
 # Java 8  Tutorial
+## [Java Blog Posts](http://winterbe.com/java/)
 ## [Java 8 Tutorial](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)
 
 ## [Java 8 Stream Tutorial](http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/)
