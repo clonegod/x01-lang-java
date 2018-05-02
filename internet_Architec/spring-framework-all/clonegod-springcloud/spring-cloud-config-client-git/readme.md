@@ -36,6 +36,7 @@
 	
 	@RefreshScope - 指定可动态刷新的Bean的范围
 	只有被该注解标记后，对应Bean下的相关属性才可能被动态刷新为最新配置（config server上配置）
+    通过调用/refresh Endpoint控制客户端配置的更新，一般用于实现：开关、阈值等功能的动态变更场景。
 	
 	RefreshEndpoint - refresh 端点
 	org.springframework.cloud.endpoint.RefreshEndpoint.refresh()
@@ -52,10 +53,10 @@
 		
 	HealthEndpoint
 		1个HealthEndpoint可以聚合多个HealthIndicator
-		每个HealthIndicator表示一个功能/方面的健康状态
 		
 	HealthIndicator	
-	
+        1个HealthIndicator表示一个功能/方面的健康状态的统计
+        
 
 ## Actuator - 为生产而准备的特性---在线监控与管理系统的运行状态/参数
 	/actuator 
