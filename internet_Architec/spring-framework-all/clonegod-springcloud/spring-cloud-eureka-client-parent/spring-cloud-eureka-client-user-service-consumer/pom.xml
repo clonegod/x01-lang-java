@@ -9,6 +9,7 @@
   </parent>
   
   <artifactId>spring-cloud-eureka-client-user-service-consumer</artifactId>
+  <packaging>jar</packaging>
   
   <name>spring-cloud-eureka-client-user-service-consumer</name>
   
@@ -31,4 +32,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>

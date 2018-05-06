@@ -29,7 +29,7 @@
 		a, 客户端定时请求config server，实现配置数据的刷新；
 			可以调用client端的本地接口/refresh实现刷新功能。
 		b,	config server 回调通知客户端，客户端再请求config server更新配置信息；
-			git server 支持更新通知的功能？
+			git hook 更新通知
 			
 		
 ## 动态配置属性 Bean

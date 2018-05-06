@@ -9,6 +9,8 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
+  <packaging>jar</packaging>
+  
   <artifactId>spring-cloud-eureka-client-user-api</artifactId>
   
   <name>spring-cloud-eureka-client-user-api</name>

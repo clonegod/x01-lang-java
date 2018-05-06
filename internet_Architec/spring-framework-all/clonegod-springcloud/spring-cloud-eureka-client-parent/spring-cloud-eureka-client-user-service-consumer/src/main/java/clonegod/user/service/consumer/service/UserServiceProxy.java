@@ -42,9 +42,9 @@ public class UserServiceProxy implements UserService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Collection<User> findAll() {
-		return restTemplate.postForObject(
+		// http请求的方式必须与 service provider 支持的请求类型一致，比如get写为了post，则会请求失败，报405错误码（Method Not Allowed）
+		return restTemplate.getForObject(
 				String.join("/", USER_SERVICE_URL_PREFIX, "user/list"), 
-				null,
 				Collection.class);
 	}
 	
