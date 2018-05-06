@@ -22,7 +22,7 @@
 
 -------------------------
 
-Config Server - 配置中心：
+##### Config Server - 配置中心：
 
 	配置中心集中管理各个服务的配置信息
 	按三个维度关联到配置：
@@ -31,7 +31,7 @@ Config Server - 配置中心：
 		profile: 配置环境，如production
 		label: 版本信息，如git的master分支	
 
-Eureka - 服务注册与发现 :
+##### Eureka - 服务注册与发现 :
 
 	Eureka Server： 
 		提供服务注册与管理（服务健康状态检查）的功能。注册信息是保存在内存中的。
@@ -47,17 +47,15 @@ Eureka - 服务注册与发现 :
 		service consumer 调用 service consumer 直接使用 Spring RestTemplate + @LoadBalanced实现服务调用和负载均衡的功能。
 		实现方式为：基于HTTP协议进行的通信，不是二进制类型的RPC通信。
 
-Ribbon - 负载均衡器
+##### Ribbon - 负载均衡器
 	服务调用的负载均衡：
 		Eureka默认集成Ribbon，并使用Ribbon作为负载均衡的实现。
 		service provider 服务一般会存在多个实例，Eureka client在调用服务时，需要根据负载均衡策略从中选择一个实例进行调用。
 
-Hystrix - 服务熔断器
-	服务短路，服务熔点 --- 保护服务在适当压力下运行，不至于被高流量冲垮
+##### Hystrix - 服务熔断器 / 限流
+	服务短路，服务熔点的目的：保护服务的正常运行
 
 	Spring Cloud Hystrix 常用限流的功能	
-
-
 
 
 -------------------------
@@ -140,14 +138,21 @@ Hystrix - 服务熔断器
 
 
 ### 4、Spring Cloud Hystrix
-	核心理念：
-		介绍服务短路的名词由来、目的，以及相关的类似慨念。随后讲述其中设计哲学、触发条件、处理手段以及客户端和服务端实现方法
+	核心理念 - 服务短路(CircuitBreaker)：
+		介绍服务短路的名词由来、目的，以及相关的类似慨念
+		触发条件、处理手段以及客户端和服务端实现方法
 
-	Spring Cloud Hystrix：
-		作为服务端服务短路实现，介绍 Spring Cloud Hystrix 常用限流的功能，同时，说明健康指标以及数据指标在生产环境下的现实意义
+	Spring Cloud Hystrix Client：
+		作为服务端服务短路实现，介绍 Spring Cloud Hystrix 常用限流的功能
 	
+	Spring Cloud Hystrix DashBoard：
+		说明健康指标以及数据指标在生产环境下的现实意义
+	
+	整合 Netflix Turbine
+
 	生产准备特性：
 		介绍聚合数据指标 Turbine 、Turbine Stream，以及整合 Hystrix Dashboard
+
 
 ### 5、Spring Cloud Feign
 	核心理念：
@@ -159,10 +164,12 @@ Hystrix - 服务熔断器
 	整合支持：
 		Spring Cloud Feign 整合 Hystrix 以及 Ribbon
 
+
 ### 6、Spring Cloud Zuul
 	核心概念：介绍服务网关使用场景、服务能力、依赖关系、架构以及类型
 	Ribbon 整合
 	Hystrix 整合
+
 
 ### 7、Spring Cloud Stream
 	Kafka
@@ -170,11 +177,10 @@ Hystrix - 服务熔断器
 	Spring Boot Kafka
 	Spring Cloud Stream，Kafka 绑定实现
 
+
 ### 8、Spring Cloud Sleuth
 
 	分布式应用跟踪
 
 	ZipKin 整合
-
-
 
