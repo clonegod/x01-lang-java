@@ -5,14 +5,39 @@ public class ComplexClass {
 	private String attr2;
 	// more attributes...
 	
-	public ComplexClass() {
+	private ComplexClass() {
 		super();
 	}
 
-	public ComplexClass(String attr1, String attr2) {
-		super();
-		this.attr1 = attr1;
-		this.attr2 = attr2;
+	public static final class ComplexClassBuilder {
+		private ComplexClass complexClass;
+		
+		// 创建目标对象实例
+		private ComplexClassBuilder() {
+			complexClass = new ComplexClass();
+		}
+		
+		// 返回Builder对象
+		public static ComplexClassBuilder newBuilder() {
+			return new ComplexClassBuilder();
+		}
+		
+		// 设置目标对象的属性1
+		public ComplexClassBuilder attr1(String value) {
+			complexClass.attr1 = value;
+			return this;
+		}
+		
+		// 设置目标对象的属性2
+		public ComplexClassBuilder attr2(String value) {
+			complexClass.attr2 = value;
+			return this;
+		}
+		
+		// 属性设置完成，返回目标对象
+		public ComplexClass build() {
+			return complexClass;
+		}
 	}
 
 	public String getAttr1() {
