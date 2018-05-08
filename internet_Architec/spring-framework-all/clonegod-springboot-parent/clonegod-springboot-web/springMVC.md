@@ -21,7 +21,7 @@ Controller的细分
 	Application Controller 	=> @Controller or Controller
 
 	ServletContextListener -> ContextLoaderListener -> Root WebApplicationContext
-							  DispatcherServlet		-> Servlet WebApplicationContext
+							       DispatcherServlet		-> Servlet WebApplicationContext
 
 DispatcherServlet 的继承体系
 
@@ -64,10 +64,10 @@ spring Web MVC 的配置Bean：
 @ConfigurationProperties(prefix = "spring.mvc")
 WebMvcProperties
 
-springboot 允许通过 appliacatio.properties 覆盖配置配置- 配置外部化 
+springboot 允许通过 appliacation.properties 覆盖配置 - 配置外部化 
 
 
-@ResponseBody 的实现
+@RequestBody, @ResponseBody 的实现
 
 	org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor
 
@@ -134,7 +134,7 @@ ViewResolver
 	
 	View Resolver = 页面 + 解析器 -> resolve view name
 
-	requestURI -> @RequsetMappingHandlerMapping -> HandleMethod -> "viewName"
+	requestURI -> RequestMappingHandlerMapping -> HandleMethod -> "viewName"
 
 	完整页面： prefixe + "viewName" + suffix
 

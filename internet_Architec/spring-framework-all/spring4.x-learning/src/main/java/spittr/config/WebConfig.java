@@ -44,7 +44,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
   
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	  registry.addResourceHandler("/static/**"); // ???
+	  registry.addResourceHandler("/static/**").addResourceLocations("/static"); // 配置静态资源的匹配模式和资源所在的目录 
   }
   
   
