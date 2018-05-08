@@ -12,8 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 public class SpringBootTestBase {
 	
+	// 配置了 webEnvironment=WebEnvironment.RANDOM_PORT 之后，请求URI向相对路径即可
 	@Autowired
-	protected TestRestTemplate testRestTemplate; // 只需要写请求URI，不需要写完整的请求路径（主机、端口、contextPath）
+	protected TestRestTemplate testRestTemplate;  
 	
 	@LocalServerPort
 //	@Value("${local.server.port}")

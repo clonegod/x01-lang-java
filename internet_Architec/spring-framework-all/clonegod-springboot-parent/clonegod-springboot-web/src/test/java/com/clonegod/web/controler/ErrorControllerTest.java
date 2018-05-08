@@ -12,8 +12,14 @@ public class ErrorControllerTest extends SpringBootTestBase {
 	}
 	
 	@Test
-	public void testErrorPage() {
+	public void testErrorPage404() {
 		String error = testRestTemplate.getForObject("/java", String.class);
+		System.out.println(error);
+	}
+	
+	@Test
+	public void testErrorPage500() {
+		String error = testRestTemplate.getForObject("/error-500", String.class);
 		System.out.println(error);
 	}
 }

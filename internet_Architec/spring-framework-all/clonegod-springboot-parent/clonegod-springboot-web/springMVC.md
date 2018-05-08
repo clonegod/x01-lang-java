@@ -106,20 +106,30 @@ HandlerMapping -> RequestMappingHandlerMapping
 
 	3、处理异常的服务地址	<location>
 
-SpringMVC 处理异常的方式(专门针对Controller中抛出的异常进行拦截处理)：
+SpringMVC 处理异常的方式(专门针对Controller中抛出的异常进行拦截处理) 
 	
 	1、创建一个类，声明 @ControllerAdvice + @ResponseBody ( = @RestControllerAdvice)
 	
-	2、在@ExceptionHandler 标注的方法中处理异常，返回错误信息给客户端
+	2、在@ExceptionHandler 标注的方法中处理异常，并直接返回错误提示信息给客户端，返回内容被格式化为JSON.
 
-springboot 处理错误页面的方式（全局的Http请求错误码处理）：
+springboot 处理错误页面的方式（全局的Http请求错误码处理） 
 
 	1、实现ErrorPageRegistrar接口
 
 	2、registry.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/404.html"));	
 
-	3、在Controller中提供一个handler来处理发生的ErrorPage错误（path匹配到注册的/404.html路径）。可以返回一个View，也可以用@ResponseBody返回json。
+	3、在Controller中提供一个handler来处理发生的ErrorPage错误（path匹配到注册的/404.html路径）。
+	
+	4、可以返回一个View，也可以用@ResponseBody返回json。具体返回哪种类型，如果是浏览器请求，则返回页面，如果是接口调用，则返回JSON。
 
+
+说明：
+异常处理的几种方式：
+	1、在handlerMethod中，try...catch。。.处理异常
+	2、定义一个在Controller范围内部有效的异常处理器
+	3、定义一个全局的异常处理器，对所有Controller有效 - @ControllerAdvice 或 	 @RestControllerAdvice
+		@ControllerAdvice   	浏览器客户端请求发生异常时，如404或500的情况下，返回自定义的错误页面。
+		@RestControllerAdvice  	接口api请求发生异常时，将异常信息进行规避后，返回json格式的错误提示。
 
 ######################################
 

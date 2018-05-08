@@ -42,4 +42,18 @@ public class ErrorController {
     	writer.flush();
     	writer.close();
     }
+    
+    @GetMapping("/500.html")
+    public void handler500(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    	log.warn("服务器内部错误: " + request.getRequestURI());
+    	
+    	// 解决中文乱码
+    	response.setCharacterEncoding("UTF-8"); 
+    	response.setHeader("Content-Type", "text/html; charset=utf-8");
+    	
+    	PrintWriter writer = response.getWriter();
+    	writer.write("clonegod website: 服务器内部错误！");
+    	writer.flush();
+    	writer.close();
+    }
 }

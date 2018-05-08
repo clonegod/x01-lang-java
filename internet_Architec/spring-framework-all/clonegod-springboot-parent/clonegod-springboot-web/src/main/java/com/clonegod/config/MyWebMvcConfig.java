@@ -34,7 +34,8 @@ public class MyWebMvcConfig  implements WebMvcConfigurer, ErrorPageRegistrar {
 	@Override
 	public void registerErrorPages(ErrorPageRegistry registry) {
 		// 客户端请求如果发生404异常，则路由请求到path=/404.html的handler
-		registry.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/404.html"));		
+		registry.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/404.html"));	
+		registry.addErrorPages(new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.html"));	
 	}
 
 	
