@@ -1,11 +1,8 @@
 package demo.guava.basic.object;
 
-import java.util.List;
-
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ComparisonChain;
-import com.google.common.collect.Lists;
 
 public class Book implements Comparable<Book> {
 		private Person author;

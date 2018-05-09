@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.junit.Test;
 
@@ -37,7 +38,8 @@ public class TestCopyOnWriteArrayList {
 	 */
 	@Test
 	public void testCopyOnWriteArrayList() throws InterruptedException {
-		boolean useCopyOnWriteArraylist = true;
+		boolean useCopyOnWriteArraylist = ThreadLocalRandom.current().nextBoolean();
+		System.out.println("useCopyOnWriteArraylist: " + useCopyOnWriteArraylist);
     	
     	final List<Integer> list = 
     			useCopyOnWriteArraylist ? new CopyOnWriteArrayList<Integer>() : new ArrayList<Integer>();

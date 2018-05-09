@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CopyOnWriteArrayListUnitTest {
 	
 	/**
-	 * CopyOnWriteArrayList返回的迭代器时稳定的
+	 * CopyOnWriteArrayList返回的迭代器是稳定的
 	 * 获取迭代器之后，即使有其它线程并发修改元素集合，也不会发生异常。
 	 * 新增加的元素对之前的迭代器将不可见。
 	 * 

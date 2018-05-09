@@ -29,9 +29,10 @@ public class BloomFilterTest {
 		BloomFilter<Book> bloomFilter = BloomFilter.create(BookFunnel.FUNNEL, 5);
 		books.forEach(book -> bloomFilter.put(book));
 		
-		Book book1 = books.get(0);
-		System.out.println("book " + book1.getTitle() 
-							+ " contained: " + bloomFilter.mightContain(book1));
+		books.forEach(book -> {
+			System.out.println("book " + book.getTitle() 
+				+ " contained: " + bloomFilter.mightContain(book));
+		});
 		
 		Book newBook = new Book.Builder().title("Mountain Climbing").isbn("Unkonwn").price(0.00).build();
 		System.out.println("book " + newBook.getTitle() 

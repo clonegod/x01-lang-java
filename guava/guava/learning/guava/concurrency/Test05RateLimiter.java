@@ -43,8 +43,8 @@ public class Test05RateLimiter {
 	static final RateLimiter LIMITER = RateLimiter.create(6.0); // 每秒放行6个请求
 	
 	private static void handleRequest(int arg) throws InterruptedException {
-		// gets a permit if one is available
-		if (LIMITER.tryAcquire()) {
+		// gets a permit if one is available  --- 可以1次获取1个permit，也可以1次获取N个permit
+		if (LIMITER.tryAcquire(1)) {
 			TimeUnit.MILLISECONDS.sleep(200);
 			System.out.println("handle  request ..." + arg);
 		} else {
