@@ -1,4 +1,5 @@
 # Spring Cloud Netflix Hystrix
+###### hystrix 可以在服务端进行短路控制，也可以在客户端实现，类似AOP封装。
 	
 	hystrix有三种使用方式：
 	

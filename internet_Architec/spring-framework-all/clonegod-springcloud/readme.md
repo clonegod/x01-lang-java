@@ -20,6 +20,17 @@
     Distributed messaging                       分布式消息: ActiveMQ / JMS 的进一步抽象
 
 
+    
+## Spring Cloud 技术整合
+	eureka		- 服务注册与发现
+	ribbon		- 负载均衡
+	hytrix		- 熔断器、短路、限流
+	feign		- 基于HTTP的RPC调用
+	zuul		- 网关
+	security - OAuth2
+	sleuth		- 监控
+	stream		- Messaging
+    
 -------------------------
 
 ##### Config Server - 配置中心：
