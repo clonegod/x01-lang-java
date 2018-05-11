@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.spring.cloud.feigh.api.domain.Person;
 import org.spring.cloud.feigh.api.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +33,7 @@ public class PersonClientController implements PersonService {
 
 	@Override
 	public Collection<Person> findAll() {
+		System.out.printf("PersonClient Controller / findAll: %s \n", Thread.currentThread().getName());
 		return personService.findAll();
 	}
 

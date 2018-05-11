@@ -32,7 +32,11 @@ public class PersonServiceController implements PersonService {
 
 	@Override
 	public Collection<Person> findAll() {
-		System.out.println("Invoke findAll...");
+		double rnd = Math.random();
+		System.out.println("Invoke findAll..."+rnd);
+		if(rnd > 0.6) {
+			throw new RuntimeException("数据库连接错误---模拟服务提供方发生异常时，客户端Hystrix的fallback功能");
+		}
 		return persons.values();
 	}
 

@@ -1,5 +1,8 @@
 # Spring Cloud Netflix Eureka
-
+	
+	Eureka是高可用的，不是高一致性的。
+	当业务规模很大，并且要求强一致性时，Eureka就不是很适用了。
+	
 ## 前微服务时代
 
 ### 分布式系统基本组成
