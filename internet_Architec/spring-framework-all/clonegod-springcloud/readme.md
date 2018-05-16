@@ -27,10 +27,47 @@
 	hytrix		- 熔断器、短路、限流
 	feign		- 基于HTTP的RPC调用
 	zuul		- 网关
-	security - OAuth2
+	security    - OAuth2
 	sleuth		- 监控
-	stream		- Messaging
+	stream		- 消息系统的整合(kafka)
     
+
+## 分布式系统的整合
+    服务提供方向eureka注册服务
+    服务调用方从eureka发现服务
+    使用feign进行服务调用
+    网关zuul从config server获取调用服务提供方相关的配置
+    当在集群环境下时，使用ribbon对服务调用进行负载均衡
+    使用stream与消息系统进行整合
+    整个调用链路建立完成后，使用seluth进行链路跟踪，监控
+    
+    >>> 分布式配置：spring-cloud-config 
+        config server  管理各个应用的配置信息
+        config client  从server获取本应用的配置信息
+
+    >>> 服务注册与发现：spring-cloud-eureka
+        eureka server       管理服务提供方，消费方
+        service-provide     服务提供方，注册所提供的服务到eureka
+        server-consumer     服务调用方，从eureka发现服务
+
+    >>> 服务调用：spring-cloud-feign
+        feign   基于http的RCP框架
+        ribbon  负载均衡
+        
+    >>> 服务熔断保护：spring-cloud-hystrix
+        hystrix 保护后端服务，提供服务降级，限流的功能
+
+    >>> 消息系统：spring-cloud-stream
+        kafka
+
+    >>> 服务监控：spring-cloud-sleuth
+        sleuth          问题排查，性能监控，调用链路跟踪
+        zipkin          
+        sleuth http     基于http的方式进行数据上报
+        sleuth stream   基于流的方式进行数据上报    
+        
+
+        
 -------------------------
 
 ##### Config Server - 配置中心：
