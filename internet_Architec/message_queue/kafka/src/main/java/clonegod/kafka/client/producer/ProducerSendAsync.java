@@ -34,7 +34,7 @@ public class ProducerSendAsync extends Thread {
             // Send asynchronously
             producer.send(new ProducerRecord<>(topic,
             		messageNo,
-            		messageStr), new DemoCallBack(startTime, messageNo, messageStr));
+            		messageStr), new SendMsgCallBack(startTime, messageNo, messageStr));
             ++messageNo;
             try {
 				Thread.sleep(3000);

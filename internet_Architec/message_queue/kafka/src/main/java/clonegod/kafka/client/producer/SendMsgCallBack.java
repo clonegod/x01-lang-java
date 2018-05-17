@@ -1,21 +1,15 @@
-package kafka.examples.producer;
+package clonegod.kafka.client.producer;
 
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
-/**
- * 异步发送消息到Kafka后的回调函数
- * 
- * @author clonegod@163.com
- *
- */
-class AsyncProduceCallBack implements Callback {
+public class SendMsgCallBack implements Callback {
 
     private final long startTime;
     private final int key;
     private final String message;
 
-    public AsyncProduceCallBack(long startTime, int key, String message) {
+    public SendMsgCallBack(long startTime, int key, String message) {
         this.startTime = startTime;
         this.key = key;
         this.message = message;
@@ -30,7 +24,6 @@ class AsyncProduceCallBack implements Callback {
      *                  occurred.
      * @param exception The exception thrown during processing of this record. Null if no error occurred.
      */
-    @Override
     public void onCompletion(RecordMetadata metadata, Exception exception) {
         long elapsedTime = System.currentTimeMillis() - startTime;
         if (metadata != null) {
@@ -42,4 +35,6 @@ class AsyncProduceCallBack implements Callback {
             exception.printStackTrace();
         }
     }
+    
 }
+

@@ -32,7 +32,7 @@ public class Producer extends Thread {
             if (isAsync) { // Send asynchronously
                 producer.send(new ProducerRecord<>(topic,
                     messageNo,
-                    messageStr), new DemoCallBack(startTime, messageNo, messageStr));
+                    messageStr), new SendMsgCallBack(startTime, messageNo, messageStr));
             } else { // Send synchronously
                 try {
                     producer.send(new ProducerRecord<>(topic,
