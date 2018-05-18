@@ -3,7 +3,9 @@
 	What are core classes and interfaces in java.util.List hierarchy in java?
 	
 ##### Answer
-	Freshers must know core classes in List hierarchy but experienced developers must be able to explain this java.util.List hierarchy in detail.
+```
+	Freshers must know core classes in List hierarchy but experienced developers 
+	must be able to explain this java.util.List hierarchy in detail.
 
 	java.util.List interface extends java.util.Collection interface.
 	
@@ -12,6 +14,7 @@
 	implements java.util.List interface.
 	
 	Also some abstract classes like java.util.AbstractCollection, java.util.AbstractList and java.util.AbstractSequentialList have been mentioned in hierarchy.
+```
 
 ![](./img/collection-list-hierarchy.png)
 
@@ -23,6 +26,7 @@
 	What are core classes and interfaces in java.util.Set hierarchy?
 	
 ##### Answer
+```
 	Freshers must know core classes in Set hierarchy but experienced developers must be able to explain this java.util.Set hierarchy in detail.
 	
 	java.util.Set interface extends java.util.Collection interface.
@@ -34,7 +38,8 @@
 	
 	Also some abstract classes like 
 	java.util.Dictionary and java.util.AbstractSet and java.util.AbstractCollection have been mentioned in hierarchy.
-	
+```
+
 ![](./img/collection-set-hierarchy.png)
 	
 	
@@ -45,6 +50,7 @@
 	What are core classes and interfaces in java.util.Map hierarchy?
 
 ##### Answer	
+```
 	java.util.Map interface extends java.util.Collection interface.
 
 	java.util.HashMap, java.util.Hashtable, java.util.concurrent.ConcurrentHashMap, 	java.util.LinkedHashMap, java.util.TreeMap, 	java.util.concurrent.ConcurrentSkipListMap, java.util.IdentityHashMap, 	java.util.WeakHashMap, java.util.EnumMap classes 
@@ -52,6 +58,7 @@
 
 
 	Also some abstract classes like java.util.Dictionary and java.util.AbstractMap have been mentioned in hierarchy.
+```
 	
 ![](./img/collection-map-hierarchy.png)
 	
