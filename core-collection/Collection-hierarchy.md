@@ -8,7 +8,10 @@
 	
 	java.util.List interface extends java.util.Collection interface.
 
-	Also some abstract classes like java.util.AbstractCollection, 	java.util.AbstractList and java.util.AbstractSequentialList 
+	Also some abstract classes like 
+		java.util.AbstractCollection, 	
+		java.util.AbstractList and 
+		java.util.AbstractSequentialList 
 	have been mentioned in hierarchy.
 	
 ### java.util.List的实现类 	
@@ -46,7 +49,10 @@
 	java.util.Set interface extends java.util.Collection interface.
 	
 	Also some abstract classes like 
-	java.util.Dictionary and java.util.AbstractSet and java.util.AbstractCollection 	have been mentioned in hierarchy.
+		java.util.Dictionary and 
+		java.util.AbstractSet and 
+		java.util.AbstractCollection 	
+	have been mentioned in hierarchy.
 	
 ### java.util.Set 的子类
 	非线程安全:
@@ -84,7 +90,9 @@
 ### Answer	
 	java.util.Map interface extends java.util.Collection interface.
 	
-	Also some abstract classes like java.util.Dictionary and java.util.AbstractMap 
+	Also some abstract classes like 
+		java.util.Dictionary and 
+		java.util.AbstractMap 
 	have been mentioned in hierarchy.
 	
 
