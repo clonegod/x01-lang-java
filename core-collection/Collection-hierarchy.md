@@ -44,7 +44,8 @@
 	What are core classes and interfaces in java.util.Set hierarchy?
 	
 ### Answer
-	Freshers must know core classes in Set hierarchy but experienced developers must be able to explain this java.util.Set hierarchy in detail.
+	Freshers must know core classes in Set hierarchy but experienced developers 
+	must be able to explain this java.util.Set hierarchy in detail.
 	
 	java.util.Set interface extends java.util.Collection interface.
 	
