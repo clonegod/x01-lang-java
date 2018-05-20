@@ -21,24 +21,26 @@ public class BinarySearch {
 		
 		int target = 27;
 		int index = search(sortedArray, target);
-		System.out.println(String.format("index of %d in array is %d", target, index));
+		System.out.println(String.format("\nindex of %d in array is %d", target, index));
 	}
 	
-	public static int search(int[] sortedArray, int targetElement) {
+	public static int search(int[] sortedArray, int key) {
 		int lower = 0;
 		int upper = sortedArray.length - 1;
-		while(lower <= upper) {
-			int mid = (lower + upper) / 2;
-			if(sortedArray[mid] < targetElement) {
-				lower = mid + 1;
-			}
-			else if(sortedArray[mid] > targetElement) {
-				upper = mid - 1;
-			}
-			else {
-				return mid;
+		int mid = 0;
+		while(true) {
+			mid = (lower + upper) / 2;
+			if(lower > upper) {
+				System.out.print("\nElement=" + key + " not found");
+                return -1; // 没有找到，返回-1
+			} else if(sortedArray[mid] == key) {
+				System.out.print("\nElement=" + key + " found at position="   + mid);
+                return mid;
+			} else if(sortedArray[mid] < key) {
+				lower = mid + 1; // 中间数小于要查找的数，则mid+1作为新的lower
+			} else {
+				upper = mid - 1; // 中间数大于要查找的数，则mid-1作为新的upper
 			}
 		}
-		return -1;
 	}
 }
