@@ -1,3 +1,5 @@
+http://www.javamadesoeasy.com/2015/05/collection-top-50-interview-questions.html
+
 ## Collection interview Question 9. 
 
 	What are core classes and interfaces in java.util.List hierarchy in java?

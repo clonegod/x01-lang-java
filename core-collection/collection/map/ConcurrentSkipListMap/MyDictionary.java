@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentSkipListMap;
  * And you can use 2 Collection classes? 
  * Which Collection classes you will prefer and WHY?
  *	
- *	--- ConcurrentSkipListMap 可以提供多线程并发安全，而且支持key的排序，对于字典而言排序是必须的。
+ *	--- ConcurrentSkipListMap 多线程并发、支持key的排序、可导航，作为字典场景的应用是很合适的。
  *	--- TreeSet 具有排序功能，而且可以去除重复元素。
  */
 public class MyDictionary {
