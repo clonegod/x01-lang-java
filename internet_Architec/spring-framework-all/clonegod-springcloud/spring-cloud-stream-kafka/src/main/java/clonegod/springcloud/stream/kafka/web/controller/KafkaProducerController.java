@@ -15,29 +15,34 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import clonegod.springcloud.stream.kafka.stream.producer.MessageProducerBean;
+
 @RestController
 public class KafkaProducerController {
 
 	private final KafkaTemplate<String, String> kafkaTemplate;
 	
 	private final String topic;
+	
+	private final MessageProducerBean messageProducerBean;
 
 	@Autowired
 	public KafkaProducerController(KafkaTemplate<String, String> kafkaTemplate, 
+									MessageProducerBean messageProducerBean,
 									@Value("${app.kafka.topic}") String topic) {
-		super();
 		this.kafkaTemplate = kafkaTemplate;
+		this.messageProducerBean = messageProducerBean;
 		this.topic = topic;
 	}
 	
 	/**
-	 * 写入消息到Kafka
+	 * 通过{@link KafkaTemplate } 发送消息到Kafka
 	 * 
 	 * @param msg
 	 * @return
 	 */
-	@GetMapping("/kafka/{msg}")
-	public Object sendMsg(@PathVariable String msg) {
+	@GetMapping("/kafkaTemplate/{msg}")
+	public Object sendMsgByKafkaTemplate(@PathVariable String msg) {
 		ProducerRecord<String, String> record = new ProducerRecord<String, String>(topic, msg);
 		ListenableFuture<SendResult<String,String>> future = kafkaTemplate.send(record);
 		try {
@@ -48,6 +53,44 @@ public class KafkaProducerController {
 			map.put("offset", metadata.offset());
 			return map;
 		} catch (InterruptedException | ExecutionException e) {
+			e.printStackTrace();
+			return e.getMessage();
+		}
+	}
+	
+	/**
+	 * 通过{@link MessageProducerBean } 发送消息到Kafka
+	 * @param msg
+	 * @return
+	 */
+	@GetMapping("/kafkaStream/{msg}")
+	public Object sendMsgByMessageBean(@PathVariable String msg) {
+		boolean success = false;
+		try {
+			success = messageProducerBean.send(msg);
+			Map<String, Object> map = new HashMap<>();
+			map.put("success", success);
+			return map;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return e.getMessage();
+		}
+	}
+	
+	/**
+	 * 通过{@link MessageProducerBean2 } 发送消息到Kafka
+	 * @param msg
+	 * @return
+	 */
+	@GetMapping("/kafkaStream2/{msg}")
+	public Object sendMsgByMyMessageBean(@PathVariable String msg) {
+		boolean success = false;
+		try {
+			success = messageProducerBean.sendByMySource(msg);
+			Map<String, Object> map = new HashMap<>();
+			map.put("success", success);
+			return map;
+		} catch (Exception e) {
 			e.printStackTrace();
 			return e.getMessage();
 		}
