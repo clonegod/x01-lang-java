@@ -3,6 +3,7 @@ package clonegod.springcloud.stream.kafka.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.IntStream;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
@@ -82,13 +83,15 @@ public class KafkaProducerController {
 	 * @param msg
 	 * @return
 	 */
-	@GetMapping("/kafkaStream2/{msg}")
+	@GetMapping("/kafkaStream/batch/{msg}")
 	public Object sendMsgByMyMessageBean(@PathVariable String msg) {
-		boolean success = false;
+		final Map<String, Object> map = new HashMap<>();
 		try {
-			success = messageProducerBean.sendByMySource(msg);
-			Map<String, Object> map = new HashMap<>();
-			map.put("success", success);
+			IntStream.rangeClosed(1, 10).forEach(n -> {
+				boolean success = false;
+				messageProducerBean.sendByMySource(n+": "+msg);
+				map.put("success", success);
+			});
 			return map;
 		} catch (Exception e) {
 			e.printStackTrace();

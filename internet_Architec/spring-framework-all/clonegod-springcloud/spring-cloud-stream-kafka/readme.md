@@ -1,4 +1,19 @@
+## 几种开源消息中间件的比较
+#### ActiveMQ
+	java语言开发，功能全面
+	JMS规范
+	AMQP高级消息队列协议
+			
+#### RabbitMQ
+	elang语言开发
+	AMQP 高级消息队列协议
+	MQTT 物联网环境下的消息传输协议
+	
+#### Kafka
+	相对松散的消息队列协议	
+	高性能、高可用，适合大数据量的消息传输
 
+-------------------
 ## Spring Kafka 相关的类
 	KafkaAutoConfiguration	springboot对kafka提供的自动装配器
 	KafkaTemplate		spring对kafka原生客户端封装的模板类
@@ -27,7 +42,7 @@
 	
 ---------------------------
 
-## Spring Cloud Stream Binder: Kafka
+## Spring Cloud Stream Binder: Kafka (生产者)
 	注意：
 	1、spring-cloud-stream 的 binder有多种实现方式，kafka仅仅是其中的一种。
 	2、spring-cloud-stream 是基于Spring Integration: 
@@ -64,9 +79,7 @@
 	spring.cloud.stream.bindings.output.destination=${app.kafka.topic}
 
 
----------------
-
-## 扩展-自定义Source
+## 扩展-自定义消息源 Source
 	# 声明接口
 	public interface MySource {
 	
@@ -121,6 +134,52 @@
 	spring.cloud.stream.bindings.myoutput.destination=${app.kafka.topic}
 
 
+----------------------------
 
+## Spring Cloud Stream Binder: Kafka (消费端)
+#### Spring Cloud Stream Kafka 消费端的几种配置方式
 
+	@Component
+	@EnableBinding({Sink.class})
+	public class MessageConsumerBean {
+	
+		
+		@Autowired
+		@Qualifier(Sink.INPUT) // 限定Bean的名称（如果有多个的话，以示区分）
+		private SubscribableChannel subscribableChannel;
+		
+		
+		@Autowired
+		private Sink sink; // sink.input() == subscribableChannel
+		
+		
+		@PostConstruct // 依赖注入完成后，进行的初始化操作
+		public void init() {
+			// 方式一
+			subscribableChannel.subscribe(new MessageHandler() {
+				@Override
+				public void handleMessage(Message<?> message) throws MessagingException {
+					System.out.println("subscribe: "+message.getPayload());
+				}
+			});
+			
+			// 方式二
+			sink.input().subscribe(msg -> {
+				System.err.println(msg);
+			});
+		}
+		
+		// 方式三
+		@ServiceActivator(inputChannel=Sink.INPUT)
+		public void onMessage(Object message) {
+			System.out.println("@ServiceActivator: " + message);
+		}
+		
+		// 方式四
+		@StreamListener(Sink.INPUT)
+		public void onMessage(String message) {
+			System.out.println("@StreamListener: " + message);
+		}
+		
+	}
 
