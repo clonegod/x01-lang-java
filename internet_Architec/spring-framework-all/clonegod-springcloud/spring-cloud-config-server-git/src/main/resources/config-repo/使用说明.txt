@@ -1,0 +1,6 @@
+首先，将config-repo放到E:/var/目录下
+
+然后，通过git 命令将zuul*.properties提交到git仓库中
+
+注意：如果使用git作为配置数据的仓储，则只有提交到git仓库的那些配置文件，才会被spring-cloud-config作为有效配置进行加载。
+

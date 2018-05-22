@@ -38,7 +38,7 @@
 		zuul.routes.person-service=/person-service/**
 		
 		
-		## Ribbon不使用Eureka的配置方式
+		## Ribbon不使用Eureka的配置方式，则需要手动配置所有相关的服务地址
 		ribbon.eureka.enable=false
 		# 配置 person-service的负载均衡服务器列表 
 		person-service.ribbon.listOfServers=http://localhost:9090

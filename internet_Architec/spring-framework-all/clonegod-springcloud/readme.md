@@ -67,7 +67,15 @@
         sleuth stream   基于流的方式进行数据上报    
         
 
-        
+## 分布式系统概况说明(按启动顺序排序)
+    Eureka                  端口：12345                     项目：spring-cloud-feign-eureka
+    Config Server           My-Config-Server-Git:10000      项目：spring-cloud-config-server-git
+    PersonService Provider  person-service:9090             项目：spring-cloud-feign-provider
+    PersonService Consumer  person-client:8080              项目：spring-cloud-feign-consumer
+    zuul                    spring-cloud-zuul:7070          项目：spring-cloud-zuul
+
+
+       
 -------------------------
 
 ##### Config Server - 配置中心：
@@ -220,10 +228,10 @@
 
 
 ### 7、Spring Cloud Stream
-	Kafka
-	Spring Kafka
-	Spring Boot Kafka
-	Spring Cloud Stream，Kafka 绑定实现
+	Kafka                       原生kafka API的使用
+	Spring Kafka                spring对kafka进行了封装，提供KafkaTemplate
+	Spring Boot Kafka           springboot对KafkaTemplate进行了自动装配的支持
+	Spring Cloud Stream Binder-Kafka  spring cloud stream 使用kafka作为stream流的binder实现
 
 
 ### 8、Spring Cloud Sleuth

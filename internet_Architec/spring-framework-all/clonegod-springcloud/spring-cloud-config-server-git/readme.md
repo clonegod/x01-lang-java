@@ -35,7 +35,7 @@
 			myapp-prod.properties			生产环境
 		
 		添加配置文件到git
-			$ cd E:\tmp
+			$ cd E:\var
 			$ mkdir config-repo
 			$ cd config-repo
 			$ git init .
