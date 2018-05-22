@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-import clonegod.commons.log.Console;
+import clonegod.utils.log.Console;
 
 /**
  * 并行异步执行任务，提供了强大的异步编程接口

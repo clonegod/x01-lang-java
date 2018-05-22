@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.LongAdder;
 
 import com.google.common.collect.Lists;
 
-import clonegod.commons.thread.ThreadUtils;
+import clonegod.uitls.ThreadUtils;
 
 public class Test03Java7ForkJoin {
 
