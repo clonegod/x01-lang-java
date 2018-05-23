@@ -11,11 +11,11 @@ import conc.util.CommonUtil;
  * 	核心池大小，最大池大小，空闲线程池存活时长，工作队列，线程工厂，拒绝执行策略。
  * 
  * 1. cpu密集型 ? io密集型? 
- * 		不同的场景需要的线程数是不同的。cpu密集型线程数建议为cpu核数+1；IO密集型建议设置较多线程提供服务；
+ * 		不同的场景需要的线程数是不同的。cpu密集型线程数建议为cpu核数+1；IO密集型建议设置较多线程提供服务，目的是为了提高cpu的利用率；
  * 2. 阻塞队列，有界？无界？
- * 		有界可以防止创建大量线程导致服务崩溃。
+ * 		有界可以防止创建大量线程导致服务崩溃。Executors工厂方法中，除了cachedThreadPool使用的SynchronousQueue，其它默认使用的LinkedBlockingQueue.
  * 3. 线程池中线程什么时候被启动？ 
- * 		默认是有任务达到后才启动，可以预启动策略，调用prestartAllCoreThreads()方法。
+ * 		默认是有任务达到后才启动，可以预启动策略，调用ThreadPoolExecutor.prestartAllCoreThreads()方法。
  * 4. 饱和策略？
  * 		RejectedExecutionHandler
  * 			AbortPolicy				默认策略。终止该任务。会引起executor抛出未检查的RejectedExecutionException
@@ -23,7 +23,7 @@ import conc.util.CommonUtil;
  * 			DiscardOldestPolicy		丢弃最旧的任务，即本来该接下来运行的任务。当使用PriorityQueue时，不能使用此策略，否则丢弃的是优先级最高的任务！
  * 			CallerRunsPolicy		把任务退回给调用者，由调用者线程来执行该任务。
  * 5. 线程池提供的回调方法？
- * 		可以使用这些回调方法来添加日志，统计信息
+ * 		可以使用这些回调方法来添加日志，统计信息 --- 基础ThreadPoolExecutor，复写相关方法，加入自定义逻辑
  * 		beforeExecute	如果抛出一个RuntimeException，任务将不会被执行，afterExecute也不会被执行
  * 		afterExecute	无论任务正常从run()返回，还是抛出异常，afterExecute都会被执行（除非是Error异常）
  * 		terminated		在线程池完成关闭后调用(所有任务都done并且所有线程都退出),此时可以发出通知，记录日志，完成统计信息。

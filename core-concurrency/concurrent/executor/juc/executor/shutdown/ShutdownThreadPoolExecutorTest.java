@@ -16,7 +16,7 @@ Invocation has no additional effect if already shut down.
 启动有序关闭，其中先前提交的任务将被执行，但不会接受任何新任务。 如果已经关闭，调用没有额外的作用。
 
 This method does not wait for previously submitted tasks to complete execution. Use awaitTermination to do that.
-此方法不等待任务的结束，会立即返回。建议结合使用“等待终止”来加强对退出逻辑。
+此方法不等待任务的结束，会立即返回。建议结合使用“等待终止”来加强退出逻辑，即让主线程wait一定时间。
  */
 public class ShutdownThreadPoolExecutorTest {
 	static final ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
@@ -42,6 +42,7 @@ public class ShutdownThreadPoolExecutorTest {
 		executor.shutdown();
 		if (!executor.awaitTermination(1, TimeUnit.MILLISECONDS)) {
 			System.out.println("-----------还有任务正在被执行或等待被执行，线程池正在等待关闭中");
+			// executor.shutdownNow();
 			//System.exit(0);
 		}
 		

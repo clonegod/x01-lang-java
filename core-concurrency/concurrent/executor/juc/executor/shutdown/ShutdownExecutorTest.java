@@ -32,8 +32,8 @@ public class ShutdownExecutorTest {
 		        }
 		    });
 
-		    executor.shutdown(); // shutdown不会中断当前正在执行的线程
-		    //executor.shutdownNow(); // shutdownNow会向当前正在执行的线程发出中断异常
+		    executor.shutdown(); // shutdown不会中断当前正在执行的线程，仅仅是不再接收新任务的提交
+		    //executor.shutdownNow(); // shutdownNow会向当前正在执行的线程发出中断异常，仅仅是发出中断信号，线程是否停止执行取决于运行的代码是否对中断进行了响应并退出
 		    
 		    // 调用完shutdown之后，再调用awaitTermination对关闭结果进行检测，如果还未关闭，则直接退出jvm进程。
 		    if (!executor.awaitTermination(100, TimeUnit.MICROSECONDS)) {
