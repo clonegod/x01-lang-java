@@ -1,16 +1,16 @@
-package com.aysnclife.dataguru.jvm;
+package jvm.classloader3;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashSet;
 
-class CustomHotswapCL extends ClassLoader { 
+class CustomClsHotSwaper extends ClassLoader { 
 
 	private String basedir; // 需要该类加载器直接加载的类文件的基目录
     private HashSet<String> dynaclazns; // 需要由该类加载器直接加载的类名
 
-    public CustomHotswapCL(String basedir, String[] clazns) { 
+    public CustomClsHotSwaper(String basedir, String[] clazns) { 
         super(null); // 指定父类加载器为 null 
         this.basedir = basedir; 
         dynaclazns = new HashSet<String>(); 

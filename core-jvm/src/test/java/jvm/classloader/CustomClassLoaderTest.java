@@ -14,7 +14,7 @@ public class CustomClassLoaderTest {
 	public static void main(String[] args) throws Exception {
 		System.out.println("测试使用自定义类加载器加载class文件");
 		
-		MyClassLoader myLoader = new MyClassLoader("E:/source/practice-java/jvm/target/classes");
+		MyClassLoader myLoader = new MyClassLoader(System.getProperty("user.dir")+"/target/classes");
 		Class<?> clazz = myLoader.loadClass("jvm.classloader.SomeClass");
 		
 		System.out.println("===== ClassLoaderTree =====");

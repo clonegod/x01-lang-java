@@ -1,10 +1,10 @@
-package com.aysnclife.dataguru.jvm;
+package jvm.gc;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JVM03 {
+public class GCLogAnalysis {
 	/*
 	 * 	【堆/新生代】
 	 *  def new generation   total 6464K, used 115K [0x34e80000, 0x35580000, 0x35580000)
@@ -25,30 +25,22 @@ public class JVM03 {
 	// -Xloggc:logpath	重定向gc日志输出到文件。 如，-Xloggc:/gclog/classloading.log 将日志输出到工作目录下gclog目录下的classloading.log文件
 	// -XX:+PrintGCDetails	程序运行结束后打印堆的垃圾清理详细日志
 	// -Xmx40M -Xmn40M -Xmn7M -XX:+PrintGCDetails -Xloggc:log/gc.log
-//	public static void main(String[] args) throws Exception {
-//		int sizeNew = (0x35580000 - 0x34e80000) / 1024 / 1024;
-//		System.out.println("size of new generation:"+sizeNew);
-//		
-//		int sizeOld = (0x37680000 - 0x35580000) / 1024 / 1024;
-//		System.out.println("size of old generation:"+sizeOld);
-//		
-//		int sizeHeap = sizeNew+sizeOld; 
-//		System.out.println("size of heap:"+sizeHeap);
-//		
-//		System.out.println("go");
-//		List<Byte[]> datas = new ArrayList<Byte[]>();
-//		for(int i=0;i<1;i++) {
-//			datas.add(new Byte[10*1024*1024]);
-//		}
-//		
-//		
-//	}
-	// -Xmx40m -Xms40m -XX:SurvivorRatio=4.5 -XX:+PrintGCDetails
-
 	public static void main(String[] args) {
-		   byte[] b=null;
-		   for(int i=0;i<10;i++)
-		       b=new byte[3*1024*1024];
+		int sizeNew = (0x35580000 - 0x34e80000) / 1024 / 1024;
+		System.out.println("size of new generation:"+sizeNew);
+		
+		int sizeOld = (0x37680000 - 0x35580000) / 1024 / 1024;
+		System.out.println("size of old generation:"+sizeOld);
+		
+		int sizeHeap = sizeNew+sizeOld; 
+		System.out.println("size of heap:"+sizeHeap);
+		
+		System.out.println("go");
+		List<Byte[]> datas = new ArrayList<Byte[]>();
+		for(int i=0;i<1;i++) {
+			datas.add(new Byte[10*1024*1024]);
 		}
-
+		
+		
+	}
 }

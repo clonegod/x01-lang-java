@@ -1,4 +1,4 @@
-package com.aysnclife.dataguru.jvm.deadlock;
+package jvm.deadlock;
 
 import java.util.Random;
 

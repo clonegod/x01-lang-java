@@ -1,6 +1,6 @@
-package com.aysnclife.dataguru.jvm.classloader;
+package jvm.classloader2;
 
-public class HelloMain {
+public class Main {
 	
 	public static void main(String[] args) throws Exception {
 

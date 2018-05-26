@@ -1,8 +1,8 @@
-package com.aysnclife.dataguru.jvm;
+package jvm.oom;
 
 import org.junit.Test;
 
-public class JVM02_02 {
+public class StackOverFlowAvoid {
 	
 	// 总递归/循环次数
 	private final static int TOTAL_TIMES = 100000; //10万

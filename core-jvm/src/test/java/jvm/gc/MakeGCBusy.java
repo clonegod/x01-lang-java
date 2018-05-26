@@ -1,4 +1,4 @@
-package com.hqh.jvm;
+package jvm.gc;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;

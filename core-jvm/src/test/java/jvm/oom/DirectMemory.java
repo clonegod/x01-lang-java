@@ -1,4 +1,4 @@
-package com.aysnclife.dataguru.jvm.memoryAnalyze;
+package jvm.oom;
 
 import java.nio.ByteBuffer;
 

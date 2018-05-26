@@ -3,7 +3,7 @@ package jvm.sysproperties;
 import java.util.Map.Entry;
 
 /**
- * 常用系统属性：
+ * Java运行时相关的常用系统属性：
  * 
  * java.home	C:\Java\jdk1.7.0_40\jre
  * java.specification.version	1.7

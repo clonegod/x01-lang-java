@@ -1,4 +1,4 @@
-package com.aysnclife.dataguru.jvm.classloader;
+package jvm.classloader2;
 
 import java.text.MessageFormat;
 import java.util.Date;

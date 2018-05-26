@@ -1,4 +1,4 @@
-package com.aysnclife.dataguru.jvm;
+package jvm.gc;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.Date;
  * -XX:+PrintGCDetails 				输出gc详细日志
  * -Xloggc:log/gc.log				重定向gc日志到文件
  */
-public class JVM04_01 {
+public class StopTheWord {
 	
 	private static final Collection<Object> leak = new ArrayList<>();
 	
