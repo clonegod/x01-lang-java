@@ -4,9 +4,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 import org.junit.Test;
 
@@ -47,6 +51,45 @@ public class Test02LocalCache {
 	    assertEquals(0, cache.size());
 	    assertEquals("HELLO", cache.getUnchecked("hello"));
 	    assertEquals(1, cache.size());
+	}
+	
+	/**
+	 * 多线程并发请求某个不存在的缓存，LocalCache内部机制确保了仅执行1次load方法，不存在多次执行load方法的问题。
+	 */
+	@Test
+	public void whenConcurrentCacheMiss_thenValueIsComputed() throws IOException, InterruptedException {
+		CacheLoader<String, String> loader;
+		loader = new CacheLoader<String, String>() {
+			@Override
+			public String load(String key) {
+				try {
+					System.out.println("-----------> load cache from somewhere start...");
+					TimeUnit.SECONDS.sleep(3);
+					System.out.println("-----------> load cache from somewhere end...");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				return key.toUpperCase();
+			}
+		};
+		
+		LoadingCache<String, String> cache;
+		cache = CacheBuilder.newBuilder().build(loader);
+		
+		CyclicBarrier barrier = new CyclicBarrier(2);
+		
+		IntStream.of(1,2).forEach(n -> {
+			new Thread(()->{
+				try {
+					barrier.await();
+					System.out.println(Thread.currentThread().getName() + ": " + cache.getUnchecked("hello"));
+				} catch (InterruptedException | BrokenBarrierException e) {
+					e.printStackTrace();
+				}
+			}) .start();
+		});
+		
+		TimeUnit.SECONDS.sleep(5);
 	}
 	
 	/**
