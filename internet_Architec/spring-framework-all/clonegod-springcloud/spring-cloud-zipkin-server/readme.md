@@ -24,3 +24,9 @@
 			SpringApplication.run(SpringCloudZipkinServerApplication.class, args);
 		}
 	}
+	
+	
+### 访问Zipkin UI
+	http://localhost:10110
+
+

@@ -67,8 +67,8 @@
 		person-client  8080
 		person-service 9090
 		spring-cloud-zuul 7070
-		spring-cloud-sleuth	11010
-		zipkin-server 23456
+		spring-cloud-sleuth	6060
+		zipkin-server 10110
 
 ### 1、HTTP - 简单，但是效率不高，受网络影响比较
 ##### 添加Zipkin 客户端依赖：
@@ -80,7 +80,9 @@
 
 
 
-
+##### 访问后台接口，触发记录日志
+	访问http://localhost:11010
+	记录的日志会上提交到zipkin server上，之后从zipkin ui上便可以查看相关的链路信息
 
 ### 2、Stream - Kafka
 
