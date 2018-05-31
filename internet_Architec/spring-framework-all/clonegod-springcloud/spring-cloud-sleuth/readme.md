@@ -4,10 +4,10 @@
 	Sleuth基于Google Dapper论文进行实现
 
 
-## Spring Cloud Sleuth
-	监控链路跟踪：一个请求到返回响应，所经过的所有服务，以及服务的响应时间（RT值）；
-	预警：对链路中出现的异常，及时通知到开发人员；
-	日志排查：处理请求失败，需要快速定位到是链路中哪个环节出现了异常；
+## Spring Cloud Sleuth 用来做什么？
+	完整监控链路跟踪：一个请求到返回响应，所经过的完整链路，以及每个服务的响应时间（RT值）；
+		日志排查：处理请求失败，需要快速定位到是链路中哪个环节出现了异常；
+		性能监控 ：检查链路中每个服务的响应耗时
 
 ## 引入Maven依赖
 	<dependency>
@@ -56,11 +56,8 @@
 ![zipkin-ui](images/zipkin-ui.png)
 ![zipkin-error-traces](images/zipkin-error-traces.png)
 
-## Zipkin 整合
-	1、启动1个Zipkin Server，具体配置参考spring-cloud-zipkin-server。
-	2、在需要向Zipkin Server上报数据的项目中，加入Zipkin的客户端。
-		
-		
+***
+
 #### 相关应用端口信息：
 		config-server 10000
 		eureka-server 12345
@@ -70,20 +67,48 @@
 		spring-cloud-sleuth	6060
 		zipkin-server 10110
 
+#### 服务启动顺序
+	1、Zipkin Server
+	2、Eureka Server
+	3、spring-cloud-config-server
+	4、person-service
+	5、person-client
+	6、spring-cloud-zuul
+	7、spring-cloud-sleuth
+	
+	
+## Zipkin 整合
+	1、Zipkin Server: 具体配置参考spring-cloud-zipkin-server。
+	2、在需要向Zipkin Server上报数据的项目中，加入Zipkin的客户端。
+	3 、客户端向zipkin上报数据有两种方式：
+			HTTP
+			Stream (Kafka/RabbitMQ)
+
 ### 1、HTTP - 简单，但是效率不高，受网络影响比较
-##### 添加Zipkin 客户端依赖：
+##### 配置Sleuth集成Zipkin依赖：
+		<!-- Sleuth  -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
 		<!-- Zipkin 客户端 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 
+##### 测试HTTP方式上报日志
+	http://localhost:6060
+	访问后台接口，触发记录日志
+	记录的日志通过http方式，将日志发送到zipkin server，之后从zipkin ui上便可以查看相关的请求链路。
 
-
-##### 访问后台接口，触发记录日志
-	访问http://localhost:11010
-	记录的日志会上提交到zipkin server上，之后从zipkin ui上便可以查看相关的链路信息
+-----
 
 ### 2、Stream - Kafka
+	应用程序将日志发送到kafka上，完成日志的上报。
+	
+-----
 
 ### 3、Logger 本地日志（最可靠）
+	扩展log4j/logback日志框架，将日志写入本地文件，再将日志收集到hadoop中，做一些统计分析。
+	// TODO
