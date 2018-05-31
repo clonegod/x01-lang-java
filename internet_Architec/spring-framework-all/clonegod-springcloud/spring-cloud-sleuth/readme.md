@@ -69,14 +69,21 @@
 
 #### 服务启动顺序
 	1、Zipkin Server
+		（提供UI显示请求的完整链路）
 	2、Eureka Server
+		（服务注册与发现）
 	3、spring-cloud-config-server
+		（配置中心，zuul从配置中心获取person服务的调用地址）
 	4、person-service
+		(person服务的提供端)
 	5、person-client
+		(person服务客户端：从eureka获取person-service的服务地址，调用person-service)
 	6、spring-cloud-zuul
+		（网关：从Eureka获取zuul.routes的相关配置，比如person-client的URI路径匹配模式）
 	7、spring-cloud-sleuth
-	
-	
+		(客户端：从Eureka获取网关地址，调用网关)
+
+------------------------------------------
 ## Zipkin 整合
 	1、Zipkin Server: 具体配置参考spring-cloud-zipkin-server。
 	2、在需要向Zipkin Server上报数据的项目中，加入Zipkin的客户端。
@@ -84,31 +91,16 @@
 			HTTP
 			Stream (Kafka/RabbitMQ)
 
-### 1、HTTP - 简单，但是效率不高，受网络影响比较
-##### 配置Sleuth集成Zipkin依赖：
-		<!-- Sleuth  -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
-		<!-- Zipkin 客户端 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
-		</dependency>
-
-##### 测试HTTP方式上报日志
-	http://localhost:6060
-	访问后台接口，触发记录日志
-	记录的日志通过http方式，将日志发送到zipkin server，之后从zipkin ui上便可以查看相关的请求链路。
 
 -----
-
+### 1、HTTP - 简单，但是效率不高，受网络影响比较
+	日志以HTTP方式发送到zipkin server上，完成日志的上报。
+	
 ### 2、Stream - Kafka
 	应用程序将日志发送到kafka上，完成日志的上报。
 	
 -----
 
-### 3、Logger 本地日志（最可靠）
+### 扩展： Logger 本地日志（另一种通过日志来对系统进行监控的方案）
 	扩展log4j/logback日志框架，将日志写入本地文件，再将日志收集到hadoop中，做一些统计分析。
 	// TODO
