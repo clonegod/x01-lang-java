@@ -35,15 +35,23 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
-		<!-- Zipkin server -->
+		<!-- Zipkin 服务器依赖 -->
 		<dependency>
-		    <groupId>io.zipkin.java</groupId>
-		    <artifactId>zipkin-server</artifactId>
+			<groupId>io.zipkin.java</groupId>
+			<artifactId>zipkin-server</artifactId>
 		</dependency>
-		<!-- Zipkin UI 控制器 -->
+
+		<!-- Zipkin 服务器UI控制器 -->
 		<dependency>
 			<groupId>io.zipkin.java</groupId>
 			<artifactId>zipkin-autoconfigure-ui</artifactId>
+		</dependency>
+		
+		<!-- Zipkin native support for kafka -->
+		<dependency>
+		    <groupId>io.zipkin.java</groupId>
+		    <artifactId>zipkin-autoconfigure-collector-kafka10</artifactId>
+		    <version>2.6.1</version>
 		</dependency>
 		
 		<dependency>

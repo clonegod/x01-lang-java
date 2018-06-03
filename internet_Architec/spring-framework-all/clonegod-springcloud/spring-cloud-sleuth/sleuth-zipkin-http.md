@@ -1,3 +1,5 @@
+# Spring Cloud Sleuth - HTTP
+
 ### 1、HTTP - 简单，但是效率不高，受网络影响比较
 ##### 配置Sleuth集成Zipkin依赖：
 		<!-- Sleuth  -->
@@ -5,6 +7,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
+		
 		<!-- Zipkin 客户端 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

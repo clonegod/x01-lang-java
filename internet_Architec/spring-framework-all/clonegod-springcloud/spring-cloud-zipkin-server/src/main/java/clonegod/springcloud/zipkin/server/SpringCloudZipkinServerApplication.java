@@ -7,7 +7,6 @@ import zipkin.server.EnableZipkinServer;
 
 @SpringBootApplication
 @EnableZipkinServer
-//@EnableZipkinStreamServer
 public class SpringCloudZipkinServerApplication {
 
 	public static void main(String[] args) {

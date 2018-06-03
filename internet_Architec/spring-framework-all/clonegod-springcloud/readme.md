@@ -2,8 +2,26 @@
 	程序员：关注功能性的实现
 	架构师：关注非功能性的实现 - 从代码角度看，系统结构是否合理，线程是否安全，应用是否稳定，系统的极限在什么地方，数据分布式的一致性等
 
-# spring-cloud 技术体系
+# Spring Cloud
+    Spring Cloud以Spring Boot为基础，通过在classpath下增加对应功能的jar包来增强功能。
+    Spring Cloud builds on Spring Boot by providing a bunch of libraries that enhance the behaviour of an application when added to the classpath.
+    
+    Spring Cloud为分布式系统的开发提供了基础设施。
+    Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems 
+    (e.g. 
+        configuration management, 
+        service discovery, 
+        circuit breakers, 
+        intelligent routing, 
+        micro-proxy, 
+        control bus, 
+        one-time tokens, 
+        global locks, 
+        leadership election, 
+        distributed sessions, 
+        cluster state).
 
+        
 ## 预备知识
 	
 	构建系统：  Maven / Gradle

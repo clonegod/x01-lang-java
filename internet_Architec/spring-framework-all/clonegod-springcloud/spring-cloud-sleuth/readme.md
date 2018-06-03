@@ -3,11 +3,37 @@
 ## Google Dapper
 	Sleuth基于Google Dapper论文进行实现
 
-
 ## Spring Cloud Sleuth 用来做什么？
 	完整监控链路跟踪：一个请求到返回响应，所经过的完整链路，以及每个服务的响应时间（RT值）；
 		日志排查：处理请求失败，需要快速定位到是链路中哪个环节出现了异常；
 		性能监控 ：检查链路中每个服务的响应耗时
+		
+## Spring Cloud Sleuth 相关依赖
+##### Only Sleuth (log correlation) - 仅记录日志，不上报
+	<dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-starter-sleuth</artifactId>
+   </dependency>
+   
+##### Sleuth with Zipkin via HTTP - 记录日志，使用http方式上报到Zipkin Server
+    <dependency>
+       	<groupId>org.springframework.cloud</groupId>
+       	<artifactId>spring-cloud-starter-zipkin</artifactId>
+   	</dependency>
+
+
+   
+##### Sleuth with Zipkin via Kafka - 记录日志，使用stream 消息方式上报到Zipkin Server
+    <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-starter-zipkin</artifactId>
+   </dependency>
+   <dependency>
+       <groupId>org.springframework.kafka</groupId>
+       <artifactId>spring-kafka</artifactId>
+   </dependency>
+   
+
 
 ## 引入Maven依赖
 	<dependency>
