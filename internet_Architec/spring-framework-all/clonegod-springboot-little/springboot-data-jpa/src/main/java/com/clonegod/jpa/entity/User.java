@@ -1,4 +1,4 @@
-package com.clonegod.jpa.model;
+package com.clonegod.jpa.entity;
 
 import java.util.Date;
 

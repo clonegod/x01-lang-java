@@ -3,7 +3,7 @@ package com.clonegod.jpa.repository;
 //import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.clonegod.jpa.model.User;
+import com.clonegod.jpa.entity.User;
 
 //public interface UserRepository extends CrudRepository<User, Integer> {
 public interface UserRepository extends PagingAndSortingRepository<User, Integer> {

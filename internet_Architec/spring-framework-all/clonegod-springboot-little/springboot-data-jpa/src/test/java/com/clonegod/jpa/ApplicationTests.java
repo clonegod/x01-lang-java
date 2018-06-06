@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.clonegod.jpa.model.User;
+import com.clonegod.jpa.entity.User;
 import com.clonegod.jpa.service.UserService;
 
 @RunWith(SpringRunner.class)
